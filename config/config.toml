@@ -1,0 +1,25 @@
+# 应用系统设置
+[setting]
+    logpath = "runtime/log/test"
+    secret  = "eyJFeHBpcmVzQXQiOjE1ODIyOTAwNzQsIm5hbWUiOiJhbGxlbiJ9"
+# 数据库连接
+[database]
+        host         = "10.10.35.21"
+        port         = "3306"
+        user         = "root"
+        pass         = "123456"
+        name         = "platform"
+        type         = "mysql"
+       #role         = "master"
+        debug        = true
+       #prefix       = "pl_"
+        charset      = "utf8"
+       #weight       = "(可选)负载均衡权重，用于负载均衡控制，不使用应用层的负载均衡机制请置空"
+       #linkinfo     = "mysql:root:123456@tcp(10.10.35.21:3306)/platform"
+       #maxIdle      = 10
+       #maxOpen      = 1204
+       #maxLifetime  = "(可选，单位秒)连接对象可重复使用的时间长度"
+
+[redis]
+    default = "127.0.0.1:6379,0"
+    cache   = "127.0.0.1:6379,1,123456?idleTimeout=600"

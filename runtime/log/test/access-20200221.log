@@ -1,0 +1,336 @@
+2020-02-21 11:19:06.730 [ERRO] 500, "POST http 10.10.35.250:8199 /task/edit?id=1000000006&title=333 HTTP/1.1" 160.001, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+Stack:
+1. reflect: call of reflect.Value.FieldByName on ptr Value
+   1).  platform/app/hander.(*Task).Edit
+    	E:/go/admin_paltform/app/hander/task.go:192
+
+2020-02-21 11:19:06.730 500 "POST http 10.10.35.250:8199 /task/edit?id=1000000006&title=333 HTTP/1.1" 160.001, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:19:09.612 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:20:37.671 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 452.178, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:20:42.687 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 100.996, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:21:01.664 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 128.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:21:11.157 [ERRO] 500, "POST http 10.10.35.250:8199 /task/edit?id=1000000006&title=333 HTTP/1.1" 197.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+Stack:
+1. reflect: call of reflect.Value.FieldByName on ptr Value
+   1).  platform/app/hander.(*Task).Edit
+    	E:/go/admin_paltform/app/hander/task.go:192
+
+2020-02-21 11:21:11.157 500 "POST http 10.10.35.250:8199 /task/edit?id=1000000006&title=333 HTTP/1.1" 197.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:21:45.910 [ERRO] 500, "POST http 10.10.35.250:8199 /task/edit?id=1000000006&title=333 HTTP/1.1" 226.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+Stack:
+1. reflect: call of reflect.Value.FieldByName on ptr Value
+   1).  platform/app/hander.(*Task).Edit
+    	E:/go/admin_paltform/app/hander/task.go:192
+
+2020-02-21 11:21:45.910 500 "POST http 10.10.35.250:8199 /task/edit?id=1000000006&title=333 HTTP/1.1" 226.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:21:53.323 [ERRO] 500, "POST http 10.10.35.250:8199 /task/edit?id=1000000006&title=333 HTTP/1.1" 15.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+Stack:
+1. reflect: call of reflect.Value.FieldByName on ptr Value
+   1).  platform/app/hander.(*Task).Edit
+    	E:/go/admin_paltform/app/hander/task.go:192
+
+2020-02-21 11:21:53.323 500 "POST http 10.10.35.250:8199 /task/edit?id=1000000006&title=333 HTTP/1.1" 15.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:22:43.357 200 "POST http 10.10.35.250:8198 /task/edit?id=1000000006&title=333 HTTP/1.1" 510.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:23:04.183 200 "POST http 10.10.35.250:8198 /task/edit?id=1000000006&title=333 HTTP/1.1" 280.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:25:39.818 200 "POST http 10.10.35.250:8198 /task/edit?id=1000000006&title=333 HTTP/1.1" 928.691, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:25:45.163 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 3059.405, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:25:53.663 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:25:57.526 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 112.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:27:27.009 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 469.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:27:31.410 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 36.997, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:27:34.773 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 49.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:27:40.643 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 1134.880, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:28:06.210 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 80.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:28:14.555 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 793.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:28:27.494 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 310.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:28:29.260 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 33.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:28:32.110 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 111.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:28:33.366 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 56.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:28:34.779 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 67.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:28:36.251 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 324.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:28:55.911 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 192.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:28:58.790 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 68.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:29:01.791 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 44.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:29:02.673 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 66.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:29:14.399 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 317.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:29:22.490 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 113.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:30:08.668 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 73.979, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:30:15.723 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 46.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:31:12.291 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 287.001, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:31:16.780 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 59.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:31:23.707 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 55.099, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:31:26.755 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 13.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:33:06.257 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 100.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:33:15.714 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 34.001, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:33:21.285 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 34.997, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:33:57.440 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 170.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:33:59.748 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 150.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:35:52.955 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 116.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:35:57.466 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 6.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:36:03.445 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 26.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:36:25.866 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 68.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:37:17.056 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 92.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:37:24.078 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 7.005, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:38:23.782 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 62.005, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:38:30.086 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 80.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:40:01.930 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 112.002, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:40:06.441 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 40.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:40:13.981 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 194.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 11:40:18.778 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 47.996, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 12:19:10.568 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 94.033, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 12:19:24.854 [ERRO] 500, "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+Stack:
+1. runtime error: invalid memory address or nil pointer dereference
+
+2020-02-21 12:19:24.855 500 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 12:30:54.863 [ERRO] 500, "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+Stack:
+1. runtime error: invalid memory address or nil pointer dereference
+
+2020-02-21 12:30:54.863 500 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 12:31:33.826 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 76.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 12:33:43.021 200 "POST http 10.10.35.250:8198 /task/edit?id=1000000006&title=333 HTTP/1.1" 56.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 12:35:14.811 200 "POST http 10.10.35.250:8198 /task/edit?id=1000000006&title=333 HTTP/1.1" 151.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 12:35:17.682 200 "POST http 10.10.35.250:8198 /task/add HTTP/1.1" 31.997, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 12:39:29.447 200 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 73.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 12:40:21.431 404 "GET http 10.10.35.250:8198 /task/list HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 12:40:25.548 404 "GET http 10.10.35.250:8198 /get HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 12:40:31.319 404 "GET http 10.10.35.250:8198 /api/get HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 12:40:42.708 200 "GET http 10.10.35.250:8198 /api/task HTTP/1.1" 64.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 12:41:23.432 404 "POST http 10.10.35.250:8198 /task/add HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 12:41:35.725 200 "POST http 10.10.35.250:8198 /api/task HTTP/1.1" 81.001, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 12:42:39.458 404 "POST http 10.10.35.250:8198 /task/edit HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 12:42:46.500 200 "POST http 10.10.35.250:8198 /api/task HTTP/1.1" 1097.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 12:42:57.787 200 "PUT http 10.10.35.250:8198 /api/task HTTP/1.1" 33.003, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 12:53:04.616 404 "GET http 10.10.35.250:8198 /api.v1/task HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 12:53:17.520 200 "GET http 10.10.35.250:8198 /api.v1/task HTTP/1.1" 180.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 12:53:37.871 200 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 102.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 12:56:12.440 200 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 112.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 12:56:55.362 403 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 1.001, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 12:57:10.328 [ERRO] 500, "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 63.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+Stack:
+1. runtime error: invalid memory address or nil pointer dereference
+   1).  platform/app/middleware.MiddlewareCORS
+    	E:/go/admin_paltform/app/middleware/cors.go:9
+
+2020-02-21 12:57:10.328 500 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 63.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 12:57:27.518 [ERRO] 500, "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 204.997, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+Stack:
+1. runtime error: invalid memory address or nil pointer dereference
+   1).  platform/app/middleware.MiddlewareCORS
+    	E:/go/admin_paltform/app/middleware/cors.go:9
+
+2020-02-21 12:57:27.519 500 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 204.997, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 12:57:50.795 404 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 12:57:59.745 [ERRO] 500, "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 250.927, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+Stack:
+1. runtime error: invalid memory address or nil pointer dereference
+   1).  platform/app/middleware.MiddlewareCORS
+    	E:/go/admin_paltform/app/middleware/cors.go:9
+
+2020-02-21 12:57:59.745 500 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 250.927, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 12:58:15.416 [ERRO] 500, "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 109.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+Stack:
+1. runtime error: invalid memory address or nil pointer dereference
+   1).  platform/app/middleware.MiddlewareCORS
+    	E:/go/admin_paltform/app/middleware/cors.go:9
+
+2020-02-21 12:58:15.416 500 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 109.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:16:40.052 403 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 1.002, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:17:29.220 403 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:17:59.599 200 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 67.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:18:12.548 200 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 72.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:18:48.111 200 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 240.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:19:22.956 200 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 83.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:19:37.080 403 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:19:47.420 403 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 1.001, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:20:28.735 200 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 0.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:21:17.539 200 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 1.001, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:21:48.388 200 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:22:18.858 200 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 1.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:22:41.822 200 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:23:08.762 200 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 1.002, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:23:20.569 200 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:23:38.463 200 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 1.002, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:25:00.072 404 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:25:12.029 404 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:25:31.980 [ERRO] 500, "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 70.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+Stack:
+1. runtime error: index out of range [1] with length 1
+   1).  platform/app/middleware.MiddlewareAuth
+    	E:/go/admin_paltform/app/middleware/auth.go:15
+
+2020-02-21 13:25:31.980 500 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 70.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:25:47.789 404 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:29:01.505 200 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 0.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:29:08.757 200 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 1.001, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:30:00.434 200 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:30:19.936 [ERRO] 500, "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 64.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+Stack:
+1. runtime error: invalid memory address or nil pointer dereference
+   1).  platform/app/middleware.MiddlewareAuth
+    	E:/go/admin_paltform/app/middleware/auth.go:17
+
+2020-02-21 13:30:19.936 500 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 64.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:30:46.167 [ERRO] 500, "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 84.997, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+Stack:
+1. runtime error: invalid memory address or nil pointer dereference
+   1).  platform/app/middleware.MiddlewareAuth
+    	E:/go/admin_paltform/app/middleware/auth.go:16
+
+2020-02-21 13:30:46.168 500 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 84.997, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:31:19.779 404 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:31:36.491 [ERRO] 500, "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 90.001, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+Stack:
+1. runtime error: invalid memory address or nil pointer dereference
+   1).  platform/app/middleware.MiddlewareAuth
+    	E:/go/admin_paltform/app/middleware/auth.go:16
+
+2020-02-21 13:31:36.491 500 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 90.001, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:33:06.416 200 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 48.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:33:39.399 [ERRO] 500, "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 84.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+Stack:
+1. runtime error: invalid memory address or nil pointer dereference
+   1).  platform/app/middleware.MiddlewareAuth
+    	E:/go/admin_paltform/app/middleware/auth.go:16
+
+2020-02-21 13:33:39.399 500 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 84.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:33:52.767 [ERRO] 500, "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 66.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+Stack:
+1. runtime error: invalid memory address or nil pointer dereference
+   1).  platform/app/middleware.MiddlewareAuth
+    	E:/go/admin_paltform/app/middleware/auth.go:16
+
+2020-02-21 13:33:52.768 500 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 66.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:34:42.221 [ERRO] 500, "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 62.001, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+Stack:
+1. runtime error: invalid memory address or nil pointer dereference
+   1).  platform/app/middleware.MiddlewareAuth
+    	E:/go/admin_paltform/app/middleware/auth.go:16
+
+2020-02-21 13:34:42.221 500 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 62.001, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:34:57.319 404 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:35:13.017 404 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:35:26.868 [ERRO] 500, "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 72.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+Stack:
+1. runtime error: invalid memory address or nil pointer dereference
+   1).  platform/app/middleware.MiddlewareAuth
+    	E:/go/admin_paltform/app/middleware/auth.go:16
+
+2020-02-21 13:35:26.868 500 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 72.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:35:43.235 [ERRO] 500, "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 66.001, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+Stack:
+1. runtime error: invalid memory address or nil pointer dereference
+   1).  platform/app/middleware.MiddlewareAuth
+    	E:/go/admin_paltform/app/middleware/auth.go:16
+
+2020-02-21 13:35:43.235 500 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 66.001, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:40:50.860 [ERRO] 500, "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 121.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+Stack:
+1. runtime error: invalid memory address or nil pointer dereference
+   1).  platform/app/middleware.MiddlewareAuth
+    	E:/go/admin_paltform/app/middleware/auth.go:16
+
+2020-02-21 13:40:50.861 500 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 121.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:41:21.571 200 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 61.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:41:33.938 [ERRO] 500, "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 86.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+Stack:
+1. runtime error: invalid memory address or nil pointer dereference
+   1).  platform/app/middleware.MiddlewareAuth
+    	E:/go/admin_paltform/app/middleware/auth.go:16
+
+2020-02-21 13:41:33.939 500 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 86.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:41:48.183 200 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 31.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:42:22.838 [ERRO] 500, "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 93.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+Stack:
+1. runtime error: invalid memory address or nil pointer dereference
+   1).  platform/app/middleware.MiddlewareAuth
+    	E:/go/admin_paltform/app/middleware/auth.go:16
+
+2020-02-21 13:42:22.838 500 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 93.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:43:06.879 [ERRO] 500, "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 161.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+Stack:
+1. runtime error: invalid memory address or nil pointer dereference
+   1).  platform/app/middleware.MiddlewareAuth
+    	E:/go/admin_paltform/app/middleware/auth.go:16
+
+2020-02-21 13:43:06.879 500 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 161.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 13:43:15.047 200 "GET http 10.10.35.250:8198 /v1/task HTTP/1.1" 96.001, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 15:00:22.235 200 "GET http 10.10.35.250:8199 /v1/task HTTP/1.1" 325.409, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 15:03:32.906 200 "POST http 10.10.35.250:8199 /v1/admin HTTP/1.1" 54.001, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 15:04:08.582 200 "POST http 10.10.35.250:8199 /v1/admin HTTP/1.1" 91.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 15:05:18.454 200 "POST http 10.10.35.250:8199 /v1/admin HTTP/1.1" 103.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 15:06:03.842 200 "POST http 10.10.35.250:8199 /v1/admin HTTP/1.1" 152.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 15:07:01.218 200 "POST http 10.10.35.250:8199 /v1/admin HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 15:11:49.197 200 "POST http 10.10.35.250:8199 /v1/admin HTTP/1.1" 62.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 15:21:46.294 200 "POST http 10.10.35.250:8199 /v1/admin HTTP/1.1" 39.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 15:22:20.182 200 "POST http 10.10.35.250:8199 /v1/admin HTTP/1.1" 3103.391, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 15:23:20.195 200 "POST http 10.10.35.250:8199 /v1/admin HTTP/1.1" 180.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 15:23:26.358 200 "POST http 10.10.35.250:8199 /v1/admin HTTP/1.1" 0.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 15:24:38.487 200 "POST http 10.10.35.250:8199 /v1/admin HTTP/1.1" 1.003, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 15:25:25.905 200 "POST http 10.10.35.250:8199 /v1/admin?account=test001 HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 15:25:40.659 200 "POST http 10.10.35.250:8199 /v1/admin?account=test001&login_password=test001 HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 15:40:42.491 404 "GET http 10.10.35.250:8199 /v1/login HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 15:40:45.404 200 "POST http 10.10.35.250:8199 /v1/login HTTP/1.1" 1.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 15:41:03.685 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 15:41:43.922 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 129.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 15:44:07.919 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 37.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 15:45:37.255 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 30.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 15:54:11.539 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 31.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 15:54:48.188 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 32.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 15:54:57.714 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 39.018, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 15:55:25.407 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 82.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 15:57:21.384 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 362.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 15:58:03.849 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 90.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 15:58:28.517 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 61.044, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 15:59:00.827 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 43.001, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 16:05:07.150 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 110.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 16:05:35.359 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 40.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 16:07:53.663 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 36.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 16:08:44.352 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 44.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 16:10:12.603 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 57.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 16:11:31.273 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 34.997, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 16:18:34.403 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 48.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 16:32:26.572 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 77.007, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 16:32:47.334 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 43.001, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 16:33:09.452 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 22.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 16:33:24.177 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 37.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 16:33:41.572 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 25.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 16:33:56.933 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 84.023, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 17:43:27.864 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 33.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 17:51:46.673 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 89.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 17:52:31.839 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 77.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 17:54:05.142 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 128.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 17:54:12.794 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 64.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 17:55:35.292 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 56.960, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 17:56:24.989 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 44.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 17:57:03.089 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 55.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 17:57:45.791 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 129.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 17:57:47.615 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 247.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 17:58:48.067 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 112.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 18:07:52.166 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 28.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 18:08:08.579 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 40.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 18:09:25.427 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 78.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 18:16:41.453 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 32.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 18:17:32.529 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 63.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 18:17:57.194 200 "GET http 10.10.35.250:8199 /v1/task HTTP/1.1" 0.984, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 18:48:24.262 200 "GET http 10.10.35.250:8199 /v1/task HTTP/1.1" 1.002, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 18:48:28.525 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 44.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 18:49:22.521 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 122.001, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 18:52:35.528 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 89.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 18:52:44.517 200 "GET http 10.10.35.250:8199 /v1/task HTTP/1.1" 0.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 18:52:46.254 200 "GET http 10.10.35.250:8199 /v1/task HTTP/1.1" 0.995, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 18:54:15.215 200 "GET http 10.10.35.250:8199 /v1/task HTTP/1.1" 1.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 19:05:08.435 200 "GET http 10.10.35.250:8199 /v1/task HTTP/1.1" 1.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 19:05:40.449 200 "GET http 10.10.35.250:8199 /v1/task HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 19:06:26.457 200 "GET http 10.10.35.250:8199 /v1/task HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 19:07:06.336 200 "GET http 10.10.35.250:8199 /v1/task HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 19:08:14.896 200 "GET http 10.10.35.250:8199 /v1/task HTTP/1.1" 1.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 19:08:42.044 200 "GET http 10.10.35.250:8199 /v1/task HTTP/1.1" 1.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 19:09:15.920 200 "GET http 10.10.35.250:8199 /v1/task HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 19:09:22.695 200 "POST http 10.10.35.250:8199 /v1/login?account=admin&login_password=admin HTTP/1.1" 35.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 19:09:29.063 200 "GET http 10.10.35.250:8199 /v1/task HTTP/1.1" 0.997, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 19:42:50.739 200 "GET http 10.10.35.250:8199 /v1/task HTTP/1.1" 0.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 19:43:38.745 200 "GET http 10.10.35.250:8199 /v1/task HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 19:44:05.472 200 "GET http 10.10.35.250:8199 /v1/task HTTP/1.1" 1.002, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-21 19:44:18.728 200 "GET http 10.10.35.250:8199 /v1/task HTTP/1.1" 1.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"

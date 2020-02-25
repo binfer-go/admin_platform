@@ -1,0 +1,105 @@
+2020-02-19 15:20:06.868 200 "POST http 10.10.35.250:8199 /user/register HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 15:29:53.898 200 "POST http 10.10.35.250:8199 /task/list HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 15:36:34.397 200 "POST http 10.10.35.250:8199 /task/list HTTP/1.1" 1.001, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 15:37:04.230 200 "POST http 10.10.35.250:8199 /task/list HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 15:37:50.011 200 "POST http 10.10.35.250:8199 /task/list HTTP/1.1" 0.992, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 15:47:38.008 200 "POST http 10.10.35.250:8199 /task/list HTTP/1.1" 64.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 15:49:12.071 200 "POST http 10.10.35.250:8199 /task/list HTTP/1.1" 30.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 15:49:52.062 200 "POST http 10.10.35.250:8199 /task/list HTTP/1.1" 23.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 15:50:16.304 200 "POST http 10.10.35.250:8199 /task/list HTTP/1.1" 85.029, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 15:53:05.128 200 "POST http 10.10.35.250:8199 /task/list HTTP/1.1" 19.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 15:53:29.874 200 "POST http 10.10.35.250:8199 /task/list HTTP/1.1" 3.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 15:57:31.431 200 "POST http 10.10.35.250:8199 /task/list HTTP/1.1" 40.997, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 16:12:23.257 200 "POST http 10.10.35.250:8199 /task/list HTTP/1.1" 389.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 16:12:40.288 200 "POST http 10.10.35.250:8199 /task/list HTTP/1.1" 382.027, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 16:19:52.347 200 "POST http 10.10.35.250:8199 /task/list HTTP/1.1" 1772.016, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 16:20:24.182 200 "POST http 10.10.35.250:8199 /task/list HTTP/1.1" 315.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 16:24:08.716 200 "POST http 10.10.35.250:8199 /task/list HTTP/1.1" 1879.414, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 16:26:34.224 200 "POST http 10.10.35.250:8199 /task/list HTTP/1.1" 71.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 16:29:15.581 200 "POST http 10.10.35.250:8199 /task/list HTTP/1.1" 30.001, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 16:30:15.595 200 "POST http 10.10.35.250:8199 /task/list HTTP/1.1" 159.997, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 16:30:40.093 200 "POST http 10.10.35.250:8199 /task/list HTTP/1.1" 54.001, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 18:55:36.072 200 "POST http 10.10.35.250:8199 /task/list HTTP/1.1" 56.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 18:55:42.018 200 "POST http 10.10.35.250:8199 /task/list HTTP/1.1" 15.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 18:55:44.688 [ERRO] 500, "POST http 10.10.35.250:8199 /task/list HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+Stack:
+1. multipart: NextPart: EOF
+   1).  platform/app/hander.(*Task).List
+    	E:/go/admin_paltform/app/hander/task.go:22
+
+2020-02-19 18:55:44.689 500 "POST http 10.10.35.250:8199 /task/list HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 18:55:46.824 [ERRO] 500, "POST http 10.10.35.250:8199 /task/list HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+Stack:
+1. multipart: NextPart: EOF
+   1).  platform/app/hander.(*Task).List
+    	E:/go/admin_paltform/app/hander/task.go:22
+
+2020-02-19 18:55:46.824 500 "POST http 10.10.35.250:8199 /task/list HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 18:55:52.468 200 "POST http 10.10.35.250:8199 /task/list HTTP/1.1" 9.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 18:56:03.420 200 "POST http 10.10.35.250:8199 /task/list HTTP/1.1" 23.001, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 18:56:08.483 [ERRO] 500, "POST http 10.10.35.250:8199 /task/list HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+Stack:
+1. multipart: NextPart: EOF
+   1).  platform/app/hander.(*Task).List
+    	E:/go/admin_paltform/app/hander/task.go:22
+
+2020-02-19 18:56:08.483 500 "POST http 10.10.35.250:8199 /task/list HTTP/1.1" 0.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 18:57:14.841 [ERRO] 500, "POST http 10.10.35.250:8199 /task/list HTTP/1.1" 1.001, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+Stack:
+1. multipart: NextPart: EOF
+   1).  platform/app/hander.(*Task).List
+    	E:/go/admin_paltform/app/hander/task.go:23
+
+2020-02-19 18:57:14.842 500 "POST http 10.10.35.250:8199 /task/list HTTP/1.1" 1.001, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 18:57:58.717 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 152.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 18:58:15.102 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 95.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 18:58:39.834 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 113.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 18:59:14.981 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 88.997, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:00:10.032 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 69.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:00:57.567 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 148.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:02:11.961 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 268.201, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:05:15.331 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 186.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:06:35.020 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 297.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:07:37.129 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 588.001, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:08:51.639 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 216.001, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:09:08.398 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 1276.510, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:09:35.234 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 235.001, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:11:32.521 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 239.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:12:17.724 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 141.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:14:26.405 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 252.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:14:41.151 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 157.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:16:56.807 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 45.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:20:25.905 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 119.002, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:21:13.229 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 133.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:30:05.300 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 120.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:30:30.812 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 142.879, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:31:27.516 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 157.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:32:19.584 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 155.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:33:45.348 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 76.001, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:36:43.996 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 143.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:36:58.661 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 302.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:41:45.329 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 70.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:43:46.770 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 108.997, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:44:22.356 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 389.044, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:49:23.961 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 280.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:49:27.088 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 161.997, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:49:29.095 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 24.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:50:06.001 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 80.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:50:29.280 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 172.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:51:25.406 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 160.513, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:51:47.248 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 35.511, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:52:13.683 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 95.997, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:53:25.743 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 47.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 19:53:47.354 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 25.997, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 20:00:18.741 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 80.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 20:00:28.993 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 25.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 20:00:57.786 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 79.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 20:01:02.664 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 27.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 20:01:17.028 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 47.960, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 20:01:18.036 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 23.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 20:01:40.890 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 120.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 20:01:46.388 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 33.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 20:01:57.635 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 47.001, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 20:02:07.365 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 49.000, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 20:02:11.824 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 223.998, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+2020-02-19 20:02:27.911 200 "GET http 10.10.35.250:8199 /task/list HTTP/1.1" 112.999, 10.10.35.250, "", "PostmanRuntime/7.22.0"

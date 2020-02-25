@@ -1,0 +1,1611 @@
+2020-02-19 13:06:42.658 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+2020-02-19 13:06:42.680 14636: http server started listening on [:8199]
+2020-02-19 13:21:59.710 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |        ROUTE        |                       HANDLER                        | MIDDLEWARE  
+----------|---------|---------|--------|---------------------|------------------------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/checkaccount  | platform/app/hander/user.(*Controller).CheckAccount  |             
+----------|---------|---------|--------|---------------------|------------------------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/checknickname | platform/app/hander/user.(*Controller).CheckNickName |             
+----------|---------|---------|--------|---------------------|------------------------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/issignedin    | platform/app/hander/user.(*Controller).IsSignedIn    |             
+----------|---------|---------|--------|---------------------|------------------------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/signin        | platform/app/hander/user.(*Controller).SignIn        |             
+----------|---------|---------|--------|---------------------|------------------------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/signout       | platform/app/hander/user.(*Controller).SignOut       |             
+----------|---------|---------|--------|---------------------|------------------------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/signup        | platform/app/hander/user.(*Controller).SignUp        |             
+----------|---------|---------|--------|---------------------|------------------------------------------------------|-------------
+
+2020-02-19 13:21:59.732 7356: http server started listening on [:8199]
+2020-02-19 13:22:58.743 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE     |                    HANDLER                     | MIDDLEWARE  
+----------|---------|---------|--------|---------------|------------------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/signin  | platform/app/hander/user.(*Controller).SignIn  |             
+----------|---------|---------|--------|---------------|------------------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/signout | platform/app/hander/user.(*Controller).SignOut |             
+----------|---------|---------|--------|---------------|------------------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/signup  | platform/app/hander/user.(*Controller).SignUp  |             
+----------|---------|---------|--------|---------------|------------------------------------------------|-------------
+
+2020-02-19 13:22:58.765 12104: http server started listening on [:8199]
+2020-02-19 13:31:26.615 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                     HANDLER                     | MIDDLEWARE  
+----------|---------|---------|--------|----------------|-------------------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander/user.(*Controller).Login    |             
+----------|---------|---------|--------|----------------|-------------------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander/user.(*Controller).Logout   |             
+----------|---------|---------|--------|----------------|-------------------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander/user.(*Controller).Register |             
+----------|---------|---------|--------|----------------|-------------------------------------------------|-------------
+
+2020-02-19 13:31:26.636 11128: http server started listening on [:8199]
+2020-02-19 13:33:26.633 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 13:33:26.656 14900: http server started listening on [:8199]
+2020-02-19 15:02:45.727 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 15:02:45.749 15632: http server started listening on [:8199]
+2020-02-19 15:19:44.350 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 15:19:44.372 13780: http server started listening on [:8199]
+2020-02-19 15:21:52.616 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 15:21:52.637 1780: http server started listening on [:8199]
+2020-02-19 15:29:43.255 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 15:29:43.277 5044: http server started listening on [:8199]
+2020-02-19 15:36:32.864 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 15:36:32.886 4788: http server started listening on [:8199]
+2020-02-19 15:36:34.397 [DEBU] 
+2020-02-19 15:37:04.230 [DEBU] 12323
+2020-02-19 15:37:49.979 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 15:37:50.000 11612: http server started listening on [:8199]
+2020-02-19 15:37:50.010 [DEBU] 12323
+2020-02-19 15:47:34.708 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 15:47:34.730 14784: http server started listening on [:8199]
+2020-02-19 15:47:38.007 [DEBU] Error 1054: Unknown column 'start_time' in 'where clause', SELECT * FROM `task` WHERE `start_time`='12323'
+
+2020-02-19 15:49:11.789 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 15:49:11.812 15104: http server started listening on [:8199]
+2020-02-19 15:49:12.071 [DEBU] [{"created_at":"2020-02-19 15:48:11","describe":"task-describe","id":1,"sort":1,"status":1,"title":"task","updated_at":"2020-02-19 15:48:13"}] 
+2020-02-19 15:49:50.740 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 15:49:50.762 12360: http server started listening on [:8199]
+2020-02-19 15:49:52.062 [DEBU] 
+2020-02-19 15:50:14.424 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 15:50:14.447 16308: http server started listening on [:8199]
+2020-02-19 15:50:16.304 [DEBU] 
+2020-02-19 15:53:02.058 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 15:53:02.081 2292: http server started listening on [:8199]
+2020-02-19 15:53:05.128 [DEBU] [{"created_at":"2020-02-19 15:48:11","describe":"task-describe","id":1,"sort":1,"status":1,"title":"task","updated_at":"2020-02-19 15:48:13"}] 
+2020-02-19 15:53:29.874 [DEBU] [{"created_at":"2020-02-19 15:48:11","describe":"task-describe","id":1,"sort":1,"status":1,"title":"task","updated_at":"2020-02-19 15:48:13"}] 
+2020-02-19 15:57:29.695 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 15:57:29.716 15168: http server started listening on [:8199]
+2020-02-19 15:57:31.430 [DEBU] [{"created_at":"2020-02-19 15:48:11","describe":"task-describe","id":1,"sort":1,"status":1,"title":"task","updated_at":"2020-02-19 15:48:13"}] 
+2020-02-19 16:06:23.698 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 16:06:23.720 11732: http server started listening on [:8199]
+2020-02-19 16:06:26.872 [ERRO] Error: 请输入账号; 账号长度为6到30位 [E:/go/admin_paltform/app/hander/task.go:23: platform/app/hander.(*Task).List] 
+Stack:
+1.  platform/library/response.LogError
+    E:/go/admin_paltform/library/response/response.go:44
+2.  platform/app/hander.(*Task).List
+    E:/go/admin_paltform/app/hander/task.go:23
+3.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1.6
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_request_middleware.go:94
+4.  github.com/gogf/gf/net/ghttp.niceCallFunc
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_func.go:54
+5.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_request_middleware.go:93
+6.  github.com/gogf/gf/util/gutil.TryCatch
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/util/gutil/gutil.go:69
+7.  github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_request_middleware.go:46
+8.  github.com/gogf/gf/net/ghttp.(*Server).handleRequest
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_server_handler.go:109
+9.  github.com/gogf/gf/net/ghttp.(*Server).defaultHandler
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_server_handler.go:29
+
+2020-02-19 16:07:33.658 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 16:07:33.680 4556: http server started listening on [:8199]
+2020-02-19 16:07:35.376 [ERRO] Error: Failure [E:/go/admin_paltform/app/hander/task.go:23: platform/app/hander.(*Task).List] 
+Stack:
+1.  platform/library/response.LogError
+    E:/go/admin_paltform/library/response/response.go:44
+2.  platform/app/hander.(*Task).List
+    E:/go/admin_paltform/app/hander/task.go:23
+3.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1.6
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_request_middleware.go:94
+4.  github.com/gogf/gf/net/ghttp.niceCallFunc
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_func.go:54
+5.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_request_middleware.go:93
+6.  github.com/gogf/gf/util/gutil.TryCatch
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/util/gutil/gutil.go:69
+7.  github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_request_middleware.go:46
+8.  github.com/gogf/gf/net/ghttp.(*Server).handleRequest
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_server_handler.go:109
+9.  github.com/gogf/gf/net/ghttp.(*Server).defaultHandler
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_server_handler.go:29
+
+2020-02-19 16:08:05.404 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 16:08:05.426 12160: http server started listening on [:8199]
+2020-02-19 16:08:06.822 [ERRO] Error: Failure [E:/go/admin_paltform/app/hander/task.go:23: platform/app/hander.(*Task).List] 
+Stack:
+1.  platform/library/response.LogError
+    E:/go/admin_paltform/library/response/response.go:46
+2.  platform/app/hander.(*Task).List
+    E:/go/admin_paltform/app/hander/task.go:23
+3.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1.6
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_request_middleware.go:94
+4.  github.com/gogf/gf/net/ghttp.niceCallFunc
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_func.go:54
+5.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_request_middleware.go:93
+6.  github.com/gogf/gf/util/gutil.TryCatch
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/util/gutil/gutil.go:69
+7.  github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_request_middleware.go:46
+8.  github.com/gogf/gf/net/ghttp.(*Server).handleRequest
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_server_handler.go:109
+9.  github.com/gogf/gf/net/ghttp.(*Server).defaultHandler
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_server_handler.go:29
+
+2020-02-19 16:09:14.603 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 16:09:14.625 15320: http server started listening on [:8199]
+2020-02-19 16:09:14.741 [ERRO] Error: Failure [E:/go/admin_paltform/app/hander/task.go:23: platform/app/hander.(*Task).List] 
+Stack:
+1.  platform/library/response.LogError
+    E:/go/admin_paltform/library/response/response.go:46
+2.  platform/app/hander.(*Task).List
+    E:/go/admin_paltform/app/hander/task.go:23
+3.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1.6
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_request_middleware.go:94
+4.  github.com/gogf/gf/net/ghttp.niceCallFunc
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_func.go:54
+5.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_request_middleware.go:93
+6.  github.com/gogf/gf/util/gutil.TryCatch
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/util/gutil/gutil.go:69
+7.  github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_request_middleware.go:46
+8.  github.com/gogf/gf/net/ghttp.(*Server).handleRequest
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_server_handler.go:109
+9.  github.com/gogf/gf/net/ghttp.(*Server).defaultHandler
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_server_handler.go:29
+
+2020-02-19 16:12:20.971 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 16:12:20.994 9080: http server started listening on [:8199]
+2020-02-19 16:12:23.257 [DEBU] [{"created_at":"2020-02-19 15:48:11","describe":"task-describe","id":1,"sort":1,"status":1,"title":"task","updated_at":"2020-02-19 15:48:13"}] 
+2020-02-19 16:12:39.355 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 16:12:39.376 6956: http server started listening on [:8199]
+2020-02-19 16:12:40.288 [DEBU] [{"created_at":"2020-02-19 15:48:11","describe":"task-describe","id":1,"sort":1,"status":1,"title":"task","updated_at":"2020-02-19 15:48:13"}] 
+2020-02-19 16:19:49.143 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 16:19:49.164 8268: http server started listening on [:8199]
+2020-02-19 16:19:52.347 [DEBU] [{"created_at":"2020-02-19 15:48:11","describe":"task-describe","id":1,"sort":1,"status":1,"title":"task","updated_at":"2020-02-19 15:48:13"}] 
+2020-02-19 16:20:22.491 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 16:20:22.512 15196: http server started listening on [:8199]
+2020-02-19 16:20:24.182 [DEBU] [{"created_at":"2020-02-19 15:48:11","describe":"task-describe","id":1,"sort":1,"status":1,"title":"task","updated_at":"2020-02-19 15:48:13"}] 
+2020-02-19 16:24:03.302 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 16:24:03.323 832: http server started listening on [:8199]
+2020-02-19 16:24:08.716 [DEBU] [{"created_at":"2020-02-19 15:48:11","describe":"task-describe","id":1,"sort":1,"status":1,"title":"task","updated_at":"2020-02-19 15:48:13"}] 
+2020-02-19 16:26:31.038 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 16:26:31.060 7392: http server started listening on [:8199]
+2020-02-19 16:26:34.224 [DEBU] [{"created_at":"2020-02-19 15:48:11","describe":"task-describe","id":1,"sort":1,"status":1,"title":"task","updated_at":"2020-02-19 15:48:13"}] 
+2020-02-19 16:29:12.119 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 16:29:12.140 3840: http server started listening on [:8199]
+2020-02-19 16:29:15.581 [DEBU] [{"created_at":"2020-02-19 15:48:11","describe":"task-describe","id":1,"sort":1,"status":1,"title":"task","updated_at":"2020-02-19 15:48:13"}] 
+2020-02-19 16:30:15.595 [DEBU] [{"created_at":"2020-02-19 15:48:11","describe":"task-describe","id":1,"sort":1,"status":1,"title":"task","updated_at":"2020-02-19 15:48:13"}] 
+2020-02-19 16:30:38.072 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 16:30:38.094 4992: http server started listening on [:8199]
+2020-02-19 16:30:40.093 [DEBU] [{"created_at":"2020-02-19 15:48:11","describe":"task-describe","id":1,"sort":1,"status":1,"title":"task","updated_at":"2020-02-19 15:48:13"}] 
+2020-02-19 18:11:38.732 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 18:11:38.754 14772: http server started listening on [:8199]
+2020-02-19 18:12:19.745 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 18:12:19.767 9084: http server started listening on [:8199]
+2020-02-19 18:12:53.215 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 18:12:53.237 10348: http server started listening on [:8199]
+2020-02-19 18:19:16.481 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 18:19:16.503 15908: http server started listening on [:8199]
+2020-02-19 18:36:25.152 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 18:36:25.174 4524: http server started listening on [:8199]
+2020-02-19 18:37:07.249 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 18:37:07.271 7988: http server started listening on [:8199]
+2020-02-19 18:37:37.639 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 18:37:37.662 856: http server started listening on [:8199]
+2020-02-19 18:48:58.728 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 18:48:58.751 14328: http server started listening on [:8199]
+2020-02-19 18:55:33.998 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 18:55:34.022 8464: http server started listening on [:8199]
+2020-02-19 18:55:36.072 [DEBU] {"TotalPage":0,"TotalSize":0,"CurrentPage":1,"PageBarNum":10}
+2020-02-19 18:55:42.018 [DEBU] {"TotalPage":0,"TotalSize":0,"CurrentPage":1,"PageBarNum":10}
+2020-02-19 18:55:52.468 [DEBU] {"TotalPage":0,"TotalSize":0,"CurrentPage":1,"PageBarNum":10}
+2020-02-19 18:56:03.419 [DEBU] {"TotalPage":0,"TotalSize":0,"CurrentPage":1,"PageBarNum":10}
+2020-02-19 18:56:56.897 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 18:56:56.919 8396: http server started listening on [:8199]
+2020-02-19 18:57:58.717 [DEBU] {"TotalPage":0,"TotalSize":0,"CurrentPage":1,"PageBarNum":10}
+2020-02-19 18:58:15.102 [DEBU] {"TotalPage":0,"TotalSize":0,"CurrentPage":1,"PageBarNum":10}
+2020-02-19 18:58:39.834 [DEBU] {"TotalPage":0,"TotalSize":0,"CurrentPage":1,"PageBarNum":10}
+2020-02-19 18:59:12.398 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 18:59:12.421 9084: http server started listening on [:8199]
+2020-02-19 18:59:14.981 [DEBU] {"TotalPage":0,"TotalSize":0,"CurrentPage":1,"PageBarNum":10}
+2020-02-19 19:00:08.259 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:00:08.282 8424: http server started listening on [:8199]
+2020-02-19 19:00:10.032 [DEBU] page list %s, %s 0 
+2020-02-19 19:00:10.032 [DEBU] {"TotalPage":0,"TotalSize":0,"CurrentPage":1,"PageBarNum":10}
+2020-02-19 19:00:55.919 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:00:55.941 13324: http server started listening on [:8199]
+2020-02-19 19:00:57.567 [DEBU] page list 0 
+2020-02-19 19:00:57.567 [DEBU] {"TotalPage":0,"TotalSize":0,"CurrentPage":1,"PageBarNum":10}
+2020-02-19 19:02:11.054 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:02:11.076 6860: http server started listening on [:8199]
+2020-02-19 19:02:11.961 [DEBU] task - page - list >>>  0 
+2020-02-19 19:02:11.961 [DEBU] {"TotalPage":0,"TotalSize":0,"CurrentPage":1,"PageBarNum":10}
+2020-02-19 19:05:13.405 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:05:13.433 4684: http server started listening on [:8199]
+2020-02-19 19:05:15.330 [DEBU] task - page - list >>>  0 
+2020-02-19 19:06:32.844 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:06:32.867 10276: http server started listening on [:8199]
+2020-02-19 19:06:35.020 [DEBU] task - page - list >>>  0 
+2020-02-19 19:07:34.898 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:07:34.920 2532: http server started listening on [:8199]
+2020-02-19 19:07:37.129 [DEBU] task - page - list >>>  0 
+2020-02-19 19:08:49.759 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:08:49.781 9456: http server started listening on [:8199]
+2020-02-19 19:08:51.638 [DEBU] task - page - list >>>  0 
+2020-02-19 19:09:05.211 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:09:05.234 5600: http server started listening on [:8199]
+2020-02-19 19:09:08.398 [DEBU] task - page - list >>>  0 
+2020-02-19 19:09:33.394 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:09:33.416 2584: http server started listening on [:8199]
+2020-02-19 19:09:35.234 [DEBU] task - page - list >>>  0 
+2020-02-19 19:11:30.777 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:11:30.800 8172: http server started listening on [:8199]
+2020-02-19 19:11:32.520 [DEBU] task - page - list >>>  0 
+2020-02-19 19:12:15.746 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:12:15.768 9848: http server started listening on [:8199]
+2020-02-19 19:12:17.724 [DEBU] task - page - list >>>  0 
+2020-02-19 19:14:24.448 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:14:24.469 7988: http server started listening on [:8199]
+2020-02-19 19:14:26.405 [DEBU] task - page - list >>>  0 
+2020-02-19 19:14:39.416 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:14:39.438 15956: http server started listening on [:8199]
+2020-02-19 19:14:41.150 [DEBU] task - page - list >>>  0 
+2020-02-19 19:16:54.994 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:16:55.016 9296: http server started listening on [:8199]
+2020-02-19 19:16:56.806 [DEBU] task - page - list >>>  0 
+2020-02-19 19:20:24.025 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:20:24.047 4436: http server started listening on [:8199]
+2020-02-19 19:20:25.905 [DEBU] task - page - list >>>  0 
+2020-02-19 19:21:11.568 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:21:11.590 5668: http server started listening on [:8199]
+2020-02-19 19:21:13.229 [DEBU] task - page - list >>>  0 
+2020-02-19 19:22:47.185 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:22:47.208 10812: http server started listening on [:8199]
+2020-02-19 19:22:52.899 [ERRO] Error: Success [E:/go/admin_paltform/app/hander/task.go:21: platform/app/hander.(*Task).List] 
+Stack:
+1.  platform/library/response.LogError
+    E:/go/admin_paltform/library/response/response.go:89
+2.  platform/app/hander.(*Task).List
+    E:/go/admin_paltform/app/hander/task.go:21
+3.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1.6
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_request_middleware.go:94
+4.  github.com/gogf/gf/net/ghttp.niceCallFunc
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_func.go:54
+5.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_request_middleware.go:93
+6.  github.com/gogf/gf/util/gutil.TryCatch
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/util/gutil/gutil.go:69
+7.  github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_request_middleware.go:46
+8.  github.com/gogf/gf/net/ghttp.(*Server).handleRequest
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_server_handler.go:109
+9.  github.com/gogf/gf/net/ghttp.(*Server).defaultHandler
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_server_handler.go:29
+
+2020-02-19 19:24:21.598 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:24:21.620 1804: http server started listening on [:8199]
+2020-02-19 19:24:23.153 [DEBU] 10333377 E:/go/admin_paltform/app/hander/task.go 21 Success
+2020-02-19 19:24:23.153 [ERRO] Error: Success [E:/go/admin_paltform/app/hander/task.go:21: platform/app/hander.(*Task).List] 
+Stack:
+1.  platform/library/response.LogError
+    E:/go/admin_paltform/library/response/response.go:90
+2.  platform/app/hander.(*Task).List
+    E:/go/admin_paltform/app/hander/task.go:21
+3.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1.6
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_request_middleware.go:94
+4.  github.com/gogf/gf/net/ghttp.niceCallFunc
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_func.go:54
+5.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_request_middleware.go:93
+6.  github.com/gogf/gf/util/gutil.TryCatch
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/util/gutil/gutil.go:69
+7.  github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_request_middleware.go:46
+8.  github.com/gogf/gf/net/ghttp.(*Server).handleRequest
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_server_handler.go:109
+9.  github.com/gogf/gf/net/ghttp.(*Server).defaultHandler
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_server_handler.go:29
+
+2020-02-19 19:24:43.412 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:24:43.434 10576: http server started listening on [:8199]
+2020-02-19 19:24:44.903 [DEBU] ------------------------ 10333409 E:/go/admin_paltform/app/hander/task.go 21 Success
+2020-02-19 19:24:44.903 [ERRO] Error: Success [E:/go/admin_paltform/app/hander/task.go:21: platform/app/hander.(*Task).List] 
+Stack:
+1.  platform/library/response.LogError
+    E:/go/admin_paltform/library/response/response.go:90
+2.  platform/app/hander.(*Task).List
+    E:/go/admin_paltform/app/hander/task.go:21
+3.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1.6
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_request_middleware.go:94
+4.  github.com/gogf/gf/net/ghttp.niceCallFunc
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_func.go:54
+5.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_request_middleware.go:93
+6.  github.com/gogf/gf/util/gutil.TryCatch
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/util/gutil/gutil.go:69
+7.  github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_request_middleware.go:46
+8.  github.com/gogf/gf/net/ghttp.(*Server).handleRequest
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_server_handler.go:109
+9.  github.com/gogf/gf/net/ghttp.(*Server).defaultHandler
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_server_handler.go:29
+
+2020-02-19 19:25:22.911 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:25:22.933 2076: http server started listening on [:8199]
+2020-02-19 19:25:24.355 [DEBU] ------------------------ \
+2020-02-19 19:25:24.356 [ERRO] Error: Success [E:/go/admin_paltform/app/hander/task.go:21: platform/app/hander.(*Task).List] 
+Stack:
+1.  platform/library/response.LogError
+    E:/go/admin_paltform/library/response/response.go:90
+2.  platform/app/hander.(*Task).List
+    E:/go/admin_paltform/app/hander/task.go:21
+3.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1.6
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_request_middleware.go:94
+4.  github.com/gogf/gf/net/ghttp.niceCallFunc
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_func.go:54
+5.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_request_middleware.go:93
+6.  github.com/gogf/gf/util/gutil.TryCatch
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/util/gutil/gutil.go:69
+7.  github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_request_middleware.go:46
+8.  github.com/gogf/gf/net/ghttp.(*Server).handleRequest
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_server_handler.go:109
+9.  github.com/gogf/gf/net/ghttp.(*Server).defaultHandler
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_server_handler.go:29
+
+2020-02-19 19:25:50.777 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:25:50.799 10344: http server started listening on [:8199]
+2020-02-19 19:25:52.549 [DEBU] ------------------------ \ ["E:/go/admin_paltform/app/hander/task.go"] E:/go/admin_paltform/app/hander/task.go
+2020-02-19 19:25:52.550 [ERRO] Error: Success [E:/go/admin_paltform/app/hander/task.go:21: platform/app/hander.(*Task).List] 
+Stack:
+1.  platform/library/response.LogError
+    E:/go/admin_paltform/library/response/response.go:90
+2.  platform/app/hander.(*Task).List
+    E:/go/admin_paltform/app/hander/task.go:21
+3.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1.6
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_request_middleware.go:94
+4.  github.com/gogf/gf/net/ghttp.niceCallFunc
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_func.go:54
+5.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_request_middleware.go:93
+6.  github.com/gogf/gf/util/gutil.TryCatch
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/util/gutil/gutil.go:69
+7.  github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_request_middleware.go:46
+8.  github.com/gogf/gf/net/ghttp.(*Server).handleRequest
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_server_handler.go:109
+9.  github.com/gogf/gf/net/ghttp.(*Server).defaultHandler
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_server_handler.go:29
+
+2020-02-19 19:27:27.042 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:27:27.063 6728: http server started listening on [:8199]
+2020-02-19 19:27:28.879 [DEBU] ------------------------ \ ["E:/go/admin_paltform/app/hander/task.go"] 1
+2020-02-19 19:27:28.880 [ERRO] Error: Success [E:/go/admin_paltform/app/hander/task.go:21: platform/app/hander.(*Task).List] 
+Stack:
+1.  platform/library/response.LogError
+    E:/go/admin_paltform/library/response/response.go:90
+2.  platform/app/hander.(*Task).List
+    E:/go/admin_paltform/app/hander/task.go:21
+3.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1.6
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_request_middleware.go:94
+4.  github.com/gogf/gf/net/ghttp.niceCallFunc
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_func.go:54
+5.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_request_middleware.go:93
+6.  github.com/gogf/gf/util/gutil.TryCatch
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/util/gutil/gutil.go:69
+7.  github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_request_middleware.go:46
+8.  github.com/gogf/gf/net/ghttp.(*Server).handleRequest
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_server_handler.go:109
+9.  github.com/gogf/gf/net/ghttp.(*Server).defaultHandler
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.11.4/net/ghttp/ghttp_server_handler.go:29
+
+2020-02-19 19:30:01.715 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:30:01.738 16192: http server started listening on [:8199]
+2020-02-19 19:30:05.300 [DEBU] task - page - list >>>  0 
+2020-02-19 19:30:29.136 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:30:29.158 5148: http server started listening on [:8199]
+2020-02-19 19:30:30.811 [DEBU] task - page - list >>>  0 
+2020-02-19 19:31:25.581 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:31:25.604 8400: http server started listening on [:8199]
+2020-02-19 19:31:27.516 [DEBU] task - page - list >>>  0 
+2020-02-19 19:32:17.912 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:32:17.935 2380: http server started listening on [:8199]
+2020-02-19 19:32:19.584 [DEBU] task - page - list >>>  0 
+2020-02-19 19:33:43.241 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:33:43.263 15512: http server started listening on [:8199]
+2020-02-19 19:33:45.348 [DEBU] task - page - list >>>  0 
+2020-02-19 19:36:42.132 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:36:42.154 15632: http server started listening on [:8199]
+2020-02-19 19:36:43.996 [DEBU] task - page - list >>>  0 
+2020-02-19 19:36:56.739 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:36:56.762 4556: http server started listening on [:8199]
+2020-02-19 19:36:58.661 [DEBU] task - page - list >>>  0 
+2020-02-19 19:41:43.727 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:41:43.750 4392: http server started listening on [:8199]
+2020-02-19 19:41:45.329 [DEBU] task - page - list >>>  0 
+2020-02-19 19:43:44.930 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:43:44.952 15960: http server started listening on [:8199]
+2020-02-19 19:43:46.769 [DEBU] task - page - list >>>  0 
+2020-02-19 19:44:20.618 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/login    | platform/app/hander.(*Task).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:44:20.640 5628: http server started listening on [:8199]
+2020-02-19 19:44:22.356 [DEBU] task - page - list >>>  0 
+2020-02-19 19:48:56.198 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:48:56.220 6748: http server started listening on [:8199]
+2020-02-19 19:49:00.874 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:49:00.896 2696: http server started listening on [:8199]
+2020-02-19 19:49:07.932 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:49:07.955 15676: http server started listening on [:8199]
+2020-02-19 19:49:21.856 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:49:21.879 5912: http server started listening on [:8199]
+2020-02-19 19:50:03.733 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:50:03.756 15912: http server started listening on [:8199]
+2020-02-19 19:50:27.352 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:50:27.374 12160: http server started listening on [:8199]
+2020-02-19 19:51:23.383 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:51:23.407 14768: http server started listening on [:8199]
+2020-02-19 19:52:10.556 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:52:10.579 7948: http server started listening on [:8199]
+2020-02-19 19:52:13.683 [DEBU] task - page - list >>>  0 
+2020-02-19 19:53:23.916 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 19:53:23.938 15500: http server started listening on [:8199]
+2020-02-19 19:53:25.743 [DEBU] task - page - list >>>  0 
+2020-02-19 19:53:47.354 [DEBU] task - page - list >>>  1 [{"created_at":"2020-02-19 19:51:39","describe":"1","id":1000000001,"sort":1,"status":1,"title":"1","updated_at":"2020-02-19 19:51:42"}]
+2020-02-19 20:00:12.077 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 20:00:12.099 1988: http server started listening on [:8199]
+2020-02-19 20:00:18.741 [DEBU] task - page - list >>>  1 
+2020-02-19 20:00:28.993 [DEBU] task - page - list >>>  1 
+2020-02-19 20:00:57.786 [DEBU] task - page - list >>>  1 [{"created_at":"2020-02-19 19:51:39","describe":"1","id":1000000001,"sort":1,"status":1,"title":"1","updated_at":"2020-02-19 19:51:42"}]
+2020-02-19 20:01:02.664 [DEBU] task - page - list >>>  1 
+2020-02-19 20:01:15.449 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 20:01:15.472 15440: http server started listening on [:8199]
+2020-02-19 20:01:17.027 [DEBU] task - page - list >>>  1 [{"created_at":"2020-02-19 19:51:39","describe":"1","id":1000000001,"sort":1,"status":1,"title":"1","updated_at":"2020-02-19 19:51:42"}]
+2020-02-19 20:01:18.036 [DEBU] task - page - list >>>  1 [{"created_at":"2020-02-19 19:51:39","describe":"1","id":1000000001,"sort":1,"status":1,"title":"1","updated_at":"2020-02-19 19:51:42"}]
+2020-02-19 20:01:39.108 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 20:01:39.130 7956: http server started listening on [:8199]
+2020-02-19 20:01:40.889 [DEBU] task - page - list >>>  1 
+2020-02-19 20:01:46.388 [DEBU] task - page - list >>>  1 
+2020-02-19 20:01:56.215 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 20:01:56.238 3032: http server started listening on [:8199]
+2020-02-19 20:01:57.635 [DEBU] task - page - list >>>  1 
+2020-02-19 20:02:07.365 [DEBU] task - page - list >>>  1 
+2020-02-19 20:02:11.824 [DEBU] task - page - list >>>  1 [{"created_at":"2020-02-19 19:51:39","describe":"1","id":1000000001,"sort":1,"status":1,"title":"1","updated_at":"2020-02-19 19:51:42"}]
+2020-02-19 20:02:26.308 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |               HANDLER                | MIDDLEWARE  
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /task/list     | platform/app/hander.(*Task).List     |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/login    | platform/app/hander.(*User).Login    |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/logout   | platform/app/hander.(*User).Logout   |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+  default | default | :8199   | ALL    | /user/register | platform/app/hander.(*User).Register |             
+----------|---------|---------|--------|----------------|--------------------------------------|-------------
+
+2020-02-19 20:02:26.330 6592: http server started listening on [:8199]
+2020-02-19 20:02:27.910 [DEBU] task - page - list >>>  1 [{"created_at":"2020-02-19 19:51:39","describe":"1","id":1000000001,"sort":1,"status":1,"title":"1","updated_at":"2020-02-19 19:51:42"}]

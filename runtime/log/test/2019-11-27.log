@@ -1,0 +1,476 @@
+2019-11-27 10:25:49.685 [FATA] [ghttp] SetServerRoot failed: cannot find file/folder "public" in following paths:
+1. E:\go\internet
+2. C:\Users\Administrator\AppData\Local\Temp 
+Stack:
+1.  github.com/gogf/gf/net/ghttp.(*Server).SetServerRoot
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.9.10/net/ghttp/ghttp_server_config_static.go:49
+2.  internet/boot.init.0
+    E:/go/internet/boot/boot.go:16
+
+2019-11-27 10:26:13.988 [DEBU] [ghttp] SetServerRoot path: E:\go\internet\public
+2019-11-27 10:26:14.007 14484: http server started task.ReqListening on [:8199]
+2019-11-27 10:36:08.169 [DEBU] [ghttp] SetServerRoot path: E:\go\internet\public
+2019-11-27 10:36:08.189 10708: http server started listening on [:8199]
+2019-11-27 10:36:25.502 [DEBU] [ghttp] SetServerRoot path: E:\go\internet\public
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |    ROUTE     |                  HANDLER                   | MIDDLEWARE  
+|---------|---------|---------|--------|---|--------------|--------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signup | internet/app/api/user.(*Controller).SignUp |             
+|---------|---------|---------|--------|---|--------------|--------------------------------------------|------------|
+
+2019-11-27 10:36:25.525 8116: http server started listening on [:8199]
+2019-11-27 10:47:11.643 [DEBU] [ghttp] SetServerRoot path: E:\go\internet\public
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |        ROUTE        |                      HANDLER                      | MIDDLEWARE  
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checknickname | internet/app/api/user.(*Controller).CheckNickName |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checkpassport | internet/app/api/user.(*Controller).CheckPassport |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/issignedin    | internet/app/api/user.(*Controller).IsSignedIn    |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signin        | internet/app/api/user.(*Controller).SignIn        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signout       | internet/app/api/user.(*Controller).SignOut       |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signup        | internet/app/api/user.(*Controller).SignUp        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+
+2019-11-27 10:47:11.663 13476: http server started listening on [:8199]
+2019-11-27 10:57:42.206 [DEBU] [ghttp] SetServerRoot path: E:\go\internet\public
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |        ROUTE        |                      HANDLER                      | MIDDLEWARE  
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checkaccount  | internet/app/api/user.(*Controller).CheckAccount  |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checknickname | internet/app/api/user.(*Controller).CheckNickName |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/issignedin    | internet/app/api/user.(*Controller).IsSignedIn    |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signin        | internet/app/api/user.(*Controller).SignIn        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signout       | internet/app/api/user.(*Controller).SignOut       |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signup        | internet/app/api/user.(*Controller).SignUp        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+
+2019-11-27 10:57:42.235 9176: http server started listening on [:8199]
+2019-11-27 10:58:35.903 [DEBU] [ghttp] SetServerRoot path: E:\go\internet\public
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |        ROUTE        |                      HANDLER                      | MIDDLEWARE  
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checkaccount  | internet/app/api/user.(*Controller).CheckAccount  |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checknickname | internet/app/api/user.(*Controller).CheckNickName |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/issignedin    | internet/app/api/user.(*Controller).IsSignedIn    |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signin        | internet/app/api/user.(*Controller).SignIn        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signout       | internet/app/api/user.(*Controller).SignOut       |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signup        | internet/app/api/user.(*Controller).SignUp        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+
+2019-11-27 10:58:35.923 1612: http server started listening on [:8199]
+2019-11-27 11:06:32.400 [DEBU] [ghttp] SetServerRoot path: E:\go\internet\public
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |        ROUTE        |                      HANDLER                      | MIDDLEWARE  
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checkaccount  | internet/app/api/user.(*Controller).CheckAccount  |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checknickname | internet/app/api/user.(*Controller).CheckNickName |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/issignedin    | internet/app/api/user.(*Controller).IsSignedIn    |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signin        | internet/app/api/user.(*Controller).SignIn        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signout       | internet/app/api/user.(*Controller).SignOut       |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signup        | internet/app/api/user.(*Controller).SignUp        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+
+2019-11-27 11:06:32.429 9732: http server started listening on [:8199]
+2019-11-27 11:08:26.363 [DEBU] [ghttp] SetServerRoot path: E:\go\internet\public
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |        ROUTE        |                      HANDLER                      | MIDDLEWARE  
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checkaccount  | internet/app/api/user.(*Controller).CheckAccount  |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checknickname | internet/app/api/user.(*Controller).CheckNickName |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/issignedin    | internet/app/api/user.(*Controller).IsSignedIn    |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signin        | internet/app/api/user.(*Controller).SignIn        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signout       | internet/app/api/user.(*Controller).SignOut       |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signup        | internet/app/api/user.(*Controller).SignUp        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+
+2019-11-27 11:08:26.383 15992: http server started listening on [:8199]
+2019-11-27 11:11:19.562 [DEBU] [ghttp] SetServerRoot path: E:\go\internet\public
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |        ROUTE        |                      HANDLER                      | MIDDLEWARE  
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checkaccount  | internet/app/api/user.(*Controller).CheckAccount  |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checknickname | internet/app/api/user.(*Controller).CheckNickName |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/issignedin    | internet/app/api/user.(*Controller).IsSignedIn    |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signin        | internet/app/api/user.(*Controller).SignIn        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signout       | internet/app/api/user.(*Controller).SignOut       |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signup        | internet/app/api/user.(*Controller).SignUp        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+
+2019-11-27 11:11:19.582 4356: http server started listening on [:8199]
+2019-11-27 11:11:21.591 {"account":"allen002","password":"123456","password2":"123456"}
+2019-11-27 11:15:32.106 [DEBU] [ghttp] SetServerRoot path: E:\go\internet\public
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |        ROUTE        |                      HANDLER                      | MIDDLEWARE  
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checkaccount  | internet/app/api/user.(*Controller).CheckAccount  |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checknickname | internet/app/api/user.(*Controller).CheckNickName |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/issignedin    | internet/app/api/user.(*Controller).IsSignedIn    |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signin        | internet/app/api/user.(*Controller).SignIn        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signout       | internet/app/api/user.(*Controller).SignOut       |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signup        | internet/app/api/user.(*Controller).SignUp        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+
+2019-11-27 11:15:32.126 12744: http server started listening on [:8199]
+2019-11-27 11:30:52.461 [DEBU] [ghttp] SetServerRoot path: E:\go\internet\public
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |        ROUTE        |                      HANDLER                      | MIDDLEWARE  
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checkaccount  | internet/app/api/user.(*Controller).CheckAccount  |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checknickname | internet/app/api/user.(*Controller).CheckNickName |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/issignedin    | internet/app/api/user.(*Controller).IsSignedIn    |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signin        | internet/app/api/user.(*Controller).SignIn        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signout       | internet/app/api/user.(*Controller).SignOut       |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signup        | internet/app/api/user.(*Controller).SignUp        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+
+2019-11-27 11:30:52.483 8288: http server started listening on [:8199]
+2019-11-27 12:55:29.650 [DEBU] [ghttp] SetServerRoot path: E:\go\internet\public\doc
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |        ROUTE        |                      HANDLER                      | MIDDLEWARE  
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checkaccount  | internet/app/api/user.(*Controller).CheckAccount  |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checknickname | internet/app/api/user.(*Controller).CheckNickName |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/issignedin    | internet/app/api/user.(*Controller).IsSignedIn    |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signin        | internet/app/api/user.(*Controller).SignIn        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signout       | internet/app/api/user.(*Controller).SignOut       |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signup        | internet/app/api/user.(*Controller).SignUp        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+
+2019-11-27 12:55:29.671 15300: http server started listening on [:8199]
+2019-11-27 12:55:50.943 [DEBU] [ghttp] SetServerRoot path: E:\go\internet\public\doc
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |        ROUTE        |                      HANDLER                      | MIDDLEWARE  
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checkaccount  | internet/app/api/user.(*Controller).CheckAccount  |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checknickname | internet/app/api/user.(*Controller).CheckNickName |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/issignedin    | internet/app/api/user.(*Controller).IsSignedIn    |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signin        | internet/app/api/user.(*Controller).SignIn        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signout       | internet/app/api/user.(*Controller).SignOut       |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signup        | internet/app/api/user.(*Controller).SignUp        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+
+2019-11-27 12:55:50.964 14980: http server started listening on [:8199]
+2019-11-27 12:56:40.171 [DEBU] [ghttp] SetServerRoot path: E:\go\internet\public
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |        ROUTE        |                      HANDLER                      | MIDDLEWARE  
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checkaccount  | internet/app/api/user.(*Controller).CheckAccount  |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checknickname | internet/app/api/user.(*Controller).CheckNickName |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/issignedin    | internet/app/api/user.(*Controller).IsSignedIn    |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signin        | internet/app/api/user.(*Controller).SignIn        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signout       | internet/app/api/user.(*Controller).SignOut       |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signup        | internet/app/api/user.(*Controller).SignUp        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+
+2019-11-27 12:56:40.192 12708: http server started listening on [:8199]
+2019-11-27 12:57:13.007 [DEBU] [ghttp] SetServerRoot path: E:\go\internet\public
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |        ROUTE        |                      HANDLER                      | MIDDLEWARE  
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checkaccount  | internet/app/api/user.(*Controller).CheckAccount  |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checknickname | internet/app/api/user.(*Controller).CheckNickName |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/issignedin    | internet/app/api/user.(*Controller).IsSignedIn    |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signin        | internet/app/api/user.(*Controller).SignIn        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signout       | internet/app/api/user.(*Controller).SignOut       |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signup        | internet/app/api/user.(*Controller).SignUp        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+
+2019-11-27 12:57:13.028 6792: http server started listening on [:8199]
+2019-11-27 12:57:35.431 [DEBU] [ghttp] SetServerRoot path: E:\go\internet\public\doc
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |        ROUTE        |                      HANDLER                      | MIDDLEWARE  
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checkaccount  | internet/app/api/user.(*Controller).CheckAccount  |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checknickname | internet/app/api/user.(*Controller).CheckNickName |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/issignedin    | internet/app/api/user.(*Controller).IsSignedIn    |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signin        | internet/app/api/user.(*Controller).SignIn        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signout       | internet/app/api/user.(*Controller).SignOut       |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signup        | internet/app/api/user.(*Controller).SignUp        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+
+2019-11-27 12:57:35.452 7480: http server started listening on [:8199]
+2019-11-27 13:02:30.262 [DEBU] [ghttp] SetServerRoot path: E:\go\internet\public\doc
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |        ROUTE        |                      HANDLER                      | MIDDLEWARE  
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checkaccount  | internet/app/api/user.(*Controller).CheckAccount  |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checknickname | internet/app/api/user.(*Controller).CheckNickName |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/issignedin    | internet/app/api/user.(*Controller).IsSignedIn    |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signin        | internet/app/api/user.(*Controller).SignIn        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signout       | internet/app/api/user.(*Controller).SignOut       |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signup        | internet/app/api/user.(*Controller).SignUp        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+
+2019-11-27 13:02:30.282 8996: http server started listening on [:8199]
+2019-11-27 13:14:23.270 [DEBU] [ghttp] SetServerRoot path: E:\go\internet\public\doc
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |         ROUTE         |                      HANDLER                      | MIDDLEWARE  
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+  default |   :80   | default | ALL    | 2 | /user/check-account   | internet/app/api/user.(*Controller).CheckAccount  |             
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+  default |   :80   | default | ALL    | 2 | /user/check-nick-name | internet/app/api/user.(*Controller).CheckNickName |             
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+  default |   :80   | default | ALL    | 2 | /user/is-signed-in    | internet/app/api/user.(*Controller).IsSignedIn    |             
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+  default |   :80   | default | ALL    | 2 | /user/sign-in         | internet/app/api/user.(*Controller).SignIn        |             
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+  default |   :80   | default | ALL    | 2 | /user/sign-out        | internet/app/api/user.(*Controller).SignOut       |             
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+  default |   :80   | default | ALL    | 2 | /user/sign-up         | internet/app/api/user.(*Controller).SignUp        |             
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+
+2019-11-27 13:14:23.290 11504: http server started listening on [:8299]
+2019-11-27 13:14:26.292 [FATA] 11504: net.Listen error: listen tcp :80: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted. 
+Stack:
+1.  github.com/gogf/gf/net/ghttp.(*Server).startServer.func1
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.9.10/net/ghttp/ghttp_server.go:506
+
+2019-11-27 13:14:54.208 [FATA] [ghttp] no router set or static feature enabled, did you forget import the router? 
+Stack:
+1.  github.com/gogf/gf/net/ghttp.(*Server).Start
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.9.10/net/ghttp/ghttp_server.go:256
+2.  github.com/gogf/gf/net/ghttp.(*Server).Run
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.9.10/net/ghttp/ghttp_server.go:397
+3.  internet/boot.init.0
+    E:/go/internet/boot/boot.go:19
+
+2019-11-27 13:15:14.021 [DEBU] [ghttp] SetServerRoot path: E:\go\internet\public\doc
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |         ROUTE         |                      HANDLER                      | MIDDLEWARE  
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+  default |   :80   | default | ALL    | 2 | /user/check-account   | internet/app/api/user.(*Controller).CheckAccount  |             
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+  default |   :80   | default | ALL    | 2 | /user/check-nick-name | internet/app/api/user.(*Controller).CheckNickName |             
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+  default |   :80   | default | ALL    | 2 | /user/is-signed-in    | internet/app/api/user.(*Controller).IsSignedIn    |             
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+  default |   :80   | default | ALL    | 2 | /user/sign-in         | internet/app/api/user.(*Controller).SignIn        |             
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+  default |   :80   | default | ALL    | 2 | /user/sign-out        | internet/app/api/user.(*Controller).SignOut       |             
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+  default |   :80   | default | ALL    | 2 | /user/sign-up         | internet/app/api/user.(*Controller).SignUp        |             
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+
+2019-11-27 13:15:17.044 [FATA] 14776: net.Listen error: listen tcp :80: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted. 
+Stack:
+1.  github.com/gogf/gf/net/ghttp.(*Server).startServer.func1
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.9.10/net/ghttp/ghttp_server.go:506
+
+2019-11-27 13:16:03.555 [DEBU] [ghttp] SetServerRoot path: E:\go\internet\public\doc
+2019-11-27 13:16:18.474 [FATA] [ghttp] no router set or static feature enabled, did you forget import the router? 
+Stack:
+1.  github.com/gogf/gf/net/ghttp.(*Server).Start
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.9.10/net/ghttp/ghttp_server.go:256
+2.  github.com/gogf/gf/net/ghttp.(*Server).Run
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.9.10/net/ghttp/ghttp_server.go:397
+3.  internet/boot.init.0
+    E:/go/internet/boot/boot.go:19
+
+2019-11-27 13:16:51.212 [DEBU] [ghttp] SetServerRoot path: E:\go\internet\public\doc
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |         ROUTE         |                      HANDLER                      | MIDDLEWARE  
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+  default |   :80   | default | ALL    | 2 | /user/check-account   | internet/app/api/user.(*Controller).CheckAccount  |             
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+  default |   :80   | default | ALL    | 2 | /user/check-nick-name | internet/app/api/user.(*Controller).CheckNickName |             
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+  default |   :80   | default | ALL    | 2 | /user/is-signed-in    | internet/app/api/user.(*Controller).IsSignedIn    |             
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+  default |   :80   | default | ALL    | 2 | /user/sign-in         | internet/app/api/user.(*Controller).SignIn        |             
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+  default |   :80   | default | ALL    | 2 | /user/sign-out        | internet/app/api/user.(*Controller).SignOut       |             
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+  default |   :80   | default | ALL    | 2 | /user/sign-up         | internet/app/api/user.(*Controller).SignUp        |             
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+
+2019-11-27 13:16:54.235 [FATA] 248: net.Listen error: listen tcp :80: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted. 
+Stack:
+1.  github.com/gogf/gf/net/ghttp.(*Server).startServer.func1
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.9.10/net/ghttp/ghttp_server.go:506
+
+2019-11-27 13:17:05.592 [DEBU] [ghttp] SetServerRoot path: E:\go\internet\public\doc
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |         ROUTE         |                      HANDLER                      | MIDDLEWARE  
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+  default |   :80   | default | ALL    | 2 | /user/check-account   | internet/app/api/user.(*Controller).CheckAccount  |             
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+  default |   :80   | default | ALL    | 2 | /user/check-nick-name | internet/app/api/user.(*Controller).CheckNickName |             
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+  default |   :80   | default | ALL    | 2 | /user/is-signed-in    | internet/app/api/user.(*Controller).IsSignedIn    |             
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+  default |   :80   | default | ALL    | 2 | /user/sign-in         | internet/app/api/user.(*Controller).SignIn        |             
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+  default |   :80   | default | ALL    | 2 | /user/sign-out        | internet/app/api/user.(*Controller).SignOut       |             
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+  default |   :80   | default | ALL    | 2 | /user/sign-up         | internet/app/api/user.(*Controller).SignUp        |             
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+
+2019-11-27 13:17:08.612 [FATA] 15744: net.Listen error: listen tcp :80: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted. 
+Stack:
+1.  github.com/gogf/gf/net/ghttp.(*Server).startServer.func1
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.9.10/net/ghttp/ghttp_server.go:506
+
+2019-11-27 13:17:15.064 [DEBU] [ghttp] SetServerRoot path: E:\go\internet\public\doc
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |         ROUTE         |                      HANDLER                      | MIDDLEWARE  
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+  default |   :80   | default | ALL    | 2 | /user/check-account   | internet/app/api/user.(*Controller).CheckAccount  |             
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+  default |   :80   | default | ALL    | 2 | /user/check-nick-name | internet/app/api/user.(*Controller).CheckNickName |             
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+  default |   :80   | default | ALL    | 2 | /user/is-signed-in    | internet/app/api/user.(*Controller).IsSignedIn    |             
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+  default |   :80   | default | ALL    | 2 | /user/sign-in         | internet/app/api/user.(*Controller).SignIn        |             
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+  default |   :80   | default | ALL    | 2 | /user/sign-out        | internet/app/api/user.(*Controller).SignOut       |             
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+  default |   :80   | default | ALL    | 2 | /user/sign-up         | internet/app/api/user.(*Controller).SignUp        |             
+|---------|---------|---------|--------|---|-----------------------|---------------------------------------------------|------------|
+
+2019-11-27 13:17:18.086 [FATA] 7968: net.Listen error: listen tcp :80: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted. 
+Stack:
+1.  github.com/gogf/gf/net/ghttp.(*Server).startServer.func1
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf@v1.9.10/net/ghttp/ghttp_server.go:506
+
+2019-11-27 13:17:29.963 [DEBU] [ghttp] SetServerRoot path: E:\go\internet\public\doc
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |        ROUTE        |                      HANDLER                      | MIDDLEWARE  
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checkaccount  | internet/app/api/user.(*Controller).CheckAccount  |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checknickname | internet/app/api/user.(*Controller).CheckNickName |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/issignedin    | internet/app/api/user.(*Controller).IsSignedIn    |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signin        | internet/app/api/user.(*Controller).SignIn        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signout       | internet/app/api/user.(*Controller).SignOut       |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signup        | internet/app/api/user.(*Controller).SignUp        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+
+2019-11-27 13:17:29.983 15004: http server started listening on [:8199]
+2019-11-27 13:17:59.554 [DEBU] [ghttp] SetServerRoot path: E:\go\internet\public\doc
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |        ROUTE        |                      HANDLER                      | MIDDLEWARE  
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checkaccount  | internet/app/api/user.(*Controller).CheckAccount  |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checknickname | internet/app/api/user.(*Controller).CheckNickName |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/issignedin    | internet/app/api/user.(*Controller).IsSignedIn    |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signin        | internet/app/api/user.(*Controller).SignIn        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signout       | internet/app/api/user.(*Controller).SignOut       |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signup        | internet/app/api/user.(*Controller).SignUp        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+
+2019-11-27 13:17:59.576 16152: http server started listening on [:8199]
+2019-11-27 13:18:42.917 [DEBU] [ghttp] SetServerRoot path: E:\go\internet\public\doc
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |        ROUTE        |                      HANDLER                      | MIDDLEWARE  
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checkaccount  | internet/app/api/user.(*Controller).CheckAccount  |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checknickname | internet/app/api/user.(*Controller).CheckNickName |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/issignedin    | internet/app/api/user.(*Controller).IsSignedIn    |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signin        | internet/app/api/user.(*Controller).SignIn        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signout       | internet/app/api/user.(*Controller).SignOut       |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signup        | internet/app/api/user.(*Controller).SignUp        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+
+2019-11-27 13:18:42.937 8832: http server started listening on [:8199]
+2019-11-27 13:19:51.114 [DEBU] [ghttp] SetServerRoot path: E:\go\internet\public
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |        ROUTE        |                      HANDLER                      | MIDDLEWARE  
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checkaccount  | internet/app/api/user.(*Controller).CheckAccount  |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/checknickname | internet/app/api/user.(*Controller).CheckNickName |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/issignedin    | internet/app/api/user.(*Controller).IsSignedIn    |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signin        | internet/app/api/user.(*Controller).SignIn        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signout       | internet/app/api/user.(*Controller).SignOut       |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+  default |  :8199  | default | ALL    | 2 | /user/signup        | internet/app/api/user.(*Controller).SignUp        |             
+|---------|---------|---------|--------|---|---------------------|---------------------------------------------------|------------|
+
+2019-11-27 13:19:51.134 14088: http server started listening on [:8199]
