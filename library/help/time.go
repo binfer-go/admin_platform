@@ -6,7 +6,8 @@ import (
 )
 
 const (
-	TIME_FORMAT_OUT = "2006-01-02 15:04:5"
+	TIME_FORMAT_OUT 	= "2006-01-02 15:04:05"
+	TIME_FORMAT_DAY_OUT = "2006-01-02"
 )
 
 func TimeToSting(times int64) string {
@@ -42,4 +43,12 @@ func (ts *Time) UnmarshalJSON(data []byte) error {
 
 func (ts Time) String() string {
 	return ts.Time().Format("2006-01-02 15:04:05")
+}
+
+func TimeStrips(y, m, d int) time.Time {
+
+	init := time.Now()
+	initTime := time.Date(init.Year(), init.Month(), init.Day(), 0,0,0,0, time.Local)
+	return initTime.AddDate(y, m, d)
+
 }

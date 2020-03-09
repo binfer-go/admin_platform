@@ -1,25 +1,41 @@
 # 应用系统设置
 [setting]
-    logpath = "runtime/log/test"
+    #logpath = "runtime/log/dev"
+    logpath = "public/log/dev"
+    upload  = "public/uploads"
+    roles   = "app/hander/role/auth_model.conf"
     secret  = "eyJFeHBpcmVzQXQiOjE1ODIyOTAwNzQsIm5hbWUiOiJhbGxlbiJ9"
 # 数据库连接
 [database]
-        host         = "10.10.35.21"
+    [[database.default]]
+        host         = "10.10.35.128"
         port         = "3306"
         user         = "root"
         pass         = "123456"
         name         = "platform"
         type         = "mysql"
-       #role         = "master"
-        debug        = true
-       #prefix       = "pl_"
         charset      = "utf8"
+        debug        = true
+       #role         = "master"
+       #prefix       = "pl_"
        #weight       = "(可选)负载均衡权重，用于负载均衡控制，不使用应用层的负载均衡机制请置空"
        #linkinfo     = "mysql:root:123456@tcp(10.10.35.21:3306)/platform"
        #maxIdle      = 10
        #maxOpen      = 1204
        #maxLifetime  = "(可选，单位秒)连接对象可重复使用的时间长度"
-
+    [[database.report]]
+        host         = "10.10.35.128"
+        port         = "3306"
+        user         = "root"
+        pass         = "123456"
+        name         = "platform_report"
+        type         = "mysql"
+        charset      = "utf8"
+        debug        = true
+       #linkinfo     = "mysql:root:123456@tcp(10.10.35.21:3306)/platform_report"
 [redis]
     default = "127.0.0.1:6379,0"
     cache   = "127.0.0.1:6379,1,123456?idleTimeout=600"
+
+[rpc]
+    default = "0.0.0.0"

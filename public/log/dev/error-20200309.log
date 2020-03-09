@@ -1,0 +1,12 @@
+2020-03-09 10:17:36.898 [ERRO] 500, "PATCH http 10.10.35.250:8199 /v1/user HTTP/1.1" 0.023, 10.10.35.146, "http://10.10.35.146:9528/undefined", "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36"
+Stack:
+1. interface conversion: interface {} is nil, not string
+   1).  platform/app/hander.(*User).Patch
+    	E:/go/admin_paltform/app/hander/user.go:287
+   2).  platform/app/middleware.MiddlewarePage
+    	E:/go/admin_paltform/app/middleware/safe.go:31
+   3).  platform/app/middleware.MiddlewareAuth
+    	E:/go/admin_paltform/app/middleware/auth.go:60
+   4).  platform/app/middleware.MiddlewareCORS
+    	E:/go/admin_paltform/app/middleware/cors.go:16
+

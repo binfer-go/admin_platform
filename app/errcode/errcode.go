@@ -3,39 +3,58 @@ package errcode
 type ErrCode int32
 
 const (
-	ErrCodeSuccess                 ErrCode = 200
-	ErrCodeFailure                 ErrCode = 201
-	ErrCodeInvalidToken            ErrCode = 202
-	ErrCodeInvalidParam            ErrCode = 203
-	ErrCodeRequestFrequently       ErrCode = 204
-	ErrCodeInvalidSMSCode          ErrCode = 205
-	ErrCodeCodeExpire              ErrCode = 206
-	ErrCodeUserAlreadyExist        ErrCode = 207
-	ErrCodeInvalidPassword         ErrCode = 208
-	ErrCodeUserNotExist            ErrCode = 209
-	ErrCodeTaskPubOrderNotExist    ErrCode = 210
-	ErrCodeTaskPubOrderExpiration  ErrCode = 211
-	ErrCodeTaskOrderAlreadyExist   ErrCode = 212
-	ErrCodeTimeError               ErrCode = 213
-	ErrCodeCreateTaskError         ErrCode = 214
-	ErrCodeUpdateTaskError         ErrCode = 215
-	ErrCodeUpdateTaskNotExist      ErrCode = 216
-	ErrCodeCreateAdminError        ErrCode = 217
-	ErrCodeUpdateAdminError        ErrCode = 218
-	ErrCodeAdminNotExist           ErrCode = 219
-	ErrCodeAdminAlreadyExist       ErrCode = 220
-	ErrCodeLoginError              ErrCode = 221
-	ErrCodeLoginStatusError        ErrCode = 222
-	ErrCodeAdminAccountLimitError  ErrCode = 223
-	ErrCodeAdminPasswordLimitError ErrCode = 224
-	ErrCodePublishPassError        ErrCode = 225
-	ErrCodeSubscribePassError      ErrCode = 226
-	ErrCodeOrderTaskLockError      ErrCode = 227
-	ErrCodeUserUpdateError         ErrCode = 228
-	ErrCodeAdminRoleError          ErrCode = 229
-	ErrCodeAdminRoleAddError       ErrCode = 230
-	ErrCodeAdminRoleEditError      ErrCode = 231
-	ErrCodeAdminRoleIsAlready      ErrCode = 232
+	ErrCodeSuccess                      ErrCode = 200
+	ErrCodeFailure                      ErrCode = 201
+	ErrCodeInvalidToken                 ErrCode = 202
+	ErrCodeInvalidParam                 ErrCode = 203
+	ErrCodeRequestFrequently            ErrCode = 204
+	ErrCodeInvalidSMSCode               ErrCode = 205
+	ErrCodeCodeExpire                   ErrCode = 206
+	ErrCodeUserAlreadyExist             ErrCode = 207
+	ErrCodeInvalidPassword              ErrCode = 208
+	ErrCodeUserNotExist                 ErrCode = 209
+	ErrCodeTaskPubOrderNotExist         ErrCode = 210
+	ErrCodeTaskPubOrderExpiration       ErrCode = 211
+	ErrCodeTaskOrderAlreadyExist        ErrCode = 212
+	ErrCodeTimeError                    ErrCode = 213
+	ErrCodeCreateTaskError              ErrCode = 214
+	ErrCodeUpdateTaskError              ErrCode = 215
+	ErrCodeUpdateTaskNotExist           ErrCode = 216
+	ErrCodeCreateAdminError             ErrCode = 217
+	ErrCodeUpdateAdminError             ErrCode = 218
+	ErrCodeAdminNotExist                ErrCode = 219
+	ErrCodeAdminAlreadyExist            ErrCode = 220
+	ErrCodeLoginError                   ErrCode = 221
+	ErrCodeLoginStatusError             ErrCode = 222
+	ErrCodeAdminAccountLimitError       ErrCode = 223
+	ErrCodeAdminPasswordLimitError      ErrCode = 224
+	ErrCodePublishPassError             ErrCode = 225
+	ErrCodeSubscribePassError           ErrCode = 226
+	ErrCodeOrderTaskLockError           ErrCode = 227
+	ErrCodeUserUpdateError              ErrCode = 228
+	ErrCodeAdminRoleError               ErrCode = 229
+	ErrCodeAdminRoleAddError            ErrCode = 230
+	ErrCodeAdminRoleEditError           ErrCode = 231
+	ErrCodeAdminRoleIsAlready           ErrCode = 232
+	ErrCodeAdminRoleNotError            ErrCode = 233
+	ErrCodeAdminPermissionError         ErrCode = 234
+	ErrCodeAdminPermissionAddError      ErrCode = 235
+	ErrCodeAdminPermissionEditError     ErrCode = 236
+	ErrCodeAdminPermissionIsAlready     ErrCode = 237
+	ErrCodeAdminPermissionParentIs      ErrCode = 238
+	ErrCodeAdminPermissionTypeIs        ErrCode = 239
+	ErrCodeAdminRolePermissionBindError ErrCode = 240
+	ErrCodeAdminRolePermissionRoleId    ErrCode = 241
+	ErrCodeAdminRolePermissionId        ErrCode = 242
+	ErrCodeApiRouteAuthError            ErrCode = 243
+	ErrCodeUserBankNotExist             ErrCode = 244
+	ErrCodeUserBankUpdateError          ErrCode = 245
+	ErrCodeAdminParseError              ErrCode = 246
+	ErrCodeAdminBindPermissionError     ErrCode = 247
+	ErrCodeAdminMasterBindError         ErrCode = 248
+	ErrCodeAdminDepositNotExist         ErrCode = 249
+	ErrCodeAdminWithDrawNotExist        ErrCode = 250
+	ErrCodeUploadError                  ErrCode = 251
 )
 
 func (code ErrCode) String() string {
@@ -106,6 +125,44 @@ func (code ErrCode) String() string {
 		return "管理角色更新失败"
 	case ErrCodeAdminRoleIsAlready:
 		return "管理角色名称已经存在"
+	case ErrCodeAdminRoleNotError:
+		return "管理角色不存在"
+	case ErrCodeAdminPermissionError:
+		return "权限名称限制2-100个字符"
+	case ErrCodeAdminPermissionAddError:
+		return "权限创建失败"
+	case ErrCodeAdminPermissionEditError:
+		return "权限更新失败"
+	case ErrCodeAdminPermissionIsAlready:
+		return "权限名称已经存在"
+	case ErrCodeAdminPermissionParentIs:
+		return "请选择一个父级模块"
+	case ErrCodeAdminPermissionTypeIs:
+		return "请选择目前支持的展示类型"
+	case ErrCodeAdminRolePermissionBindError:
+		return "绑定权限失败"
+	case ErrCodeAdminRolePermissionRoleId:
+		return "角色ID非法"
+	case ErrCodeAdminRolePermissionId:
+		return "绑定权限信息非法"
+	case ErrCodeApiRouteAuthError:
+		return "无权限访问"
+	case ErrCodeUserBankNotExist:
+		return "会员银行卡不存在"
+	case ErrCodeUserBankUpdateError:
+		return "会员银行卡更新失败"
+	case ErrCodeAdminParseError:
+		return "数据解析失败"
+	case ErrCodeAdminBindPermissionError:
+		return "角色尚未绑定权限"
+	case ErrCodeAdminMasterBindError:
+		return "当前不允许绑定超级管理员"
+	case ErrCodeAdminDepositNotExist:
+		return "存款订单不存在"
+	case ErrCodeAdminWithDrawNotExist:
+		return "取款订单不存在"
+	case ErrCodeUploadError:
+		return "文件上传失败"
 	default:
 		return "系统繁忙"
 	}
@@ -179,6 +236,44 @@ func Code(err error) ErrCode {
 		return ErrCodeAdminRoleEditError
 	case AdminRoleIsAlready:
 		return ErrCodeAdminRoleIsAlready
+	case AdminRoleNotError:
+		return ErrCodeAdminRoleNotError
+	case AdminPermissionError:
+		return ErrCodeAdminPermissionError
+	case AdminPermissionAddError:
+		return ErrCodeAdminPermissionAddError
+	case AdminPermissionEditError:
+		return ErrCodeAdminPermissionEditError
+	case AdminPermissionIsAlready:
+		return ErrCodeAdminPermissionIsAlready
+	case AdminPermissionParentIs:
+		return ErrCodeAdminPermissionParentIs
+	case AdminPermissionTypeIs:
+		return ErrCodeAdminPermissionTypeIs
+	case AdminRolePermissionBindError:
+		return ErrCodeAdminRolePermissionBindError
+	case AdminRolePermissionRoleId:
+		return ErrCodeAdminRolePermissionRoleId
+	case AdminRolePermissionId:
+		return ErrCodeAdminRolePermissionId
+	case ApiRouteAuthError:
+		return ErrCodeApiRouteAuthError
+	case UserBankNotExist:
+		return ErrCodeUserBankNotExist
+	case UserBankUpdateError:
+		return ErrCodeUserBankUpdateError
+	case AdminParseError:
+		return ErrCodeAdminParseError
+	case AdminBindPermissionError:
+		return ErrCodeAdminBindPermissionError
+	case AdminMasterBindError:
+		return ErrCodeAdminMasterBindError
+	case AdminDepositNotExist:
+		return ErrCodeAdminDepositNotExist
+	case AdminWithDrawNotExist:
+		return ErrCodeAdminWithDrawNotExist
+	case UploadError:
+		return ErrCodeUploadError
 	default:
 		return -1
 	}

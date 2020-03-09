@@ -1,7 +1,7 @@
 {
 "name": "Manage Platform of Admin ",
 "title": "后台接口",
-"description":"API接口文档",
+"description":"* ** : 禁用 Token 校验\n  ### : 禁用Api",
 "url" : "http://10.10.35.250:8199",
 "version": "0.1.0"
 }

@@ -9,6 +9,7 @@ import (
 	"platform/app/errcode"
 	"runtime"
 	"strings"
+	"time"
 )
 
 
@@ -31,6 +32,8 @@ func Json(r *ghttp.Request, code errcode.ErrCode, msg string, data ...interface{
 		"code": int32(code),
 		"msg": message,
 		"data": responseData,
+		"time": time.Now().Unix(),
+		"api": 1583482081,
 	}
 	if len(data) > 0 {
 		result["data"] = data[0]
@@ -40,6 +43,7 @@ func Json(r *ghttp.Request, code errcode.ErrCode, msg string, data ...interface{
 	}
 	_ = r.Response.WriteJson(result)
 	r.Exit()
+
 }
 
 

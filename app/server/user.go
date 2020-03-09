@@ -11,6 +11,9 @@ import (
 const (
 	USER_STATUS_ENABLE = byte(1)
 	USER_STATUS_DISABLE= byte(2)
+
+	USER_WALLET_TYPE_MASTER   	= byte(1)
+	USER_WALLET_TYPE_COMISSION 	= byte(2)
 )
 
 var (
@@ -79,3 +82,39 @@ func (*ServerUser) GetClildsById(id int32) (gdb.Result, error)  {
 	}
 	return result, nil
 }
+
+func (*ServerUser) GetCount (where interface{}) int {
+
+	rows, err := tableUser.Where(where).Count()
+	if err != nil {
+		return int(0)
+	}
+	return rows
+}
+
+func (*ServerUser) GetSum (where interface{})  float64  {
+
+	result, err := tableUser.Where(where).Fields("SUM(balance) as sums").One()
+	if err != nil {
+		return  0
+	}
+	type tempSums struct{
+		Sums float64 `json:"sums"`
+	}
+	var tempSum tempSums
+	_ = result.Struct(&tempSum)
+	return tempSum.Sums
+
+}
+
+func (*ServerUser) Get (where interface{}, fields string, groups string, orders string) (gdb.Result, error) {
+
+	result, err := tableUser.Where(where).Fields(fields).Order(orders).Group(groups).All()
+	if err != nil {
+		return nil, err
+	}
+	return result, nil
+
+}
+
+

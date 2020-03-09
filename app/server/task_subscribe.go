@@ -9,11 +9,14 @@ import (
 )
 
 const (
-	SUBSCRIBE_STATUS_WAIT  		= byte(1)	// 进行中
-	SUBSCRIBE_STATUS_PASS 		= byte(2)	// 已提交
-	SUBSCRIBE_STATUS_REFUSE 	= byte(3)	// 已拒绝
-	SUBSCRIBE_STATUS_REWAIT 	= byte(4)	// 重新提交
-	SUBSCRIBE_STATUS_OK 		= byte(5)	// 已结算
+	// 1: 待提交 2:待审核 3:已通过 4:已拒绝 5:待复审 6:复审失败 7:已过期
+	SUBSCRIBE_STATUS_WAIT  		= byte(1)	// 待提交
+	SUBSCRIBE_STATUS_INSPECTION = byte(2)	// 待审核
+	SUBSCRIBE_STATUS_PASS 		= byte(3)	// 已通过
+	SUBSCRIBE_STATUS_REFUSE 	= byte(4)	// 已拒绝
+	SUBSCRIBE_STATUS_REWAIT 	= byte(5)	// 待复审
+	SUBSCRIBE_STATUS_REWAIT_FAILURE = byte(6)	// 复审失败
+	SUBSCRIBE_STATUS_OVERDUE 	= byte(7)	// 已过期
 
 )
 
@@ -34,7 +37,7 @@ func (*ServiceTaskSubscribe) GetPageList(where interface{}, page int, pageSize i
 	if err != nil{
 		return nil, nil, err
 	}
-	result, err := tableSubscribe.Where(where).Filter().Page(page, pageSize).All()
+	result, err := tableSubscribe.Where(where).Filter().Order("id desc").Page(page, pageSize).All()
 	if err != nil{
 		return nil, nil, err
 	}
@@ -66,3 +69,13 @@ func (*ServiceTaskSubscribe) GetById(id int32) (gdb.Record, error)  {
 	}
 	return result, nil
 }
+
+func (*ServiceTaskSubscribe) GetCount (where interface{}) int {
+	rows, err := tableSubscribe.Where(where).Count()
+	if err != nil {
+		return int(0)
+	}
+	return rows
+}
+
+

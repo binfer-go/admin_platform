@@ -36,7 +36,7 @@ func (*ServiceTaskPublish) GetPageList(where interface{}, page int, pageSize int
 	if err != nil{
 		return nil, nil, err
 	}
-	result, err := tablePublish.Where(where).Filter().Page(page, pageSize).All()
+	result, err := tablePublish.Where(where).Filter().Order("id desc").Page(page, pageSize).All()
 	if err != nil{
 		return nil, nil, err
 	}
@@ -65,4 +65,52 @@ func (*ServiceTaskPublish) GetById(id int32) (gdb.Record, error)  {
 		return nil, err
 	}
 	return result, nil
+}
+
+func (*ServiceTaskPublish) GetCount (where interface{}) int {
+	rows, err := tablePublish.Where(where).Count()
+	if err != nil {
+		return int(0)
+	}
+	return rows
+}
+
+func (*ServiceTaskPublish) DistinctCounts (where interface{}, fields string) int {
+
+	rows, err := tablePublish.Where(where).Fields(fields).Count()
+	if err != nil {
+		return int(0)
+	}
+	return rows
+
+}
+
+func (*ServiceTaskPublish) GetSum (where interface{}, field string)  int  {
+
+	if field == "" {
+		field = "SUM(count) as sums"
+	}
+	result, err := tablePublish.Where(where).Fields(field).One()
+	if err != nil {
+		return  0
+	}
+	type tempSums struct{
+		Sums int `json:"sums"`
+	}
+	var tempSum tempSums
+	_ = result.Struct(&tempSum)
+	return tempSum.Sums
+
+}
+
+
+
+func (*ServiceTaskPublish) Get (where interface{}, fields string, groups string, orders string) (gdb.Result, error) {
+
+	result, err := tablePublish.Where(where).Fields(fields).Order(orders).Group(groups).All()
+	if err != nil {
+		return nil, err
+	}
+	return result, nil
+
 }

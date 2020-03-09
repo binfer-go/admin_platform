@@ -1,9 +1,11 @@
 package hander
 
 import (
+	"encoding/json"
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
 	"platform/app/errcode"
+	"platform/app/hander/env"
 	"platform/app/server"
 	"platform/library/help"
 	"platform/library/response"
@@ -31,6 +33,7 @@ type putEditTaskReq struct {
 }
 
 type getListTaskReq struct {
+	Id int32 `json:"id"`
 	Title string `json:"title"`
 	Status int `json:"status"`
 	Start_time time.Time `json:"start_time"`
@@ -49,10 +52,11 @@ type getListTaskReq struct {
  * @apiGroup 任务类型 Task
  * @apiParam {Integer} page			1
  * @apiParam {Integer} page_size	20
+ * @apiParam {Integer} id			Id查询详情
  * @apiParam {String}  title		标题
  * @apiParam {String}  start_time   开始时间
  * @apiParam {String}  end_time		结束时间
- * @apiParam {Integer} status		状态
+ * @apiParam {Integer} status		状态 {config: task_status}
  * @apiSuccess {Integer}   code   标识码 200：成功
  * @apiSuccess {Object}    data   数据
  * @apiSuccess {String}    msg    提示信息
@@ -61,12 +65,21 @@ type getListTaskReq struct {
  * {
 		"code": 200,
 		"data": null,
+		"remark": {
+		Id        int32     `plat:"primary_key;id" json:"id"`
+		Title     string    `plat:"title" json:"title"`           // 任务标题
+		Describe  string    `plat:"describe" json:"describe"`     // 任务描述
+		Status    byte      `plat:"status" json:"status"`         // 1:启用 2:禁用
+		Sort      int32     `plat:"sort" json:"sort"`             // 排序
+		CreatedAt time.Time `plat:"created_at" json:"created_at"` // 创建时间
+		UpdatedAt time.Time `plat:"updated_at" json:"updated_at"` // 更新时间
+		},
 		"msg": "成功",
 		"page": {
-			"TotalPage": 1,
-			"TotalSize": 1,
-			"CurrentPage": 1,
-			"PageBarNum": 10
+			"TotalPage": 1,		#总页数
+			"TotalSize": 1,		#总条数
+			"CurrentPage": 1,	#当前页码
+			"PageBarNum": 10	#分页标识
 		}
 	}
  * @apiErrorExample Error-Response:
@@ -95,6 +108,9 @@ func (task *Task) Get (req *ghttp.Request)  {
 	}
 	if list.Title != "" {
 		where["title"] = list.Title
+	}
+	if list.Id > 0 {
+		where["id"] = list.Id
 	}
 	result, pages, _ := server.ModelTask.GetPageList(where, list.Page, list.PageSize);
 
@@ -134,7 +150,7 @@ func (task *Task) Post (req *ghttp.Request)  {
 	err := req.Parse(&add)
 	if err != nil {
 
-		response.Json(req, errcode.ErrCodeCreateTaskError, "解析失败")
+		response.Json(req, errcode.ErrCodeAdminParseError, "")
 	}
 	add.CreatedAt = time.Now()
 	add.UpdatedAt = time.Now()
@@ -143,6 +159,15 @@ func (task *Task) Post (req *ghttp.Request)  {
 	if err != nil {
 		response.Json(req, errcode.ErrCodeCreateTaskError, "")
 	}
+	log, _ := json.Marshal(&add)
+	server.ModelAdminLog.NewAdminLogOption(func(options *server.AdminLogOptions) {
+		options.Action = server.ADMIN_LOG_ACTION_CREATE
+		options.Title  = env.F[env.ADMIN_MODULE_TASK]
+		options.Description = string(log)
+		options.ActionAdminId = Admins.Id
+		options.ActionAdminName = Admins.Account
+		options.ActionAdminIp = req.GetClientIp()
+	})
 	response.Json(req, errcode.ErrCodeSuccess,"", status)
 
 }
@@ -187,13 +212,23 @@ func (task *Task) Put (req *ghttp.Request)  {
 	}
 	if err := req.Parse(&edit); err != nil {
 
-		response.Json(req, errcode.ErrCodeUpdateTaskError, "解析失败")
+		response.Json(req, errcode.ErrCodeAdminParseError, "")
 	}
 
 	edit.UpdatedAt = time.Now()
 	data := help.Filter(edit)
 	status, err := server.ModelTask.Update(id, data)
-
+	if err != nil || status != nil {
+		log, _ := json.Marshal(&edit)
+		server.ModelAdminLog.NewAdminLogOption(func(options *server.AdminLogOptions) {
+			options.Action = server.ADMIN_LOG_ACTION_UPDATE
+			options.Title  = env.F[env.ADMIN_MODULE_TASK]
+			options.Description = string(log)
+			options.ActionAdminId = Admins.Id
+			options.ActionAdminName = Admins.Account
+			options.ActionAdminIp = req.GetClientIp()
+		})
+	}
 	response.Json(req, errcode.ErrCodeSuccess, "", status)
 
 }

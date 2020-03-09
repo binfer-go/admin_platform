@@ -38,7 +38,25 @@ var (
 	AdminRoleAddError 		= errors.New("admin role create failure")      // 管理角色创建失败
 	AdminRoleEditError 		= errors.New("admin role update failure")      // 管理角色更新失败
 	AdminRoleIsAlready 		= errors.New("admin role already exist")       // 管理角色名称已经存在
-
+	AdminRoleNotError 		= errors.New("admin role not exist")       	// 管理角色不存在
+	AdminPermissionError 			= errors.New("admin permission error")      		  // 权限名称限制2-100个字符
+	AdminPermissionAddError 		= errors.New("admin permission create failure")      // 权限创建失败
+	AdminPermissionEditError 		= errors.New("admin permission update failure")      // 权限更新失败
+	AdminPermissionIsAlready 		= errors.New("admin permission already exist")       // 权限名称已经存在
+	AdminPermissionParentIs 		= errors.New("admin permission not have parent")     // 请选择一个父级模块
+	AdminPermissionTypeIs 			= errors.New("admin permission not have type")     	// 请选择目前支持的展示类型
+	AdminRolePermissionBindError 		= errors.New("admin role permission bind error")   // 绑定权限失败
+	AdminRolePermissionRoleId 			= errors.New("admin role id is error")     		// 角色ID非法
+	AdminRolePermissionId 				= errors.New("admin permission id is error")     	// 绑定权限信息非法
+	ApiRouteAuthError 					= errors.New("api route is error")     			// 无权限访问
+	UserBankNotExist    				= errors.New("userBank not exist")    				// 会员银行卡不存在
+	UserBankUpdateError    				= errors.New("userBank update failure")    		// 会员银行卡更新失败
+	AdminParseError    					= errors.New("request parse failure")    			// 数据解析失败
+	AdminBindPermissionError    		= errors.New("role permission not bind")    		// 角色尚未绑定权限
+	AdminMasterBindError    			= errors.New("master permission not bind")    		// 当前不允许绑定超级管理员
+	AdminDepositNotExist    			= errors.New("deposit not exist")    				// 存款订单不存在
+	AdminWithDrawNotExist    			= errors.New("withdraw not exist")    				// 取款订单不存在
+	UploadError   						= errors.New("upload file failure")    			// 文件上传失败
 
 
 

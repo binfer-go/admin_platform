@@ -1,12 +1,18 @@
 package middleware
 
 import (
-	"fmt"
 	"github.com/gogf/gf/net/ghttp"
+	"platform/app/errcode"
+	"platform/library/response"
 )
 
 func MiddlewareCORS(r *ghttp.Request)  {
+
 	r.Response.CORSDefault()
-	fmt.Println(1)
+	if r.Method == "OPTIONS" {
+		response.Json(r, errcode.ErrCodeSuccess, "")
+		return
+	}
 	r.Middleware.Next()
+
 }

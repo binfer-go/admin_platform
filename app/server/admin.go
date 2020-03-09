@@ -11,18 +11,28 @@ import (
 const (
 	ADMIN_STATUS_ENABLE = byte(1)
 	ADMIN_STATUS_DISABLE= byte(2)
+
+	ADMIN_MASTER_ROLE_DEFAULT = int32(1)
 )
 
 var (
+
+	Token *interface{}
 	ModelAdmin  *ServerAdmin
 	tableAdmin = g.DB().Table(new(model.Admin).TableName()).Safe()
 )
 
 type ServerAdmin struct {}
 
+type ServiceAdminOption func(admin *model.Admin)
+
+
+
 func init()  {
 	ModelAdmin = &ServerAdmin{}
 }
+
+
 
 func (*ServerAdmin) GetPageList(where interface{}, page int, pageSize int) (gdb.Result, interface{}, error)  {
 
@@ -79,3 +89,14 @@ func (*ServerAdmin) GetByAccount(account string) (gdb.Record, error)  {
 	}
 	return result, nil
 }
+
+func (*ServerAdmin) UpdateRoleName(role_id int32, data interface{}) (interface{}, error)  {
+
+	result, err := tableAdmin.Data(data).Where("role_id=?", role_id).Update()
+	if err != nil {
+		return nil, err
+	}
+	rowsNum, _ := result.RowsAffected()
+	return rowsNum, nil
+}
+

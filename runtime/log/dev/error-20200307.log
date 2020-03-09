@@ -1,0 +1,12 @@
+2020-03-07 15:25:48.170 [ERRO] 500, "PATCH http 10.10.35.250:8299 /v1/user HTTP/1.1" 0.044, 10.10.35.250, "", "PostmanRuntime/7.22.0"
+Stack:
+1. interface conversion: interface {} is []uint8, not string
+   1).  platform/app/hander.(*User).Patch
+    	E:/go/admin_paltform/app/hander/user.go:245
+   2).  platform/app/middleware.MiddlewarePage
+    	E:/go/admin_paltform/app/middleware/safe.go:31
+   3).  platform/app/middleware.MiddlewareAuth
+    	E:/go/admin_paltform/app/middleware/auth.go:60
+   4).  platform/app/middleware.MiddlewareCORS
+    	E:/go/admin_paltform/app/middleware/cors.go:16
+

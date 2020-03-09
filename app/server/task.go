@@ -8,7 +8,10 @@ import (
 	"platform/library/response"
 )
 
-
+const (
+	ADMIN_TASK_STATUS_ENABLE 	= byte(1)
+	ADMIN_TASK_STATUS_DISABLE 	= byte(2)
+)
 var (
 	ModelTask  *ServerTask
 	tableTask = g.DB().Table(new(model.Task).TableName()).Safe()

@@ -80,3 +80,21 @@ func (*ServerAdminRole) GetByRoleName(roleName string) (gdb.Record, error)  {
 	}
 	return result, nil
 }
+
+
+func (*ServerAdminRole) CheckAdminRole(id int32) bool  {
+
+	result, err := tableAdminRole.Where("id=? and status=?", id, ADMIN_ROLE_STATUS_ENABLE).One()
+	if err != nil || result == nil {
+		return false
+	}
+	return true
+}
+
+func (*ServerAdminRole) Options (where interface{}) (gdb.Result, error)   {
+	result, err := tableAdminRole.Where(where).Where("status=?", ADMIN_ROLE_STATUS_ENABLE).All()
+	if err != nil {
+		return nil, err
+	}
+	return result, nil
+}

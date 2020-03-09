@@ -1,0 +1,252 @@
+2020-03-06 10:05:19.045 [DEBU] === @login -------- count: {2}, current: {clear1}
+2020-03-06 10:05:19.257 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"]] true
+2020-03-06 10:05:19.268 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"]] false
+2020-03-06 10:05:27.331 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"]] true
+2020-03-06 10:05:31.471 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"]] true
+2020-03-06 10:05:31.472 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"]] false
+2020-03-06 10:07:07.547 [DEBU] === @login -------- count: {2}, current: {admin1}
+2020-03-06 10:07:20.968 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"]] true
+2020-03-06 10:07:20.978 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"]] false
+2020-03-06 10:07:27.296 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"]] true
+2020-03-06 10:07:27.297 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"]] false
+2020-03-06 10:07:29.864 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"]] false
+2020-03-06 10:07:29.864 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"]] false
+2020-03-06 10:07:35.542 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"]] false
+2020-03-06 10:07:35.543 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"]] false
+2020-03-06 10:07:51.881 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"]] false
+2020-03-06 10:07:51.882 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"]] false
+2020-03-06 10:08:53.737 [DEBU] === @login -------- count: {2}, current: {clear1}
+2020-03-06 10:08:53.914 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"]] true
+2020-03-06 10:08:53.916 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"]] false
+2020-03-06 10:09:57.344 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"]] true
+2020-03-06 10:09:57.349 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"]] false
+2020-03-06 10:14:09.934 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"]] true
+2020-03-06 10:14:45.667 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"]] true
+2020-03-06 10:14:50.940 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"]] true
+2020-03-06 10:15:05.102 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"]] true
+2020-03-06 10:15:05.106 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"]] false
+2020-03-06 10:15:14.056 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"]] true
+2020-03-06 10:15:14.056 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"]] false
+2020-03-06 10:16:19.724 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"]] true
+2020-03-06 10:16:19.729 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"]] false
+2020-03-06 10:16:27.245 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"]] true
+2020-03-06 10:16:48.225 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"]] false
+2020-03-06 10:16:48.227 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"]] true
+2020-03-06 10:17:45.831 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"]] true
+2020-03-06 10:17:45.832 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"]] false
+2020-03-06 10:17:46.980 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"]] true
+2020-03-06 10:17:46.982 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"]] false
+2020-03-06 10:18:43.206 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"]] false
+2020-03-06 10:18:45.977 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"]] false
+2020-03-06 10:19:07.932 [DEBU] === @login -------- count: {2}, current: {clear1}
+2020-03-06 10:19:08.057 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"],["23","admin_permission","GET"]] true
+2020-03-06 10:19:09.837 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"],["23","admin_permission","GET"]] true
+2020-03-06 10:19:09.840 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"],["23","admin_permission","GET"]] true
+2020-03-06 10:19:59.721 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"],["23","admin_permission","GET"]] true
+2020-03-06 10:20:15.755 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"],["23","admin_permission","GET"]] true
+2020-03-06 10:20:23.891 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"],["23","admin_permission","GET"]] true
+2020-03-06 10:20:24.157 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"],["23","admin_permission","GET"]] true
+2020-03-06 10:20:25.706 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"],["23","admin_permission","GET"]] true
+2020-03-06 10:20:28.096 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"],["23","admin_permission","GET"]] true
+2020-03-06 10:20:28.098 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"],["23","admin_permission","GET"]] true
+2020-03-06 10:21:00.120 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"],["23","admin_permission","GET"]] true
+2020-03-06 10:21:01.394 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"],["23","admin_permission","GET"]] true
+2020-03-06 10:21:01.396 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"],["23","admin_permission","GET"]] true
+2020-03-06 10:21:02.275 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"],["23","admin_permission","GET"]] true
+2020-03-06 10:21:04.183 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"],["23","admin_permission","GET"]] true
+2020-03-06 10:21:04.184 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"],["23","admin_permission","GET"]] true
+2020-03-06 10:21:07.702 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"],["23","admin_permission","GET"]] true
+2020-03-06 10:21:22.989 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"],["23","admin_permission","GET"]] true
+2020-03-06 10:21:22.989 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"],["23","admin_permission","GET"]] true
+2020-03-06 10:21:28.067 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"],["23","admin_permission","GET"]] true
+2020-03-06 10:21:29.655 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"],["23","admin_permission","GET"]] true
+2020-03-06 10:21:29.656 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"],["23","admin_permission","GET"]] true
+2020-03-06 10:21:52.679 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"],["23","admin_permission","GET"]] true
+2020-03-06 10:22:11.388 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"],["23","admin_permission","GET"]] true
+2020-03-06 14:01:04.171 [DEBU] === @login -------- count: {2}, current: {clear1}
+2020-03-06 14:01:04.347 [DEBU] [["23","system","OPTIONS"],["23","admin_permission","POST"],["23","admin","GET"],["23","site_bank","GET"],["23","admin_role","GET"],["23","admin_permission","GET"],["23","admin_permission","PUT"]] true
+2020-03-06 14:33:51.607 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |           ROUTE           |                       HANDLER                        |                     MIDDLEWARE                       
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | ALL    | /*                        | platform/app/middleware.MiddlewareCORS               | GLOBAL MIDDLEWARE                                    
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | GET    | /v1/admin                 | platform/app/hander.(*Admin).Get                     | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | PATCH  | /v1/admin                 | platform/app/hander.(*Admin).Patch                   | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | POST   | /v1/admin                 | platform/app/hander.(*Admin).Post                    | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | PUT    | /v1/admin                 | platform/app/hander.(*Admin).Put                     | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | GET    | /v1/admin_permission      | platform/app/hander.(*AdminPermission).Get           | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | POST   | /v1/admin_permission      | platform/app/hander.(*AdminPermission).Post          | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | PUT    | /v1/admin_permission      | platform/app/hander.(*AdminPermission).Put           | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | GET    | /v1/admin_role            | platform/app/hander.(*AdminRole).Get                 | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | POST   | /v1/admin_role            | platform/app/hander.(*AdminRole).Post                | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | PUT    | /v1/admin_role            | platform/app/hander.(*AdminRole).Put                 | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | GET    | /v1/admin_role_maps       | platform/app/hander.(*AdminRole).RoleMaps-fm         | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | GET    | /v1/admin_role_options    | platform/app/hander.(*AdminRole).Option-fm           | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | PUT    | /v1/admin_role_permission | platform/app/hander.(*AdminRolePermission).Put       | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | GET    | /v1/bill                  | platform/app/hander.(*Bill).Get                      | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | POST   | /v1/login                 | platform/app/hander.(*Auth).Post-fm                  |                                                      
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | POST   | /v1/logout                | platform/app/hander.(*Logout).Post                   | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | PUT    | /v1/refresh               | platform/app/hander.(*Auth).Put-fm                   | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | GET    | /v1/report_dashboards     | platform/app/hander/report.(*ReportDashboard).Get-fm | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | GET    | /v1/site_admin_log        | platform/app/hander.(*SiteAdminLog).Get              | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | GET    | /v1/site_bank             | platform/app/hander.(*SiteBank).Get                  | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | GET    | /v1/site_config           | platform/app/hander.(*Configs).Get                   |                                                      
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | GET    | /v1/task                  | platform/app/hander.(*Task).Get                      | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | POST   | /v1/task                  | platform/app/hander.(*Task).Post                     | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | PUT    | /v1/task                  | platform/app/hander.(*Task).Put                      | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | GET    | /v1/task_publish          | platform/app/hander.(*TaskPublish).Get               | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | PATCH  | /v1/task_publish          | platform/app/hander.(*TaskPublish).Patch             | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | PUT    | /v1/task_publish          | platform/app/hander.(*TaskPublish).Put               | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | GET    | /v1/task_subscribe        | platform/app/hander.(*TaskSubscribe).Get             | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | PATCH  | /v1/task_subscribe        | platform/app/hander.(*TaskSubscribe).Patch           | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | PUT    | /v1/task_subscribe        | platform/app/hander.(*TaskSubscribe).Put             | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | GET    | /v1/user                  | platform/app/hander.(*User).Get                      | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | PATCH  | /v1/user                  | platform/app/hander.(*User).Patch                    | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | PUT    | /v1/user                  | platform/app/hander.(*User).Put                      | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | GET    | /v1/user_bank             | platform/app/hander.(*UserBank).Get                  | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | PUT    | /v1/user_bank             | platform/app/hander.(*UserBank).Put                  | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | GET    | /v1/user_deposit          | platform/app/hander.(*UserDeposit).Get               | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | PUT    | /v1/user_deposit          | platform/app/hander.(*UserDeposit).Put               | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | GET    | /v1/user_withdraw         | platform/app/hander.(*UserWithdraw).Get              | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8199   | PUT    | /v1/user_withdraw         | platform/app/hander.(*UserWithdraw).Put              | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+
+2020-03-06 14:33:51.628 10376: http server started listening on [:8199]
+2020-03-06 15:05:41.787 [DEBU] === @login -------- count: {1}, current: {admin}
+2020-03-06 15:06:13.088 [DEBU] === @login -------- count: {1}, current: {admin}
+2020-03-06 15:06:30.559 [DEBU] === @login -------- count: {1}, current: {admin}
+2020-03-06 15:19:28.725 [DEBU] === @login -------- count: {1}, current: {admin}
+2020-03-06 15:21:16.980 [DEBU] === @login -------- count: {1}, current: {admin}
+2020-03-06 15:29:07.320 [DEBU] === @login -------- count: {1}, current: {admin}
+2020-03-06 15:39:16.416 [DEBU] === @login -------- count: {1}, current: {admin}
+2020-03-06 16:03:51.126 [DEBU] === @login -------- count: {1}, current: {admin}
+2020-03-06 16:05:51.706 [DEBU] === @login -------- count: {1}, current: {admin}
+2020-03-06 16:06:38.271 [DEBU] === @login -------- count: {1}, current: {admin}
+2020-03-06 16:08:53.652 [DEBU] [ghttp] SetServerRoot path: E:\go\admin_paltform\public
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |           ROUTE           |                       HANDLER                        |                     MIDDLEWARE                       
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | ALL    | /*                        | platform/app/middleware.MiddlewareCORS               | GLOBAL MIDDLEWARE                                    
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | GET    | /v1/admin                 | platform/app/hander.(*Admin).Get                     | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | PATCH  | /v1/admin                 | platform/app/hander.(*Admin).Patch                   | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | POST   | /v1/admin                 | platform/app/hander.(*Admin).Post                    | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | PUT    | /v1/admin                 | platform/app/hander.(*Admin).Put                     | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | GET    | /v1/admin_permission      | platform/app/hander.(*AdminPermission).Get           | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | POST   | /v1/admin_permission      | platform/app/hander.(*AdminPermission).Post          | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | PUT    | /v1/admin_permission      | platform/app/hander.(*AdminPermission).Put           | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | GET    | /v1/admin_role            | platform/app/hander.(*AdminRole).Get                 | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | POST   | /v1/admin_role            | platform/app/hander.(*AdminRole).Post                | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | PUT    | /v1/admin_role            | platform/app/hander.(*AdminRole).Put                 | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | GET    | /v1/admin_role_maps       | platform/app/hander.(*AdminRole).RoleMaps-fm         | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | GET    | /v1/admin_role_options    | platform/app/hander.(*AdminRole).Option-fm           | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | PUT    | /v1/admin_role_permission | platform/app/hander.(*AdminRolePermission).Put       | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | GET    | /v1/bill                  | platform/app/hander.(*Bill).Get                      | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | POST   | /v1/login                 | platform/app/hander.(*Auth).Post-fm                  |                                                      
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | POST   | /v1/logout                | platform/app/hander.(*Logout).Post                   | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | PUT    | /v1/refresh               | platform/app/hander.(*Auth).Put-fm                   | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | GET    | /v1/report_dashboards     | platform/app/hander/report.(*ReportDashboard).Get-fm | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | GET    | /v1/site_admin_log        | platform/app/hander.(*SiteAdminLog).Get              | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | GET    | /v1/site_bank             | platform/app/hander.(*SiteBank).Get                  | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | GET    | /v1/site_config           | platform/app/hander.(*Configs).Get                   |                                                      
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | GET    | /v1/task                  | platform/app/hander.(*Task).Get                      | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | POST   | /v1/task                  | platform/app/hander.(*Task).Post                     | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | PUT    | /v1/task                  | platform/app/hander.(*Task).Put                      | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | GET    | /v1/task_publish          | platform/app/hander.(*TaskPublish).Get               | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | PATCH  | /v1/task_publish          | platform/app/hander.(*TaskPublish).Patch             | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | PUT    | /v1/task_publish          | platform/app/hander.(*TaskPublish).Put               | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | GET    | /v1/task_subscribe        | platform/app/hander.(*TaskSubscribe).Get             | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | PATCH  | /v1/task_subscribe        | platform/app/hander.(*TaskSubscribe).Patch           | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | PUT    | /v1/task_subscribe        | platform/app/hander.(*TaskSubscribe).Put             | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | GET    | /v1/user                  | platform/app/hander.(*User).Get                      | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | PATCH  | /v1/user                  | platform/app/hander.(*User).Patch                    | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | PUT    | /v1/user                  | platform/app/hander.(*User).Put                      | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | GET    | /v1/user_bank             | platform/app/hander.(*UserBank).Get                  | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | PUT    | /v1/user_bank             | platform/app/hander.(*UserBank).Put                  | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | GET    | /v1/user_deposit          | platform/app/hander.(*UserDeposit).Get               | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | PUT    | /v1/user_deposit          | platform/app/hander.(*UserDeposit).Put               | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | GET    | /v1/user_withdraw         | platform/app/hander.(*UserWithdraw).Get              | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+  default | default | :8299   | PUT    | /v1/user_withdraw         | platform/app/hander.(*UserWithdraw).Put              | middleware.MiddlewareAuth,middleware.MiddlewarePage  
+----------|---------|---------|--------|---------------------------|------------------------------------------------------|------------------------------------------------------
+
+2020-03-06 16:08:53.675 17668: http server started listening on [:8299]
+2020-03-06 16:08:57.864 [DEBU] === @login -------- count: {1}, current: {test001}
+2020-03-06 18:16:07.827 [DEBU] === @login -------- count: {1}, current: {admin}
+2020-03-06 19:20:06.291 [DEBU] === @login -------- count: {1}, current: {admin}

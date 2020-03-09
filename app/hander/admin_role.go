@@ -1,12 +1,15 @@
 package hander
 
 import (
+	"encoding/json"
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
 	"platform/app/errcode"
+	"platform/app/hander/env"
 	"platform/app/model"
 	"platform/app/server"
 	"platform/library/help"
+	"platform/library/redis"
 	"platform/library/response"
 	"time"
 )
@@ -23,6 +26,7 @@ type putEditAdminRoleReq struct {
 }
 
 type getListAdminRoleReq struct {
+	Id int32 `json:"id"`
 	RoleName string `json:"role_name"`
 	Status byte `json:"status"`
 	Start_time time.Time `json:"start_time"`
@@ -31,6 +35,11 @@ type getListAdminRoleReq struct {
 	PageSize int `json:"page_size"`
 }
 
+type patchAdminRolePermission struct {
+	RoleId int32 `json:"id"`
+}
+
+
 /**
  * @api {get} /v1/admin_role  管理角色列表
  * @apiVersion 0.1.0
@@ -38,10 +47,11 @@ type getListAdminRoleReq struct {
  * @apiGroup 管理角色 AdminRole
  * @apiParam {Integer} page			1
  * @apiParam {Integer} page_size	20
+ * @apiParam {Integer} id			Id查询详情
  * @apiParam {String}  start_time   开始时间
  * @apiParam {String}  end_time		结束时间
  * @apiParam {String}  role_name    角色名称
- * @apiParam {Integer} status		状态 {1：启用 2：禁用}
+ * @apiParam {Integer} status		状态 {1：启用 2：禁用} {config: admin_role_status}
  * @apiSuccess {Integer}   code   标识码 200：成功
  * @apiSuccess {Object}    data   数据
  * @apiSuccess {String}    msg    提示信息
@@ -50,6 +60,16 @@ type getListAdminRoleReq struct {
  * {
 		"code": 200,
 		"data": null,
+		"remark": {
+		Id        int32     `plat:"primary_key;id" json:"id"`
+		RoleName  string    `plat:"role_name" json:"role_name"`   // 角色名称
+		RoleCode  string    `plat:"role_code" json:"role_code"`   // 角色代号
+		Status    byte      `plat:"status" json:"status"`         // 1:启用 2：禁用
+		Remark    string    `plat:"remark" json:"remark"`         // 备注
+		CreatedAt time.Time `plat:"created_at" json:"created_at"` // 创建时间
+		UpdatedAt time.Time `plat:"updated_at" json:"updated_at"` // 更新时间
+		CreatedIp string    `plat:"created_ip" json:"created_ip"` // 创建Ip
+		},
 		"msg": "成功",
 		"page": {
 			"TotalPage": 1,
@@ -85,7 +105,12 @@ func (*AdminRole)Get(req *ghttp.Request)  {
 	if list.RoleName != "" {
 		where["role_name"]= list.RoleName
 	}
-
+	if list.Id > 0 {
+		where["id"] = list.Id
+	}
+	if Admins.RoleId != server.ADMIN_MASTER_ROLE_DEFAULT {
+		where["id!="] = server.ADMIN_MASTER_ROLE_DEFAULT
+	}
 	result, pages, _ := server.ModelAdminRole.GetPageList(where, list.Page, list.PageSize)
 
 	response.Json(req, errcode.ErrCodeSuccess, "", result, pages)
@@ -147,7 +172,15 @@ func (*AdminRole) Post (req *ghttp.Request)  {
 
 		response.Json(req, errcode.ErrCodeAdminRoleAddError, "")
 	}
-
+	log, _ := json.Marshal(&add)
+	server.ModelAdminLog.NewAdminLogOption(func(options *server.AdminLogOptions) {
+		options.Action = server.ADMIN_LOG_ACTION_CREATE
+		options.Title = env.F[env.ADMIN_MODULE_ROLE]
+		options.Description = string(log)
+		options.ActionAdminId = Admins.Id
+		options.ActionAdminName = Admins.Account
+		options.ActionAdminIp = req.GetClientIp()
+	})
 	response.Json(req, errcode.ErrCodeSuccess, "", result)
 
 }
@@ -183,28 +216,127 @@ func (*AdminRole) Post (req *ghttp.Request)  {
 func (task *AdminRole) Put (req *ghttp.Request)  {
 	var edit putEditAdminRoleReq
 
-	id := req.GetInt32("id", 0)
-	if id == 0 {
+	if err := req.Parse(&edit); err != nil {
+		response.Json(req, errcode.ErrCodeAdminParseError, "")
+	}
+	if edit.Id == 0 {
 		response.Json(req, errcode.ErrCodeAdminRoleEditError, "")
 	}
-	info, err := server.ModelAdminRole.GetById(id)
+	info, err := server.ModelAdminRole.GetById(edit.Id)
 	if err != nil || info == nil{
 		response.Json(req, errcode.ErrCodeAdminRoleEditError, "")
-	}
-	if err := req.Parse(&edit); err != nil {
-
-		response.Json(req, errcode.ErrCodeAdminRoleEditError, "解析失败")
+		return
 	}
 	if len(edit.RoleName) < 4 {
 		response.Json(req, errcode.ErrCodeAdminRoleError, "")
 	}
+	type temps struct {
+		RoleName string `json:"role_name"`
+	}
+	var temp temps
+	_ = info.Struct(&temp)
+	if edit.RoleName != temp.RoleName {
+		_, err := server.ModelAdmin.UpdateRoleName(edit.Id, g.Map{"role_name":edit.RoleName})
+		if err != nil {
+			return
+		}
+	}
 	edit.UpdatedAt = time.Now()
 	data := help.Filter(edit)
-	status, err := server.ModelAdminRole.Update(id, data)
+	status, err := server.ModelAdminRole.Update(edit.Id, data)
 	if err != nil {
 
 		response.Json(req, errcode.ErrCodeAdminRoleEditError, "")
 	}
+	log, _ := json.Marshal(&edit)
+	server.ModelAdminLog.NewAdminLogOption(func(options *server.AdminLogOptions) {
+		options.Action = server.ADMIN_LOG_ACTION_UPDATE
+		options.Title = env.F[env.ADMIN_MODULE_ROLE]
+		options.Description = string(log)
+		options.ActionAdminId = Admins.Id
+		options.ActionAdminName = Admins.Account
+		options.ActionAdminIp = req.GetClientIp()
+	})
 	response.Json(req, errcode.ErrCodeSuccess, "", status)
+
+}
+
+/**
+ * @api {get} /v1/admin_role_options  管理角色选项
+ * @apiVersion 0.1.0
+ * @apiName  选项
+ * @apiGroup 管理角色 AdminRole
+ * @apiParam {Integer} id		 	   * ID
+ * @apiParam {String}  role_name	   * 角色名称
+ * @apiParam {Integer} status		   * 状态 	{ 1：启用 2：禁用 }
+ * @apiParam {String}  remark			 备注
+ * @apiSuccess {Integer}   code   标识码 200：成功
+ * @apiSuccess {Object}    data   数据
+ * @apiSuccess {String}    msg    提示信息
+ * @apiSuccessExample Success-Response:
+	{
+		"code": 200,
+		"data": 1,
+		"msg": "成功"
+	}
+ * @apiErrorExample Error-Response:
+   {
+     	"code": 201,
+      	"data": null
+      	"msg": "失败提示",
+   }
+*/
+func (*AdminRole) Option (req *ghttp.Request)  {
+	where := g.Map{}
+	if Admins.RoleId != server.ADMIN_MASTER_ROLE_DEFAULT {
+		where["id!="] = server.ADMIN_MASTER_ROLE_DEFAULT
+	}
+	roles, err := server.ModelAdminRole.Options(where)
+	if err != nil {
+		response.Json(req, errcode.ErrCodeFailure, "")
+	}
+	response.Json(req, errcode.ErrCodeSuccess, "", roles)
+
+}
+
+
+
+/**
+ * @api {get} /v1/admin_role_maps  角色权限列表maps
+ * @apiVersion 0.1.0
+ * @apiName  maps
+ * @apiGroup 管理角色 AdminRole
+ * @apiParam {Integer} id		 	   * 角色ID
+ * @apiSuccess {Integer}   code   标识码 200：成功
+ * @apiSuccess {Object}    data   数据
+ * @apiSuccess {String}    msg    提示信息
+ * @apiSuccessExample Success-Response:
+	{
+		"code": 200,
+		"data": 1,
+		"msg": "成功"
+	}
+ * @apiErrorExample Error-Response:
+   {
+     	"code": 201,
+      	"data": null
+      	"msg": "失败提示",
+   }
+*/
+func (*AdminRole) RoleMaps (req *ghttp.Request)  {
+
+	var patch patchAdminRolePermission
+	if err := req.Parse(&patch); err != nil {
+		response.Json(req, errcode.ErrCodeFailure, "")
+	}
+	if patch.RoleId <= 0 {
+		response.Json(req, errcode.ErrCodeFailure, "")
+	}
+	var redisService redis.RedisService
+
+	var permissions []*permission
+	_ = redisService.GetJsonDecodeDataByKeyName(redis.ADMIN_HASH_ROLE_PERMISSION_AUTH, patch.RoleId, &permissions)
+
+	response.Json(req, errcode.ErrCodeSuccess, "", permissions)
 
 }
