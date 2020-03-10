@@ -97,7 +97,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n\t\t\"code\": 200,\n\t\t\"data\": null,\n\t\t\"remark\": {\n\t\tId        int32     `plat:\"primary_key;id\" json:\"id\"`\n\t\tTitle     string    `plat:\"title\" json:\"title\"`           // 任务标题\n\t\tDescribe  string    `plat:\"describe\" json:\"describe\"`     // 任务描述\n\t\tStatus    byte      `plat:\"status\" json:\"status\"`         // 1:启用 2:禁用\n\t\tSort      int32     `plat:\"sort\" json:\"sort\"`             // 排序\n\t\tCreatedAt time.Time `plat:\"created_at\" json:\"created_at\"` // 创建时间\n\t\tUpdatedAt time.Time `plat:\"updated_at\" json:\"updated_at\"` // 更新时间\n\t\t},\n\t\t\"msg\": \"成功\",\n\t\t\"page\": {\n\t\t\t\"TotalPage\": 1,\t\t#总页数\n\t\t\t\"TotalSize\": 1,\t\t#总条数\n\t\t\t\"CurrentPage\": 1,\t#当前页码\n\t\t\t\"PageBarNum\": 10\t#分页标识\n\t\t}\n\t}",
+          "content": "{\n\t\t\"code\": 200,\n\t\t\"data\": null,\n\t\t\"remark\": {\n\t\tId        int32     `plat:\"primary_key;id\" json:\"id\"`\n\t\tTitle     string    `plat:\"title\" json:\"title\"`           // 任务标题\n\t\tDescribe  string    `plat:\"describe\" json:\"describe\"`     // 任务描述\n\t\tStatus    byte      `plat:\"status\" json:\"status\"`         // 1:上架 2:下架 3：删除\n\t\tSort      int32     `plat:\"sort\" json:\"sort\"`             // 排序\n\t\tCreatedAt time.Time `plat:\"created_at\" json:\"created_at\"` // 创建时间\n\t\tUpdatedAt time.Time `plat:\"updated_at\" json:\"updated_at\"` // 更新时间\n\t\t},\n\t\t\"msg\": \"成功\",\n\t\t\"page\": {\n\t\t\t\"TotalPage\": 1,\t\t#总页数\n\t\t\t\"TotalSize\": 1,\t\t#总条数\n\t\t\t\"CurrentPage\": 1,\t#当前页码\n\t\t\t\"PageBarNum\": 10\t#分页标识\n\t\t}\n\t}",
           "type": "json"
         }
       ]
@@ -107,6 +107,72 @@ define({ "api": [
         {
           "title": "Error-Response:",
           "content": "{\n   \"code\": 201,\n   \"data\": null\n   \"msg\": \"失败提示\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/hander/task.go",
+    "groupTitle": "任务类型_Task"
+  },
+  {
+    "type": "delete",
+    "url": "/v1/task",
+    "title": "删除任务",
+    "version": "0.1.0",
+    "name": "删除",
+    "group": "任务类型_Task",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "id",
+            "description": "<ul> <li>任务Id</li> </ul>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Integer",
+            "optional": false,
+            "field": "code",
+            "description": "<p>标识码 200：成功</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>数据</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>提示信息</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n\t\"code\": 200,\n\t\"data\": 1,\n\t\"msg\": \"成功\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n  \t\"code\": 201,\n   \t\"data\": null\n   \t\"msg\": \"失败提示\",\n}",
           "type": "json"
         }
       ]
@@ -136,14 +202,28 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "title",
-            "description": "<p>标题</p>"
+            "description": "<ul> <li>标题</li> </ul>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": false,
             "field": "describe",
-            "description": "<p>描述</p>"
+            "description": "<ul> <li>描述</li> </ul>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "commit_time",
+            "description": "<ul> <li>提交时限 {1,2,3,4,5}</li> </ul>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "inspect_time",
+            "description": "<ul> <li>审核周期 {23,24,76}</li> </ul>"
           },
           {
             "group": "Parameter",
@@ -157,7 +237,7 @@ define({ "api": [
             "type": "Integer",
             "optional": false,
             "field": "status",
-            "description": "<p>状态 0：启用 1：禁用</p>"
+            "description": "<ul> <li>状态 {config: task_status}</li> </ul>"
           }
         ]
       }
@@ -223,14 +303,28 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "title",
-            "description": "<p>标题</p>"
+            "description": "<ul> <li>标题</li> </ul>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": false,
             "field": "describe",
-            "description": "<p>描述</p>"
+            "description": "<ul> <li>描述</li> </ul>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "commit_time",
+            "description": "<ul> <li>提交时限 {1,2,3,4,5}</li> </ul>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "inspect_time",
+            "description": "<ul> <li>审核周期 {23,24,76}</li> </ul>"
           },
           {
             "group": "Parameter",
@@ -244,7 +338,7 @@ define({ "api": [
             "type": "Integer",
             "optional": false,
             "field": "status",
-            "description": "<p>状态 0：启用 1：禁用</p>"
+            "description": "<ul> <li>状态 {config: task_status}</li> </ul>"
           }
         ]
       }
@@ -296,8 +390,161 @@ define({ "api": [
     "groupTitle": "任务类型_Task"
   },
   {
+    "type": "patch",
+    "url": "/v1/task",
+    "title": "任务上下架",
+    "version": "0.1.0",
+    "name": "行为",
+    "group": "任务类型_Task",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "id",
+            "description": "<ul> <li>任务Id</li> </ul>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "status",
+            "description": "<ul> <li>状态 {config: task_status}</li> </ul>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Integer",
+            "optional": false,
+            "field": "code",
+            "description": "<p>标识码 200：成功</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>数据</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>提示信息</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n\t\"code\": 200,\n\t\"data\": 1,\n\t\"msg\": \"成功\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n  \t\"code\": 201,\n   \t\"data\": null\n   \t\"msg\": \"失败提示\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/hander/task.go",
+    "groupTitle": "任务类型_Task"
+  },
+  {
+    "type": "patch",
+    "url": "/v1/user_withdraw",
+    "title": "人工扣款",
+    "version": "0.1.0",
+    "name": "人工",
+    "group": "会员取款_Withdraw",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "user_id",
+            "description": "<ul> <li>会员id</li> </ul>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "wallet",
+            "description": "<ul> <li>会员钱包类型 {config: user_wallet_type}</li> </ul>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Float",
+            "optional": false,
+            "field": "money",
+            "description": "<ul> <li>交易金额/元</li> </ul>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Integer",
+            "optional": false,
+            "field": "code",
+            "description": "<p>标识码 200：成功</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>数据</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>提示信息</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n\t\"code\": 200,\n\t\"data\": 1,\n\t\"msg\": \"成功\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n  \t\"code\": 201,\n   \t\"data\": null\n   \t\"msg\": \"失败提示\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/hander/user_withdraw.go",
+    "groupTitle": "会员取款_Withdraw"
+  },
+  {
     "type": "get",
-    "url": "/v1/user_deposit",
+    "url": "/v1/user_withdraw",
     "title": "会员取款列表",
     "version": "0.1.0",
     "name": "列表",
@@ -426,8 +673,8 @@ define({ "api": [
   },
   {
     "type": "put",
-    "url": "/v1/user_deposit",
-    "title": "更新会员取款信息",
+    "url": "/v1/user_withdraw",
+    "title": "更新会员取款信息(审核)",
     "version": "0.1.0",
     "name": "更新",
     "group": "会员取款_Withdraw",
@@ -439,7 +686,7 @@ define({ "api": [
             "type": "Integer",
             "optional": false,
             "field": "id",
-            "description": "<ul> <li>存款Id</li> </ul>"
+            "description": "<ul> <li>存款Id {status= 2才可以审核}</li> </ul>"
           },
           {
             "group": "Parameter",
@@ -496,6 +743,152 @@ define({ "api": [
     },
     "filename": "app/hander/user_withdraw.go",
     "groupTitle": "会员取款_Withdraw"
+  },
+  {
+    "type": "put",
+    "url": "/v1/user_withdraw_lock",
+    "title": "锁定/解锁取款单",
+    "version": "0.1.0",
+    "name": "行为",
+    "group": "会员取款_Withdraw",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "id",
+            "description": "<p>*取款单Id</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Integer",
+            "optional": false,
+            "field": "code",
+            "description": "<p>标识码 200：成功</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>数据</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>提示信息</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n\t\"code\": 200,\n\t\"data\": 1,\n\t\"msg\": \"成功\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n  \t\"code\": 201,\n   \t\"data\": null\n   \t\"msg\": \"失败提示\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/hander/user_withdraw.go",
+    "groupTitle": "会员取款_Withdraw"
+  },
+  {
+    "type": "patch",
+    "url": "/v1/user_deposit",
+    "title": "人工加款",
+    "version": "0.1.0",
+    "name": "人工",
+    "group": "会员存款_Deposit",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "user_id",
+            "description": "<ul> <li>会员id</li> </ul>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "wallet",
+            "description": "<ul> <li>会员钱包类型 {config: user_wallet_type}</li> </ul>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Float",
+            "optional": false,
+            "field": "money",
+            "description": "<ul> <li>交易金额/元</li> </ul>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Integer",
+            "optional": false,
+            "field": "code",
+            "description": "<p>标识码 200：成功</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>数据</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>提示信息</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n\t\"code\": 200,\n\t\"data\": 1,\n\t\"msg\": \"成功\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n  \t\"code\": 201,\n   \t\"data\": null\n   \t\"msg\": \"失败提示\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/hander/user_deposit.go",
+    "groupTitle": "会员存款_Deposit"
   },
   {
     "type": "get",
@@ -641,7 +1034,7 @@ define({ "api": [
             "type": "Integer",
             "optional": false,
             "field": "id",
-            "description": "<ul> <li>存款Id</li> </ul>"
+            "description": "<ul> <li>存款Id {status == 2, 才可以审核}</li> </ul>"
           },
           {
             "group": "Parameter",
@@ -1389,7 +1782,7 @@ define({ "api": [
             "type": "Integer",
             "optional": false,
             "field": "status",
-            "description": "<p>任务状态 {1:待发布 2:待审核 3:已通过 4:已拒绝 5:已关闭 6:已删除} {config: task_publish_status}</p>"
+            "description": "<p>任务状态  {config: task_publish_status}</p>"
           }
         ]
       }
@@ -1430,7 +1823,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n\t\t\"code\": 200,\n\t\t\"data\": null,\n\t\t\"remark\": {\n\t\tId                int32     `plat:\"primary_key;id\" json:\"id\"`\n\t\tUserId            int32     `plat:\"user_id\" json:\"user_id\"`                       // 用户ID\n\t\tUsername          string    `plat:\"username\" json:\"username\"`                     // 用户名\n\t\tAvatar            string    `plat:\"avatar\" json:\"avatar\"`                         // 用户头像\n\t\tTaskType          byte      `plat:\"task_type\" json:\"task_type\"`                   // 任务类型ID\n\t\tProject           string    `plat:\"project\" json:\"project\"`                       // 项目名称\n\t\tTitle             string    `plat:\"title\" json:\"title\"`                           // 任务标题\n\t\tDescribe          string    `plat:\"describe\" json:\"describe\"`                     // 任务描述\n\t\tLink              string    `plat:\"link\" json:\"link\"`                             // 任务链接\n\t\tAmount            int32     `plat:\"amount\" json:\"amount\"`                         // 任务金额\n\t\tAccept            int32     `plat:\"accept\" json:\"accept\"`                         // 做单人数\n\t\tCommit            int32     `plat:\"commit\" json:\"commit\"`                         // 待审核人数\n\t\tSuccess           int32     `plat:\"success\" json:\"success\"`                       // 已通过人数\n\t\tCount             int32     `plat:\"count\" json:\"count\"`                           // 任务数量\n\t\tAdminAccount      string    `plat:\"admin_account\" json:\"admin_account\"`           // 操作人账号\n\t\tStep              string    `plat:\"step\" json:\"step\"`                             // 任务步骤\n\t\tStatus            byte      `plat:\"status\" json:\"status\"`                         // 1:待发布 2:待审核3:已通过 4:已拒绝 5:已结束\n\t\tRefuseRemark      string    `plat:\"refuse_remark\" json:\"refuse_remark\"`           // 拒绝原因\n\t\tUnavailableRemark string    `plat:\"unavailable_remark\" json:\"unavailable_remark\"` // 禁用原因\n\t\tExpireTs          int64     `plat:\"expire_ts\" json:\"expire_ts\"`                   // 过期时间\n\t\tInspectTs         int64     `plat:\"inspect_ts\" json:\"inspect_ts\"`                 // 检查时间\n\t\tStartTs           int64     `plat:\"start_ts\" json:\"start_ts\"`                     // 任务开始时间\n\t\tFinishTs          int64     `plat:\"finish_ts\" json:\"finish_ts\"`                   // 任务结束时间\n\t\tCreatedAt         time.Time `plat:\"created_at\" json:\"created_at\"`                 // 创建时间\n\t\tUpdatedAt         time.Time `plat:\"updated_at\" json:\"updated_at\"`                 // 更新时间\n\t\t},\n\t\t\"msg\": \"成功\",\n\t\t\"page\": {\n\t\t\t\"TotalPage\": 1,\n\t\t\t\"TotalSize\": 1,\n\t\t\t\"CurrentPage\": 1,\n\t\t\t\"PageBarNum\": 10\n\t\t}\n\t}",
+          "content": "{\n\t\t\"code\": 200,\n\t\t\"data\": null,\n\t\t\"remark\": {\n\t\t\tId                int32     `plat:\"primary_key;id\" json:\"id\"`\n\tUserId            int32     `plat:\"user_id\" json:\"user_id\"`                       // 用户ID\n\tUsername          string    `plat:\"username\" json:\"username\"`                     // 用户名\n\tAvatar            string    `plat:\"avatar\" json:\"avatar\"`                         // 用户头像\n\tTaskType          byte      `plat:\"task_type\" json:\"task_type\"`                   // 任务类型ID\n\tProject           string    `plat:\"project\" json:\"project\"`                       // 项目名称\n\tTitle             string    `plat:\"title\" json:\"title\"`                           // 任务标题\n\tDescribe          string    `plat:\"describe\" json:\"describe\"`                     // 任务描述\n\tLink              string    `plat:\"link\" json:\"link\"`                             // 任务链接\n\tAmount            int32     `plat:\"amount\" json:\"amount\"`                         // 任务金额\n\tAccept            int32     `plat:\"accept\" json:\"accept\"`                         // 做单人数\n\tCommit            int32     `plat:\"commit\" json:\"commit\"`                         // 待审核人数\n\tSuccess           int32     `plat:\"success\" json:\"success\"`                       // 已通过人数\n\tCount             int32     `plat:\"count\" json:\"count\"`                           // 任务数量\n\tAdminAccount      string    `plat:\"admin_account\" json:\"admin_account\"`           // 操作人账号\n\tStep              string    `plat:\"step\" json:\"step\"`                             // 任务步骤\n\tStatus            byte      `plat:\"status\" json:\"status\"`                         // {config: task_publish_status} 1:待发布 2:待审核3:已通过 4:已拒绝 5:已结束\n\tRefuseRemark      string    `plat:\"refuse_remark\" json:\"refuse_remark\"`           // 拒绝原因\n\tUnavailableRemark string    `plat:\"unavailable_remark\" json:\"unavailable_remark\"` // 禁用原因\n\tExpireTs          int64     `plat:\"expire_ts\" json:\"expire_ts\"`                   // 过期时间\n\tInspectTs         int64     `plat:\"inspect_ts\" json:\"inspect_ts\"`                 // 检查时间\n\tStartTs           int64     `plat:\"start_ts\" json:\"start_ts\"`                     // 任务开始时间\n\tFinishTs          int64     `plat:\"finish_ts\" json:\"finish_ts\"`                   // 任务结束时间\n\tCreatedAt         time.Time `plat:\"created_at\" json:\"created_at\"`                 // 创建时间\n\tUpdatedAt         time.Time `plat:\"updated_at\" json:\"updated_at\"`                 // 更新时间\n\t\t},\n\t\t\"msg\": \"成功\",\n\t\t\"page\": {\n\t\t\t\"TotalPage\": 1,\n\t\t\t\"TotalSize\": 1,\n\t\t\t\"CurrentPage\": 1,\n\t\t\t\"PageBarNum\": 10\n\t\t}\n\t}",
           "type": "json"
         }
       ]
@@ -1450,7 +1843,7 @@ define({ "api": [
   {
     "type": "put",
     "url": "/v1/task_publish",
-    "title": "更新发布任务",
+    "title": "更新发布任务（审核）",
     "version": "0.1.0",
     "name": "更新",
     "group": "发布任务_Publish",
@@ -1462,84 +1855,28 @@ define({ "api": [
             "type": "Integer",
             "optional": false,
             "field": "id",
-            "description": "<ul> <li>发布任务Id  - {status==1 or 3，才可以修改}</li> </ul>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "project",
-            "description": "<p>项目名称</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "title",
-            "description": "<p>标题</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "describe",
-            "description": "<p>描述</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "link",
-            "description": "<p>url</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Integer",
-            "optional": false,
-            "field": "limit_count",
-            "description": "<p>任务限制人数</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Integer",
-            "optional": false,
-            "field": "count",
-            "description": "<p>已领人数</p>"
+            "description": "<ul> <li>发布任务Id {status == 2, 才可以审核}</li> </ul>"
           },
           {
             "group": "Parameter",
             "type": "Integer",
             "optional": false,
             "field": "status",
-            "description": "<p>任务状态：{1:待发布 2:待审核 3:已通过 4:已拒绝 5:已关闭 6:已删除}</p>"
+            "description": "<ul> <li>任务状态：{3: 通过 4：未通过}</li> </ul>"
           },
           {
             "group": "Parameter",
-            "type": "Integer",
+            "type": "Float",
             "optional": false,
-            "field": "expire_ts",
-            "description": "<p>过期时间</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Integer",
-            "optional": false,
-            "field": "inspect_ts",
-            "description": "<p>检查时间</p>"
+            "field": "rate",
+            "description": "<ul> <li>费率</li> </ul>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "start_time",
-            "description": "<p>开始时间</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "finish_time",
-            "description": "<p>结束时间</p>"
+            "field": "refuse_remark",
+            "description": "<p>备注</p>"
           }
         ]
       }
@@ -1800,7 +2137,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n\t\t\"code\": 200,\n\t\t\"data\": null,\n\t\t\"remark\": {\n\t\tId              int32     `plat:\"primary_key;id\" json:\"id\"`\n\t\tTaskId          int32     `plat:\"task_id\" json:\"task_id\"`                   // 任务id\n\t\tTaskType        byte      `plat:\"task_type\" json:\"task_type\"`               // 任务类型\n\t\tProject         string    `plat:\"project\" json:\"project\"`                   // 项目名称\n\t\tMerchantId      int32     `plat:\"merchant_id\" json:\"merchant_id\"`           // 卖家ID\n\t\tMerchantName    string    `plat:\"merchant_name\" json:\"merchant_name\"`       // 卖家账号\n\t\tMerchantAvatar  string    `plat:\"merchant_avatar\" json:\"merchant_avatar\"`   // 卖家头像\n\t\tUserId          int32     `plat:\"user_id\" json:\"user_id\"`                   // 买家ID\n\t\tUserName        string    `plat:\"user_name\" json:\"user_name\"`               // 买家账号\n\t\tAmount          int32     `plat:\"amount\" json:\"amount\"`                     // 任务佣金\n\t\tStep            string    `plat:\"step\" json:\"step\"`                         // 任务步骤\n\t\tResult          string    `plat:\"result\" json:\"result\"`                     // 任务提交凭证\n\t\tStatus          byte      `plat:\"status\" json:\"status\"`                     // 1: 待提交 2:待审核 3:已通过 4:已拒绝 5:待复审 6:复审失败 7:已过期\n\t\tAdminAccount    string    `plat:\"admin_account\" json:\"admin_account\"`       // 操作人账号\n\t\tAcceptTs        int64     `plat:\"accept_ts\" json:\"accept_ts\"`               // 领取时间\n\t\tCommitTs        int64     `plat:\"commit_ts\" json:\"commit_ts\"`               // 提交时间\n\t\tVerifyTs        int64     `plat:\"verify_ts\" json:\"verify_ts\"`               // 审核时间\n\t\tReportTs        int64     `plat:\"report_ts\" json:\"report_ts\"`               // 复审提交时间\n\t\tReportReason    string    `plat:\"report_reason\" json:\"report_reason\"`       // 复审举报理由\n\t\tReverifyTs      int64     `plat:\"reverify_ts\" json:\"reverify_ts\"`           // 复审时间\n\t\tReverifyRemark  string    `plat:\"reverify_remark\" json:\"reverify_remark\"`   // 复审备注\n\t\tReverifyAccount string    `plat:\"reverify_account\" json:\"reverify_account\"` // 复审处理人 为空则为商家处理\n\t\tExpireTs        int64     `plat:\"expire_ts\" json:\"expire_ts\"`               // 过期时间\n\t\tInspectTs       int64     `plat:\"inspect_ts\" json:\"inspect_ts\"`             // 审核周期\n\t\tAutoCompleteTs  int64     `plat:\"auto_complete_ts\" json:\"auto_complete_ts\"` // 自动完成时间\n\t\tCommitMsg       string    `plat:\"commit_msg\" json:\"commit_msg\"`             // 订单提交信息\n\t\tRefuseMsg       string    `plat:\"refuse_msg\" json:\"refuse_msg\"`             // 拒绝理由\n\t\tRemark          string    `plat:\"remark\" json:\"remark\"`                     // 订单备注\n\t\tCreatedAt       time.Time `plat:\"created_at\" json:\"created_at\"`             // 创建时间\n\t\tUpdatedAt       time.Time `plat:\"updated_at\" json:\"updated_at\"`             // 更新时间\n\t\t},\n\t\t\"msg\": \"成功\",\n\t\t\"page\": {\n\t\t\t\"TotalPage\": 1,\n\t\t\t\"TotalSize\": 1,\n\t\t\t\"CurrentPage\": 1,\n\t\t\t\"PageBarNum\": 10\n\t\t}\n\t}",
+          "content": "{\n\t\t\"code\": 200,\n\t\t\"data\": null,\n\t\t\"remark\": {\n\t\tId              int32     `plat:\"primary_key;id\" json:\"id\"`\n\t\tTaskId          int32     `plat:\"task_id\" json:\"task_id\"`                   // 任务id\n\t\tTaskType        byte      `plat:\"task_type\" json:\"task_type\"`               // 任务类型\n\t\tProject         string    `plat:\"project\" json:\"project\"`                   // 项目名称\n\t\tMerchantId      int32     `plat:\"merchant_id\" json:\"merchant_id\"`           // 卖家ID\n\t\tMerchantName    string    `plat:\"merchant_name\" json:\"merchant_name\"`       // 卖家账号\n\t\tMerchantAvatar  string    `plat:\"merchant_avatar\" json:\"merchant_avatar\"`   // 卖家头像\n\t\tUserId          int32     `plat:\"user_id\" json:\"user_id\"`                   // 买家ID\n\t\tUserName        string    `plat:\"user_name\" json:\"user_name\"`               // 买家账号\n\t\tAmount          int32     `plat:\"amount\" json:\"amount\"`                     // 任务佣金\n\t\tStep            string    `plat:\"step\" json:\"step\"`                         // 任务步骤\n\t\tResult          string    `plat:\"result\" json:\"result\"`                     // 任务提交凭证\n\t\tStatus          byte      `plat:\"status\" json:\"status\"`                     // {config: task_subscribe_status} 1: 待提交 2:待审核 3:已通过 4:已拒绝 5:待复审 6:复审失败 7:已过期\n\t\tAdminAccount    string    `plat:\"admin_account\" json:\"admin_account\"`       // 操作人账号\n\t\tAcceptTs        int64     `plat:\"accept_ts\" json:\"accept_ts\"`               // 领取时间\n\t\tCommitTs        int64     `plat:\"commit_ts\" json:\"commit_ts\"`               // 提交时间\n\t\tVerifyTs        int64     `plat:\"verify_ts\" json:\"verify_ts\"`               // 审核时间\n\t\tReportTs        int64     `plat:\"report_ts\" json:\"report_ts\"`               // 复审提交时间\n\t\tReportReason    string    `plat:\"report_reason\" json:\"report_reason\"`       // 复审举报理由\n\t\tReverifyTs      int64     `plat:\"reverify_ts\" json:\"reverify_ts\"`           // 复审时间\n\t\tReverifyRemark  string    `plat:\"reverify_remark\" json:\"reverify_remark\"`   // 复审备注\n\t\tReverifyAccount string    `plat:\"reverify_account\" json:\"reverify_account\"` // 复审处理人 为空则为商家处理\n\t\tExpireTs        int64     `plat:\"expire_ts\" json:\"expire_ts\"`               // 过期时间\n\t\tInspectTs       int64     `plat:\"inspect_ts\" json:\"inspect_ts\"`             // 审核周期\n\t\tAutoCompleteTs  int64     `plat:\"auto_complete_ts\" json:\"auto_complete_ts\"` // 自动完成时间\n\t\tCommitMsg       string    `plat:\"commit_msg\" json:\"commit_msg\"`             // 订单提交信息\n\t\tRefuseMsg       string    `plat:\"refuse_msg\" json:\"refuse_msg\"`             // 拒绝理由\n\t\tRemark          string    `plat:\"remark\" json:\"remark\"`                     // 订单备注\n\t\tCreatedAt       time.Time `plat:\"created_at\" json:\"created_at\"`             // 创建时间\n\t\tUpdatedAt       time.Time `plat:\"updated_at\" json:\"updated_at\"`             // 更新时间\n\t\t},\n\t\t\"msg\": \"成功\",\n\t\t\"page\": {\n\t\t\t\"TotalPage\": 1,\n\t\t\t\"TotalSize\": 1,\n\t\t\t\"CurrentPage\": 1,\n\t\t\t\"PageBarNum\": 10\n\t\t}\n\t}",
           "type": "json"
         }
       ]
@@ -1820,7 +2157,7 @@ define({ "api": [
   {
     "type": "put",
     "url": "/v1/task_subscribe",
-    "title": "更新接单任务",
+    "title": "更新接单任务（审核）",
     "version": "0.1.0",
     "name": "更新",
     "group": "接单任务_Subscribe",
@@ -1832,14 +2169,14 @@ define({ "api": [
             "type": "Integer",
             "optional": false,
             "field": "id",
-            "description": "<ul> <li>接单任务Id\t- {status == 2, 才可以修改}</li> </ul>"
+            "description": "<ul> <li>接单任务Id\t- {status == 2, 才可以审核}</li> </ul>"
           },
           {
             "group": "Parameter",
             "type": "Integer",
             "optional": false,
             "field": "status",
-            "description": "<p>任务状态：{ 1: 待提交 2:待审核 3:已通过 4:已拒绝 5:待复审 6:复审失败 7:已过期}</p>"
+            "description": "<p>任务状态：{config: task_subscribe_status}</p>"
           },
           {
             "group": "Parameter",
@@ -2722,7 +3059,7 @@ define({ "api": [
   },
   {
     "type": "Get",
-    "url": "/v1/site_config",
+    "url": "/v1/config",
     "title": "*** 配置信息",
     "version": "0.1.0",
     "name": "配置",
@@ -2770,7 +3107,7 @@ define({ "api": [
         }
       ]
     },
-    "filename": "app/hander/site_config.go",
+    "filename": "app/hander/config.go",
     "groupTitle": "站点相关_Site"
   },
   {
@@ -3621,21 +3958,21 @@ define({ "api": [
             "type": "Integer",
             "optional": false,
             "field": "type",
-            "description": "<p>账变形式 { 1: 加款 2：扣款 } {config : bill_type}</p>"
+            "description": "<p>账变形式 {config : bill_type}</p>"
           },
           {
             "group": "Parameter",
             "type": "Integer",
             "optional": false,
             "field": "operate",
-            "description": "<p>账变类型 { 1:存款 2:取款 3:发布任务 4:佣金 5:任务结束退回 6:提取佣金 }{config : bill_operate}</p>"
+            "description": "<p>账变类型 {config : bill_operate}</p>"
           },
           {
             "group": "Parameter",
             "type": "Integer",
             "optional": false,
             "field": "role",
-            "description": "<p>账变方案 { 1:系统处理 2:人工处理} {config : bill_role}</p>"
+            "description": "<p>账变方案 {config : bill_role}</p>"
           },
           {
             "group": "Parameter",
@@ -3690,7 +4027,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n\t\t\"code\": 200,\n\t\t\"data\": null,\n\t\t\"remark\": {\n\t\tId           int64     `plat:\"primary_key;id\" json:\"id\"`\n\t\tUserId       int32     `plat:\"user_id\" json:\"user_id\"`             // 用户ID\n\t\tUsername     string    `plat:\"username\" json:\"username\"`           // 用户名\n\t\tPhone        string    `plat:\"phone\" json:\"phone\"`                 // 手机号\n\t\tType         byte      `plat:\"type\" json:\"type\"`                   // 账变类型(1:加钱 2:扣钱)\n\t\tOperate      byte      `plat:\"operate\" json:\"operate\"`             // 1:存款 2:取款 3:发布任务 4:佣金 5:任务结束退回 6:提取佣金\n\t\tSrc          int32     `plat:\"src\" json:\"src\"`                     // 来源ID，默认为系统：0\n\t\tTaskId       int32     `plat:\"task_id\" json:\"task_id\"`             // 任务Id 当类型为发布任务或者获得佣金时此id生效\n\t\tStatus       byte      `plat:\"status\" json:\"status\"`               // 状态 1:待处理 2:成功 3:失败\n\t\tAmount       int32     `plat:\"amount\" json:\"amount\"`               // 交易金额\n\t\tBeforeAmount int32     `plat:\"before_amount\" json:\"before_amount\"` // 变动前金额\n\t\tAfterAmount  int32     `plat:\"after_amount\" json:\"after_amount\"`   // 变动后金额\n\t\tDesc         string    `plat:\"desc\" json:\"desc\"`                   // 账变描述\n\t\tCreatedAt    time.Time `plat:\"created_at\" json:\"created_at\"`       // 创建时间\n\t\tUpdatedAt    time.Time `plat:\"updated_at\" json:\"updated_at\"`       // 更新时间\n\t\t},\n\t\t\"msg\": \"成功\",\n\t\t\"page\": {\n\t\t\t\"TotalPage\": 1,\n\t\t\t\"TotalSize\": 1,\n\t\t\t\"CurrentPage\": 1,\n\t\t\t\"PageBarNum\": 10\n\t\t}\n\t}",
+          "content": "{\n\t\t\"code\": 200,\n\t\t\"data\": null,\n\t\t\"remark\": {\n\t\tId           int64     `plat:\"primary_key;id\" json:\"id\"`\n\t\tUserId       int32     `plat:\"user_id\" json:\"user_id\"`             // 用户ID\n\t\tUsername     string    `plat:\"username\" json:\"username\"`           // 用户名\n\t\tPhone        string    `plat:\"phone\" json:\"phone\"`                 // 手机号\n\t\tType         byte      `plat:\"type\" json:\"type\"`                   // 账变类型(1:加钱 2:扣钱)\n\t\tOperate      byte      `plat:\"operate\" json:\"operate\"`             // 1:存款 2:取款 3:发布任务 4:佣金 5:任务结束退回 6:提取佣金\n\t\tSrc          int32     `plat:\"src\" json:\"src\"`                     // 来源ID，默认为系统：0\n\t\tRole         byte      `plat:\"role\" json:\"role\"`                   // 账变角色\n\t\tAmount       int32     `plat:\"amount\" json:\"amount\"`               // 交易金额\n\t\tBeforeAmount int32     `plat:\"before_amount\" json:\"before_amount\"` // 变动前金额\n\t\tAfterAmount  int32     `plat:\"after_amount\" json:\"after_amount\"`   // 变动后金额\n\t\tDesc         string    `plat:\"desc\" json:\"desc\"`                   // 账变描述\n\t\tCreatedAt    time.Time `plat:\"created_at\" json:\"created_at\"`       // 创建时间\n\t\tUpdatedAt    time.Time `plat:\"updated_at\" json:\"updated_at\"`       // 更新时间\n\t\t},\n\t\t\"msg\": \"成功\",\n\t\t\"page\": {\n\t\t\t\"TotalPage\": 1,\n\t\t\t\"TotalSize\": 1,\n\t\t\t\"CurrentPage\": 1,\n\t\t\t\"PageBarNum\": 10\n\t\t}\n\t}",
           "type": "json"
         }
       ]
@@ -3706,5 +4043,695 @@ define({ "api": [
     },
     "filename": "app/hander/bill.go",
     "groupTitle": "账单管理_Bill"
+  },
+  {
+    "type": "get",
+    "url": "/v1/site_configs",
+    "title": "配置列表",
+    "version": "0.1.0",
+    "name": "列表",
+    "group": "配置_Configs",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "page",
+            "description": "<p>1</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "page_size",
+            "description": "<p>20</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "id",
+            "description": "<p>单条信息详情</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "option_code",
+            "description": "<p>code</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "option_name",
+            "description": "<p>配置名</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "type_id",
+            "description": "<p>配置类型选项查询 {api : get /v1/site_configs_type}</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Integer",
+            "optional": false,
+            "field": "code",
+            "description": "<p>标识码 200：成功</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>数据</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>提示信息</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n\t\"code\": 200,\n\t\"data\": 1000000006,\n\t\"remark\": {\n\tId              int32     `plat:\"primary_key;id\" json:\"id\"`\n\tOptionName      string    `plat:\"option_name\" json:\"option_name\"`             // 选项名称\n\tOptionCode      string    `plat:\"option_code\" json:\"option_code\"`             // 选项code\n\tOptionDescribe  string    `plat:\"option_describe\" json:\"option_describe\"`     // 选项描述\n\tTypeId          int32     `plat:\"type_id\" json:\"type_id\"`                     // 配置类型\n\tFromId          int32     `plat:\"from_id\" json:\"from_id\"`                     // 表单类型 {config: site_configs_from_type}\n\tBussinessTypeId int32     `plat:\"bussiness_type_id\" json:\"bussiness_type_id\"` // 业务类型\n\tUnits           string    `plat:\"units\" json:\"units\"`                         // 单位\n\tValueType       int32     `plat:\"value_type\" json:\"value_type\"`               // 值类型  {config : site_configs_value_type}\n\tValue           string    `plat:\"value\" json:\"value\"`                         // 值\n\tCreatedAt       time.Time `plat:\"created_at\" json:\"created_at\"`               // 创建时间\n\tUpdatedAt       time.Time `plat:\"updated_at\" json:\"updated_at\"`               // 更新时间\n\t},\n\t\"msg\": \"成功\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n  \t\"code\": 201,\n   \t\"data\": null\n   \t\"msg\": \"失败提示\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/hander/config/site_configs.go",
+    "groupTitle": "配置_Configs"
+  },
+  {
+    "type": "put",
+    "url": "/v1/site_configs",
+    "title": "更新配置",
+    "version": "0.1.0",
+    "name": "更新",
+    "group": "配置_Configs",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "id",
+            "description": "<ul> <li>类型id</li> </ul>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "option_name",
+            "description": "<ul> <li>配置名称\t{ &gt; 2个字符}</li> </ul>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "option_code",
+            "description": "<ul> <li>配置code\t{ &gt; 2个字符}</li> </ul>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "option_describe",
+            "description": "<ul> <li>描述</li> </ul>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "type_id",
+            "description": "<ul> <li>配置类型选项查询 {api : get /v1/site_configs_type}</li> </ul>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "from_id",
+            "description": "<ul> <li>表单类型 {config: site_configs_from_type}</li> </ul>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "units",
+            "description": "<ul> <li>单位 {元 份 %}</li> </ul>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "value_type",
+            "description": "<ul> <li>类型 { config : site_configs_value_type }</li> </ul>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "value",
+            "description": "<ul> <li>值</li> </ul>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Integer",
+            "optional": false,
+            "field": "code",
+            "description": "<p>标识码 200：成功</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>数据</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>提示信息</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n\t\"code\": 200,\n\t\"data\": 1000000006,\n\t\"msg\": \"成功\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n  \t\"code\": 201,\n   \t\"data\": null\n   \t\"msg\": \"失败提示\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/hander/config/site_configs.go",
+    "groupTitle": "配置_Configs"
+  },
+  {
+    "type": "post",
+    "url": "/v1/site_configs",
+    "title": "添加配置",
+    "version": "0.1.0",
+    "name": "添加",
+    "group": "配置_Configs",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "option_name",
+            "description": "<ul> <li>配置名称\t{ &gt; 2个字符}</li> </ul>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "option_code",
+            "description": "<ul> <li>配置code\t{ &gt; 2个字符}</li> </ul>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "option_describe",
+            "description": "<ul> <li>描述</li> </ul>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "type_id",
+            "description": "<ul> <li>配置类型选项查询 {api : get /v1/site_configs_type}</li> </ul>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "from_id",
+            "description": "<ul> <li>表单类型 {config: site_configs_from_type}</li> </ul>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "units",
+            "description": "<ul> <li>单位 {元 份 %}</li> </ul>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "value_type",
+            "description": "<ul> <li>类型 { config : site_configs_value_type }</li> </ul>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "value",
+            "description": "<ul> <li>值</li> </ul>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Integer",
+            "optional": false,
+            "field": "code",
+            "description": "<p>标识码 200：成功</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>数据</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>提示信息</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n\t\"code\": 200,\n\t\"data\": 1000000006,\n\t\"msg\": \"成功\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n  \t\"code\": 201,\n   \t\"data\": null\n   \t\"msg\": \"失败提示\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/hander/config/site_configs.go",
+    "groupTitle": "配置_Configs"
+  },
+  {
+    "type": "get",
+    "url": "/v1/site_type_config",
+    "title": "配置下属列表(遍历)",
+    "version": "0.1.0",
+    "name": "遍历列表",
+    "group": "配置_Configs",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "type_id",
+            "description": "<ul> <li>配置类型id</li> </ul>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Integer",
+            "optional": false,
+            "field": "code",
+            "description": "<p>标识码 200：成功</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>数据</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>提示信息</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n\t\"code\": 200,\n\t\"data\": 1000000006,\n\t\"msg\": \"成功\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n  \t\"code\": 201,\n   \t\"data\": null\n   \t\"msg\": \"失败提示\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/hander/config/site_configs.go",
+    "groupTitle": "配置_Configs"
+  },
+  {
+    "type": "patch",
+    "url": "/v1/site_configs",
+    "title": "更新(遍历)配置参数",
+    "version": "0.1.0",
+    "name": "配置参数",
+    "group": "配置_Configs",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "type_id",
+            "description": "<ul> <li>类型id</li> </ul>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "options",
+            "description": "<ul> <li>配置项参数json\t[{&quot;id&quot;: 1,&quot;option_code&quot;:&quot;task_money_min&quot;,&quot;value&quot;: 1110},{&quot;id&quot;: 2,&quot;option_code&quot;:&quot;task_count_min&quot;,&quot;value&quot;:112}]</li> </ul>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Integer",
+            "optional": false,
+            "field": "code",
+            "description": "<p>标识码 200：成功</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>数据</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>提示信息</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n\t\"code\": 200,\n\t\"data\": 1000000006,\n\t\"msg\": \"成功\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n  \t\"code\": 201,\n   \t\"data\": null\n   \t\"msg\": \"失败提示\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/hander/config/site_configs.go",
+    "groupTitle": "配置_Configs"
+  },
+  {
+    "type": "get",
+    "url": "/v1/site_configs_type",
+    "title": "配置类型选项",
+    "version": "0.1.0",
+    "name": "列表",
+    "group": "配置类型_ConfigType",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Integer",
+            "optional": false,
+            "field": "code",
+            "description": "<p>标识码 200：成功</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>数据</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>提示信息</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n\t\"code\": 200,\n\t\"data\": 1000000006,\n\t\"remark\": {\n\tId        int32     `plat:\"primary_key;id\" json:\"id\"`\n\tName      string    `plat:\"name\" json:\"name\"`             // 类型名称\n\tStatus    byte      `plat:\"status\" json:\"status\"`         // 1: 启用 2：禁用\n\tCreatedAt time.Time `plat:\"created_at\" json:\"created_at\"` // 创建时间\n\tUpdatedAt time.Time `plat:\"updated_at\" json:\"updated_at\"` // 更新时间\n\t},\n\t\"msg\": \"成功\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n  \t\"code\": 201,\n   \t\"data\": null\n   \t\"msg\": \"失败提示\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/hander/config/site_configs_type.go",
+    "groupTitle": "配置类型_ConfigType"
+  },
+  {
+    "type": "post",
+    "url": "/v1/site_configs_type",
+    "title": "修改配置类型",
+    "version": "0.1.0",
+    "name": "更新",
+    "group": "配置类型_ConfigType",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "id",
+            "description": "<ul> <li>类型id</li> </ul>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<ul> <li>类型名称 { &gt; 2个字符}</li> </ul>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "status",
+            "description": "<ul> <li>状态 \t{ 1：启用 2：禁用 } {config: site_config_type}</li> </ul>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Integer",
+            "optional": false,
+            "field": "code",
+            "description": "<p>标识码 200：成功</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>数据</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>提示信息</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n\t\"code\": 200,\n\t\"data\": 1000000006,\n\t\"msg\": \"成功\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n  \t\"code\": 201,\n   \t\"data\": null\n   \t\"msg\": \"失败提示\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/hander/config/site_configs_type.go",
+    "groupTitle": "配置类型_ConfigType"
+  },
+  {
+    "type": "post",
+    "url": "/v1/site_configs_type",
+    "title": "添加配置类型",
+    "version": "0.1.0",
+    "name": "添加",
+    "group": "配置类型_ConfigType",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "id",
+            "description": "<ul> <li>类型id</li> </ul>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<ul> <li>类型名称 { &gt; 2个字符}</li> </ul>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "status",
+            "description": "<ul> <li>状态 \t{ 1：启用 2：禁用 } {config: site_config_type}</li> </ul>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Integer",
+            "optional": false,
+            "field": "code",
+            "description": "<p>标识码 200：成功</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>数据</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>提示信息</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n\t\"code\": 200,\n\t\"data\": 1000000006,\n\t\"msg\": \"成功\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n  \t\"code\": 201,\n   \t\"data\": null\n   \t\"msg\": \"失败提示\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/hander/config/site_configs_type.go",
+    "groupTitle": "配置类型_ConfigType"
   }
 ] });

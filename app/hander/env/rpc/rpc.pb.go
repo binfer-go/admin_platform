@@ -24,11 +24,451 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
+type LockType int32
+
+const (
+	LockType_LockTypeNone     LockType = 0
+	LockType_LockTypeWithdraw LockType = 1
+	LockType_LockTypeDeposit  LockType = 2
+)
+
+var LockType_name = map[int32]string{
+	0: "LockTypeNone",
+	1: "LockTypeWithdraw",
+	2: "LockTypeDeposit",
+}
+
+var LockType_value = map[string]int32{
+	"LockTypeNone":     0,
+	"LockTypeWithdraw": 1,
+	"LockTypeDeposit":  2,
+}
+
+func (x LockType) String() string {
+	return proto.EnumName(LockType_name, int32(x))
+}
+
+func (LockType) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_77a6da22d6a3feb1, []int{0}
+}
+
+type Wallet int32
+
+const (
+	Wallet_WalletNone       Wallet = 0
+	Wallet_WalletBalance    Wallet = 1
+	Wallet_WalletCommission Wallet = 2
+)
+
+var Wallet_name = map[int32]string{
+	0: "WalletNone",
+	1: "WalletBalance",
+	2: "WalletCommission",
+}
+
+var Wallet_value = map[string]int32{
+	"WalletNone":       0,
+	"WalletBalance":    1,
+	"WalletCommission": 2,
+}
+
+func (x Wallet) String() string {
+	return proto.EnumName(Wallet_name, int32(x))
+}
+
+func (Wallet) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_77a6da22d6a3feb1, []int{1}
+}
+
+type RecordLockRequest struct {
+	Type                 LockType `protobuf:"varint,1,opt,name=type,proto3,enum=rpc.LockType" json:"type,omitempty"`
+	Id                   int32    `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	Account              string   `protobuf:"bytes,3,opt,name=account,proto3" json:"account,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RecordLockRequest) Reset()         { *m = RecordLockRequest{} }
+func (m *RecordLockRequest) String() string { return proto.CompactTextString(m) }
+func (*RecordLockRequest) ProtoMessage()    {}
+func (*RecordLockRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_77a6da22d6a3feb1, []int{0}
+}
+
+func (m *RecordLockRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RecordLockRequest.Unmarshal(m, b)
+}
+func (m *RecordLockRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RecordLockRequest.Marshal(b, m, deterministic)
+}
+func (m *RecordLockRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RecordLockRequest.Merge(m, src)
+}
+func (m *RecordLockRequest) XXX_Size() int {
+	return xxx_messageInfo_RecordLockRequest.Size(m)
+}
+func (m *RecordLockRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_RecordLockRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RecordLockRequest proto.InternalMessageInfo
+
+func (m *RecordLockRequest) GetType() LockType {
+	if m != nil {
+		return m.Type
+	}
+	return LockType_LockTypeNone
+}
+
+func (m *RecordLockRequest) GetId() int32 {
+	if m != nil {
+		return m.Id
+	}
+	return 0
+}
+
+func (m *RecordLockRequest) GetAccount() string {
+	if m != nil {
+		return m.Account
+	}
+	return ""
+}
+
+type RecordLockResponse struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RecordLockResponse) Reset()         { *m = RecordLockResponse{} }
+func (m *RecordLockResponse) String() string { return proto.CompactTextString(m) }
+func (*RecordLockResponse) ProtoMessage()    {}
+func (*RecordLockResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_77a6da22d6a3feb1, []int{1}
+}
+
+func (m *RecordLockResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RecordLockResponse.Unmarshal(m, b)
+}
+func (m *RecordLockResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RecordLockResponse.Marshal(b, m, deterministic)
+}
+func (m *RecordLockResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RecordLockResponse.Merge(m, src)
+}
+func (m *RecordLockResponse) XXX_Size() int {
+	return xxx_messageInfo_RecordLockResponse.Size(m)
+}
+func (m *RecordLockResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_RecordLockResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RecordLockResponse proto.InternalMessageInfo
+
+type HandleWithdrawRequest struct {
+	Id                   int32    `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Status               bool     `protobuf:"varint,2,opt,name=status,proto3" json:"status,omitempty"`
+	Account              string   `protobuf:"bytes,3,opt,name=account,proto3" json:"account,omitempty"`
+	Remark               string   `protobuf:"bytes,4,opt,name=remark,proto3" json:"remark,omitempty"`
+	Amount               int32    `protobuf:"varint,5,opt,name=amount,proto3" json:"amount,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *HandleWithdrawRequest) Reset()         { *m = HandleWithdrawRequest{} }
+func (m *HandleWithdrawRequest) String() string { return proto.CompactTextString(m) }
+func (*HandleWithdrawRequest) ProtoMessage()    {}
+func (*HandleWithdrawRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_77a6da22d6a3feb1, []int{2}
+}
+
+func (m *HandleWithdrawRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_HandleWithdrawRequest.Unmarshal(m, b)
+}
+func (m *HandleWithdrawRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_HandleWithdrawRequest.Marshal(b, m, deterministic)
+}
+func (m *HandleWithdrawRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_HandleWithdrawRequest.Merge(m, src)
+}
+func (m *HandleWithdrawRequest) XXX_Size() int {
+	return xxx_messageInfo_HandleWithdrawRequest.Size(m)
+}
+func (m *HandleWithdrawRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_HandleWithdrawRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_HandleWithdrawRequest proto.InternalMessageInfo
+
+func (m *HandleWithdrawRequest) GetId() int32 {
+	if m != nil {
+		return m.Id
+	}
+	return 0
+}
+
+func (m *HandleWithdrawRequest) GetStatus() bool {
+	if m != nil {
+		return m.Status
+	}
+	return false
+}
+
+func (m *HandleWithdrawRequest) GetAccount() string {
+	if m != nil {
+		return m.Account
+	}
+	return ""
+}
+
+func (m *HandleWithdrawRequest) GetRemark() string {
+	if m != nil {
+		return m.Remark
+	}
+	return ""
+}
+
+func (m *HandleWithdrawRequest) GetAmount() int32 {
+	if m != nil {
+		return m.Amount
+	}
+	return 0
+}
+
+type HandleWithdrawResponse struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *HandleWithdrawResponse) Reset()         { *m = HandleWithdrawResponse{} }
+func (m *HandleWithdrawResponse) String() string { return proto.CompactTextString(m) }
+func (*HandleWithdrawResponse) ProtoMessage()    {}
+func (*HandleWithdrawResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_77a6da22d6a3feb1, []int{3}
+}
+
+func (m *HandleWithdrawResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_HandleWithdrawResponse.Unmarshal(m, b)
+}
+func (m *HandleWithdrawResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_HandleWithdrawResponse.Marshal(b, m, deterministic)
+}
+func (m *HandleWithdrawResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_HandleWithdrawResponse.Merge(m, src)
+}
+func (m *HandleWithdrawResponse) XXX_Size() int {
+	return xxx_messageInfo_HandleWithdrawResponse.Size(m)
+}
+func (m *HandleWithdrawResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_HandleWithdrawResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_HandleWithdrawResponse proto.InternalMessageInfo
+
+type HandleRechargeRequest struct {
+	Id                   int32    `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Status               bool     `protobuf:"varint,2,opt,name=status,proto3" json:"status,omitempty"`
+	Account              string   `protobuf:"bytes,3,opt,name=account,proto3" json:"account,omitempty"`
+	Remark               string   `protobuf:"bytes,4,opt,name=remark,proto3" json:"remark,omitempty"`
+	Amount               int32    `protobuf:"varint,5,opt,name=amount,proto3" json:"amount,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *HandleRechargeRequest) Reset()         { *m = HandleRechargeRequest{} }
+func (m *HandleRechargeRequest) String() string { return proto.CompactTextString(m) }
+func (*HandleRechargeRequest) ProtoMessage()    {}
+func (*HandleRechargeRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_77a6da22d6a3feb1, []int{4}
+}
+
+func (m *HandleRechargeRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_HandleRechargeRequest.Unmarshal(m, b)
+}
+func (m *HandleRechargeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_HandleRechargeRequest.Marshal(b, m, deterministic)
+}
+func (m *HandleRechargeRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_HandleRechargeRequest.Merge(m, src)
+}
+func (m *HandleRechargeRequest) XXX_Size() int {
+	return xxx_messageInfo_HandleRechargeRequest.Size(m)
+}
+func (m *HandleRechargeRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_HandleRechargeRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_HandleRechargeRequest proto.InternalMessageInfo
+
+func (m *HandleRechargeRequest) GetId() int32 {
+	if m != nil {
+		return m.Id
+	}
+	return 0
+}
+
+func (m *HandleRechargeRequest) GetStatus() bool {
+	if m != nil {
+		return m.Status
+	}
+	return false
+}
+
+func (m *HandleRechargeRequest) GetAccount() string {
+	if m != nil {
+		return m.Account
+	}
+	return ""
+}
+
+func (m *HandleRechargeRequest) GetRemark() string {
+	if m != nil {
+		return m.Remark
+	}
+	return ""
+}
+
+func (m *HandleRechargeRequest) GetAmount() int32 {
+	if m != nil {
+		return m.Amount
+	}
+	return 0
+}
+
+type HandleRechargeResponse struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *HandleRechargeResponse) Reset()         { *m = HandleRechargeResponse{} }
+func (m *HandleRechargeResponse) String() string { return proto.CompactTextString(m) }
+func (*HandleRechargeResponse) ProtoMessage()    {}
+func (*HandleRechargeResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_77a6da22d6a3feb1, []int{5}
+}
+
+func (m *HandleRechargeResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_HandleRechargeResponse.Unmarshal(m, b)
+}
+func (m *HandleRechargeResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_HandleRechargeResponse.Marshal(b, m, deterministic)
+}
+func (m *HandleRechargeResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_HandleRechargeResponse.Merge(m, src)
+}
+func (m *HandleRechargeResponse) XXX_Size() int {
+	return xxx_messageInfo_HandleRechargeResponse.Size(m)
+}
+func (m *HandleRechargeResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_HandleRechargeResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_HandleRechargeResponse proto.InternalMessageInfo
+
+type HandleReportRequest struct {
+	Id                   int32    `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Status               bool     `protobuf:"varint,2,opt,name=status,proto3" json:"status,omitempty"`
+	Account              string   `protobuf:"bytes,3,opt,name=account,proto3" json:"account,omitempty"`
+	Remark               string   `protobuf:"bytes,4,opt,name=remark,proto3" json:"remark,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *HandleReportRequest) Reset()         { *m = HandleReportRequest{} }
+func (m *HandleReportRequest) String() string { return proto.CompactTextString(m) }
+func (*HandleReportRequest) ProtoMessage()    {}
+func (*HandleReportRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_77a6da22d6a3feb1, []int{6}
+}
+
+func (m *HandleReportRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_HandleReportRequest.Unmarshal(m, b)
+}
+func (m *HandleReportRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_HandleReportRequest.Marshal(b, m, deterministic)
+}
+func (m *HandleReportRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_HandleReportRequest.Merge(m, src)
+}
+func (m *HandleReportRequest) XXX_Size() int {
+	return xxx_messageInfo_HandleReportRequest.Size(m)
+}
+func (m *HandleReportRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_HandleReportRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_HandleReportRequest proto.InternalMessageInfo
+
+func (m *HandleReportRequest) GetId() int32 {
+	if m != nil {
+		return m.Id
+	}
+	return 0
+}
+
+func (m *HandleReportRequest) GetStatus() bool {
+	if m != nil {
+		return m.Status
+	}
+	return false
+}
+
+func (m *HandleReportRequest) GetAccount() string {
+	if m != nil {
+		return m.Account
+	}
+	return ""
+}
+
+func (m *HandleReportRequest) GetRemark() string {
+	if m != nil {
+		return m.Remark
+	}
+	return ""
+}
+
+type HandleReportResponse struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *HandleReportResponse) Reset()         { *m = HandleReportResponse{} }
+func (m *HandleReportResponse) String() string { return proto.CompactTextString(m) }
+func (*HandleReportResponse) ProtoMessage()    {}
+func (*HandleReportResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_77a6da22d6a3feb1, []int{7}
+}
+
+func (m *HandleReportResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_HandleReportResponse.Unmarshal(m, b)
+}
+func (m *HandleReportResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_HandleReportResponse.Marshal(b, m, deterministic)
+}
+func (m *HandleReportResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_HandleReportResponse.Merge(m, src)
+}
+func (m *HandleReportResponse) XXX_Size() int {
+	return xxx_messageInfo_HandleReportResponse.Size(m)
+}
+func (m *HandleReportResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_HandleReportResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_HandleReportResponse proto.InternalMessageInfo
+
 type TaskVerifyRequest struct {
 	Id                   int32    `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	Status               bool     `protobuf:"varint,2,opt,name=status,proto3" json:"status,omitempty"`
 	Remark               string   `protobuf:"bytes,3,opt,name=remark,proto3" json:"remark,omitempty"`
-	Rate                 uint32   `protobuf:"varint,4,opt,name=rate,proto3" json:"rate,omitempty"`
+	Rate                 float64  `protobuf:"fixed64,4,opt,name=rate,proto3" json:"rate,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -38,7 +478,7 @@ func (m *TaskVerifyRequest) Reset()         { *m = TaskVerifyRequest{} }
 func (m *TaskVerifyRequest) String() string { return proto.CompactTextString(m) }
 func (*TaskVerifyRequest) ProtoMessage()    {}
 func (*TaskVerifyRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_77a6da22d6a3feb1, []int{0}
+	return fileDescriptor_77a6da22d6a3feb1, []int{8}
 }
 
 func (m *TaskVerifyRequest) XXX_Unmarshal(b []byte) error {
@@ -80,7 +520,7 @@ func (m *TaskVerifyRequest) GetRemark() string {
 	return ""
 }
 
-func (m *TaskVerifyRequest) GetRate() uint32 {
+func (m *TaskVerifyRequest) GetRate() float64 {
 	if m != nil {
 		return m.Rate
 	}
@@ -97,7 +537,7 @@ func (m *TaskVerifyResponse) Reset()         { *m = TaskVerifyResponse{} }
 func (m *TaskVerifyResponse) String() string { return proto.CompactTextString(m) }
 func (*TaskVerifyResponse) ProtoMessage()    {}
 func (*TaskVerifyResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_77a6da22d6a3feb1, []int{1}
+	return fileDescriptor_77a6da22d6a3feb1, []int{9}
 }
 
 func (m *TaskVerifyResponse) XXX_Unmarshal(b []byte) error {
@@ -118,27 +558,181 @@ func (m *TaskVerifyResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_TaskVerifyResponse proto.InternalMessageInfo
 
+type ManualUserAmountRequest struct {
+	UserId               int32    `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Username             string   `protobuf:"bytes,2,opt,name=username,proto3" json:"username,omitempty"`
+	Phone                string   `protobuf:"bytes,3,opt,name=phone,proto3" json:"phone,omitempty"`
+	Amount               int32    `protobuf:"varint,4,opt,name=amount,proto3" json:"amount,omitempty"`
+	Account              string   `protobuf:"bytes,5,opt,name=account,proto3" json:"account,omitempty"`
+	Status               bool     `protobuf:"varint,6,opt,name=status,proto3" json:"status,omitempty"`
+	Wallet               Wallet   `protobuf:"varint,7,opt,name=wallet,proto3,enum=rpc.Wallet" json:"wallet,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ManualUserAmountRequest) Reset()         { *m = ManualUserAmountRequest{} }
+func (m *ManualUserAmountRequest) String() string { return proto.CompactTextString(m) }
+func (*ManualUserAmountRequest) ProtoMessage()    {}
+func (*ManualUserAmountRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_77a6da22d6a3feb1, []int{10}
+}
+
+func (m *ManualUserAmountRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ManualUserAmountRequest.Unmarshal(m, b)
+}
+func (m *ManualUserAmountRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ManualUserAmountRequest.Marshal(b, m, deterministic)
+}
+func (m *ManualUserAmountRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ManualUserAmountRequest.Merge(m, src)
+}
+func (m *ManualUserAmountRequest) XXX_Size() int {
+	return xxx_messageInfo_ManualUserAmountRequest.Size(m)
+}
+func (m *ManualUserAmountRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_ManualUserAmountRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ManualUserAmountRequest proto.InternalMessageInfo
+
+func (m *ManualUserAmountRequest) GetUserId() int32 {
+	if m != nil {
+		return m.UserId
+	}
+	return 0
+}
+
+func (m *ManualUserAmountRequest) GetUsername() string {
+	if m != nil {
+		return m.Username
+	}
+	return ""
+}
+
+func (m *ManualUserAmountRequest) GetPhone() string {
+	if m != nil {
+		return m.Phone
+	}
+	return ""
+}
+
+func (m *ManualUserAmountRequest) GetAmount() int32 {
+	if m != nil {
+		return m.Amount
+	}
+	return 0
+}
+
+func (m *ManualUserAmountRequest) GetAccount() string {
+	if m != nil {
+		return m.Account
+	}
+	return ""
+}
+
+func (m *ManualUserAmountRequest) GetStatus() bool {
+	if m != nil {
+		return m.Status
+	}
+	return false
+}
+
+func (m *ManualUserAmountRequest) GetWallet() Wallet {
+	if m != nil {
+		return m.Wallet
+	}
+	return Wallet_WalletNone
+}
+
+type ManualUserAmountResponse struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ManualUserAmountResponse) Reset()         { *m = ManualUserAmountResponse{} }
+func (m *ManualUserAmountResponse) String() string { return proto.CompactTextString(m) }
+func (*ManualUserAmountResponse) ProtoMessage()    {}
+func (*ManualUserAmountResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_77a6da22d6a3feb1, []int{11}
+}
+
+func (m *ManualUserAmountResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ManualUserAmountResponse.Unmarshal(m, b)
+}
+func (m *ManualUserAmountResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ManualUserAmountResponse.Marshal(b, m, deterministic)
+}
+func (m *ManualUserAmountResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ManualUserAmountResponse.Merge(m, src)
+}
+func (m *ManualUserAmountResponse) XXX_Size() int {
+	return xxx_messageInfo_ManualUserAmountResponse.Size(m)
+}
+func (m *ManualUserAmountResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_ManualUserAmountResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ManualUserAmountResponse proto.InternalMessageInfo
+
 func init() {
+	proto.RegisterEnum("rpc.LockType", LockType_name, LockType_value)
+	proto.RegisterEnum("rpc.Wallet", Wallet_name, Wallet_value)
+	proto.RegisterType((*RecordLockRequest)(nil), "rpc.RecordLockRequest")
+	proto.RegisterType((*RecordLockResponse)(nil), "rpc.RecordLockResponse")
+	proto.RegisterType((*HandleWithdrawRequest)(nil), "rpc.HandleWithdrawRequest")
+	proto.RegisterType((*HandleWithdrawResponse)(nil), "rpc.HandleWithdrawResponse")
+	proto.RegisterType((*HandleRechargeRequest)(nil), "rpc.HandleRechargeRequest")
+	proto.RegisterType((*HandleRechargeResponse)(nil), "rpc.HandleRechargeResponse")
+	proto.RegisterType((*HandleReportRequest)(nil), "rpc.HandleReportRequest")
+	proto.RegisterType((*HandleReportResponse)(nil), "rpc.HandleReportResponse")
 	proto.RegisterType((*TaskVerifyRequest)(nil), "rpc.TaskVerifyRequest")
 	proto.RegisterType((*TaskVerifyResponse)(nil), "rpc.TaskVerifyResponse")
+	proto.RegisterType((*ManualUserAmountRequest)(nil), "rpc.ManualUserAmountRequest")
+	proto.RegisterType((*ManualUserAmountResponse)(nil), "rpc.ManualUserAmountResponse")
 }
 
 func init() { proto.RegisterFile("rpc.proto", fileDescriptor_77a6da22d6a3feb1) }
 
 var fileDescriptor_77a6da22d6a3feb1 = []byte{
-	// 181 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0xe2, 0x2c, 0x2a, 0x48, 0xd6,
-	0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x2e, 0x2a, 0x48, 0x56, 0x4a, 0xe7, 0x12, 0x0c, 0x49,
-	0x2c, 0xce, 0x0e, 0x4b, 0x2d, 0xca, 0x4c, 0xab, 0x0c, 0x4a, 0x2d, 0x2c, 0x4d, 0x2d, 0x2e, 0x11,
-	0xe2, 0xe3, 0x62, 0xca, 0x4c, 0x91, 0x60, 0x54, 0x60, 0xd4, 0x60, 0x0d, 0x62, 0xca, 0x4c, 0x11,
-	0x12, 0xe3, 0x62, 0x2b, 0x2e, 0x49, 0x2c, 0x29, 0x2d, 0x96, 0x60, 0x52, 0x60, 0xd4, 0xe0, 0x08,
-	0x82, 0xf2, 0x40, 0xe2, 0x45, 0xa9, 0xb9, 0x89, 0x45, 0xd9, 0x12, 0xcc, 0x0a, 0x8c, 0x1a, 0x9c,
-	0x41, 0x50, 0x9e, 0x90, 0x10, 0x17, 0x4b, 0x51, 0x62, 0x49, 0xaa, 0x04, 0x8b, 0x02, 0xa3, 0x06,
-	0x6f, 0x10, 0x98, 0xad, 0x24, 0xc2, 0x25, 0x84, 0x6c, 0x51, 0x71, 0x41, 0x7e, 0x5e, 0x71, 0xaa,
-	0x91, 0x07, 0x17, 0x0b, 0x48, 0x54, 0xc8, 0x81, 0x8b, 0x1b, 0x44, 0x7b, 0xe6, 0x15, 0x17, 0xa4,
-	0x26, 0x97, 0x08, 0x89, 0xe9, 0x81, 0x9c, 0x89, 0xe1, 0x30, 0x29, 0x71, 0x0c, 0x71, 0x88, 0x39,
-	0x4a, 0x0c, 0x49, 0x6c, 0x60, 0x4f, 0x19, 0x03, 0x02, 0x00, 0x00, 0xff, 0xff, 0xd6, 0x93, 0x6d,
-	0x5f, 0xe1, 0x00, 0x00, 0x00,
+	// 575 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xcc, 0x55, 0xcd, 0x6e, 0xd3, 0x40,
+	0x10, 0x8e, 0xf3, 0xe3, 0x24, 0xd3, 0x36, 0x38, 0xdb, 0x90, 0x18, 0x03, 0x52, 0x30, 0x97, 0xa8,
+	0x87, 0x1e, 0xca, 0x03, 0x40, 0x0b, 0x08, 0x2a, 0x7e, 0x24, 0xac, 0x42, 0x8f, 0xb0, 0xd8, 0x43,
+	0x63, 0x25, 0xd9, 0x35, 0xbb, 0x1b, 0x55, 0x79, 0x04, 0xde, 0x8a, 0x77, 0xe0, 0x85, 0x90, 0xd7,
+	0xeb, 0xc4, 0x8e, 0x93, 0x03, 0x07, 0xa4, 0xde, 0x76, 0x66, 0xbc, 0xdf, 0xf7, 0xcd, 0xec, 0xcc,
+	0x18, 0xba, 0x22, 0x09, 0x4f, 0x13, 0xc1, 0x15, 0x27, 0x0d, 0x91, 0x84, 0xfe, 0x37, 0xe8, 0x07,
+	0x18, 0x72, 0x11, 0xbd, 0xe7, 0xe1, 0x2c, 0xc0, 0x9f, 0x4b, 0x94, 0x8a, 0x3c, 0x81, 0xa6, 0x5a,
+	0x25, 0xe8, 0x5a, 0x63, 0x6b, 0xd2, 0x3b, 0x3b, 0x3a, 0x4d, 0xef, 0xa4, 0xf1, 0xab, 0x55, 0x82,
+	0x81, 0x0e, 0x91, 0x1e, 0xd4, 0xe3, 0xc8, 0xad, 0x8f, 0xad, 0x49, 0x2b, 0xa8, 0xc7, 0x11, 0x71,
+	0xa1, 0x4d, 0xc3, 0x90, 0x2f, 0x99, 0x72, 0x1b, 0x63, 0x6b, 0xd2, 0x0d, 0x72, 0xd3, 0x1f, 0x00,
+	0x29, 0x32, 0xc8, 0x84, 0x33, 0x89, 0xfe, 0x2f, 0x0b, 0xee, 0xbf, 0xa5, 0x2c, 0x9a, 0xe3, 0x75,
+	0xac, 0xa6, 0x91, 0xa0, 0xb7, 0x39, 0x79, 0x86, 0x6c, 0xad, 0x91, 0x87, 0x60, 0x4b, 0x45, 0xd5,
+	0x52, 0x6a, 0xb6, 0x4e, 0x60, 0xac, 0xfd, 0x8c, 0xe9, 0x0d, 0x81, 0x0b, 0x2a, 0x66, 0x6e, 0x53,
+	0x07, 0x8c, 0x95, 0xfa, 0xe9, 0x42, 0x5f, 0x68, 0x69, 0x74, 0x63, 0xf9, 0x2e, 0x0c, 0xb7, 0xa5,
+	0x54, 0x54, 0x06, 0x18, 0x4e, 0xa9, 0xb8, 0xc1, 0x3b, 0xa0, 0x72, 0x23, 0xc5, 0xa8, 0xe4, 0x70,
+	0x9c, 0x47, 0x12, 0x2e, 0xd4, 0x7f, 0x97, 0xe8, 0x0f, 0x61, 0x50, 0x26, 0x34, 0x42, 0x6e, 0xa0,
+	0x7f, 0x45, 0xe5, 0xec, 0x0b, 0x8a, 0xf8, 0xc7, 0xea, 0x5f, 0x65, 0x6c, 0xc8, 0x1a, 0xa5, 0x7a,
+	0x10, 0x68, 0x0a, 0xaa, 0x50, 0x4b, 0xb0, 0x02, 0x7d, 0x4e, 0x7b, 0xaa, 0x48, 0x64, 0xe8, 0xff,
+	0x58, 0x30, 0xfa, 0x40, 0xd9, 0x92, 0xce, 0x3f, 0x4b, 0x14, 0xe7, 0xba, 0x6c, 0xb9, 0x8a, 0x11,
+	0xb4, 0x97, 0x12, 0xc5, 0xd7, 0xb5, 0x14, 0x3b, 0x35, 0x2f, 0x23, 0xe2, 0x41, 0x27, 0x3d, 0x31,
+	0xba, 0x40, 0x2d, 0xa8, 0x1b, 0xac, 0x6d, 0x32, 0x80, 0x56, 0x32, 0xe5, 0x0c, 0x8d, 0xa2, 0xcc,
+	0x28, 0x3c, 0x50, 0xb3, 0xf8, 0x40, 0xc5, 0x3a, 0xb6, 0x2a, 0x75, 0x34, 0x29, 0xdb, 0xa5, 0x94,
+	0x9f, 0x82, 0x7d, 0x4b, 0xe7, 0x73, 0x54, 0x6e, 0x5b, 0x4f, 0xda, 0x81, 0x9e, 0xb4, 0x6b, 0xed,
+	0x0a, 0x4c, 0xc8, 0xf7, 0xc0, 0xad, 0x26, 0x95, 0x65, 0x7c, 0xf2, 0x06, 0x3a, 0xf9, 0x5c, 0x12,
+	0x07, 0x0e, 0xf3, 0xf3, 0x47, 0xce, 0xd0, 0xa9, 0x91, 0x01, 0x38, 0xb9, 0x27, 0xef, 0x6c, 0xc7,
+	0x22, 0xc7, 0x70, 0x2f, 0xf7, 0xbe, 0xc2, 0x84, 0xcb, 0x58, 0x39, 0xf5, 0x93, 0x73, 0xb0, 0x33,
+	0x5a, 0xd2, 0x03, 0xc8, 0x4e, 0x06, 0xa4, 0x0f, 0x47, 0x99, 0x7d, 0x41, 0xe7, 0x94, 0x85, 0xe8,
+	0x58, 0x29, 0x6e, 0xe6, 0x7a, 0xc9, 0x17, 0x8b, 0x58, 0xca, 0x98, 0x33, 0xa7, 0x7e, 0xf6, 0xbb,
+	0x01, 0xed, 0x0b, 0x1a, 0xce, 0x90, 0x45, 0xe4, 0x05, 0x1c, 0xa4, 0xef, 0x73, 0xc9, 0x64, 0x82,
+	0xa1, 0x22, 0x43, 0x9d, 0x57, 0xa5, 0x35, 0xbc, 0x51, 0xc5, 0x6f, 0x5e, 0xb2, 0x46, 0x5e, 0xc3,
+	0x61, 0xb1, 0xc5, 0x88, 0xab, 0x3f, 0xdd, 0xd1, 0xe6, 0xde, 0x83, 0x1d, 0x91, 0x35, 0xcc, 0x27,
+	0x70, 0xb6, 0x8b, 0x47, 0x1e, 0xe9, 0x0b, 0x7b, 0x1a, 0xc5, 0x7b, 0xbc, 0x27, 0xba, 0x86, 0x7c,
+	0x07, 0xbd, 0xf2, 0xb6, 0x20, 0x5e, 0x41, 0xc1, 0xd6, 0x36, 0xf3, 0x1e, 0xee, 0x8c, 0x55, 0xc1,
+	0xf2, 0xa1, 0x2e, 0x81, 0x6d, 0x2d, 0x9d, 0x12, 0x58, 0x65, 0x0b, 0xd4, 0xc8, 0x73, 0x80, 0xcd,
+	0xa6, 0x35, 0x45, 0xaf, 0x2c, 0x77, 0x53, 0xf4, 0x1d, 0x2b, 0xb9, 0xf6, 0xdd, 0xd6, 0x3f, 0x86,
+	0x67, 0x7f, 0x03, 0x00, 0x00, 0xff, 0xff, 0x29, 0xe9, 0xf5, 0x1e, 0x25, 0x06, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -149,72 +743,252 @@ var _ grpc.ClientConn
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion4
 
-// TaskClient is the client API for Task service.
+// BackendClient is the client API for Backend service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type TaskClient interface {
+type BackendClient interface {
 	TaskInspect(ctx context.Context, in *TaskVerifyRequest, opts ...grpc.CallOption) (*TaskVerifyResponse, error)
+	HandleReport(ctx context.Context, in *HandleReportRequest, opts ...grpc.CallOption) (*HandleReportResponse, error)
+	ManualUserAmount(ctx context.Context, in *ManualUserAmountRequest, opts ...grpc.CallOption) (*ManualUserAmountResponse, error)
+	HandleWithdraw(ctx context.Context, in *HandleWithdrawRequest, opts ...grpc.CallOption) (*HandleWithdrawResponse, error)
+	HandleRecharge(ctx context.Context, in *HandleRechargeRequest, opts ...grpc.CallOption) (*HandleRechargeResponse, error)
+	RecordLock(ctx context.Context, in *RecordLockRequest, opts ...grpc.CallOption) (*RecordLockResponse, error)
 }
 
-type taskClient struct {
+type backendClient struct {
 	cc *grpc.ClientConn
 }
 
-func NewTaskClient(cc *grpc.ClientConn) TaskClient {
-	return &taskClient{cc}
+func NewBackendClient(cc *grpc.ClientConn) BackendClient {
+	return &backendClient{cc}
 }
 
-func (c *taskClient) TaskInspect(ctx context.Context, in *TaskVerifyRequest, opts ...grpc.CallOption) (*TaskVerifyResponse, error) {
+func (c *backendClient) TaskInspect(ctx context.Context, in *TaskVerifyRequest, opts ...grpc.CallOption) (*TaskVerifyResponse, error) {
 	out := new(TaskVerifyResponse)
-	err := c.cc.Invoke(ctx, "/rpc.Task/TaskInspect", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/rpc.Backend/TaskInspect", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// TaskServer is the server API for Task service.
-type TaskServer interface {
+func (c *backendClient) HandleReport(ctx context.Context, in *HandleReportRequest, opts ...grpc.CallOption) (*HandleReportResponse, error) {
+	out := new(HandleReportResponse)
+	err := c.cc.Invoke(ctx, "/rpc.Backend/HandleReport", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *backendClient) ManualUserAmount(ctx context.Context, in *ManualUserAmountRequest, opts ...grpc.CallOption) (*ManualUserAmountResponse, error) {
+	out := new(ManualUserAmountResponse)
+	err := c.cc.Invoke(ctx, "/rpc.Backend/ManualUserAmount", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *backendClient) HandleWithdraw(ctx context.Context, in *HandleWithdrawRequest, opts ...grpc.CallOption) (*HandleWithdrawResponse, error) {
+	out := new(HandleWithdrawResponse)
+	err := c.cc.Invoke(ctx, "/rpc.Backend/HandleWithdraw", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *backendClient) HandleRecharge(ctx context.Context, in *HandleRechargeRequest, opts ...grpc.CallOption) (*HandleRechargeResponse, error) {
+	out := new(HandleRechargeResponse)
+	err := c.cc.Invoke(ctx, "/rpc.Backend/HandleRecharge", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *backendClient) RecordLock(ctx context.Context, in *RecordLockRequest, opts ...grpc.CallOption) (*RecordLockResponse, error) {
+	out := new(RecordLockResponse)
+	err := c.cc.Invoke(ctx, "/rpc.Backend/RecordLock", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// BackendServer is the server API for Backend service.
+type BackendServer interface {
 	TaskInspect(context.Context, *TaskVerifyRequest) (*TaskVerifyResponse, error)
+	HandleReport(context.Context, *HandleReportRequest) (*HandleReportResponse, error)
+	ManualUserAmount(context.Context, *ManualUserAmountRequest) (*ManualUserAmountResponse, error)
+	HandleWithdraw(context.Context, *HandleWithdrawRequest) (*HandleWithdrawResponse, error)
+	HandleRecharge(context.Context, *HandleRechargeRequest) (*HandleRechargeResponse, error)
+	RecordLock(context.Context, *RecordLockRequest) (*RecordLockResponse, error)
 }
 
-// UnimplementedTaskServer can be embedded to have forward compatible implementations.
-type UnimplementedTaskServer struct {
+// UnimplementedBackendServer can be embedded to have forward compatible implementations.
+type UnimplementedBackendServer struct {
 }
 
-func (*UnimplementedTaskServer) TaskInspect(ctx context.Context, req *TaskVerifyRequest) (*TaskVerifyResponse, error) {
+func (*UnimplementedBackendServer) TaskInspect(ctx context.Context, req *TaskVerifyRequest) (*TaskVerifyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method TaskInspect not implemented")
 }
-
-func RegisterTaskServer(s *grpc.Server, srv TaskServer) {
-	s.RegisterService(&_Task_serviceDesc, srv)
+func (*UnimplementedBackendServer) HandleReport(ctx context.Context, req *HandleReportRequest) (*HandleReportResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method HandleReport not implemented")
+}
+func (*UnimplementedBackendServer) ManualUserAmount(ctx context.Context, req *ManualUserAmountRequest) (*ManualUserAmountResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ManualUserAmount not implemented")
+}
+func (*UnimplementedBackendServer) HandleWithdraw(ctx context.Context, req *HandleWithdrawRequest) (*HandleWithdrawResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method HandleWithdraw not implemented")
+}
+func (*UnimplementedBackendServer) HandleRecharge(ctx context.Context, req *HandleRechargeRequest) (*HandleRechargeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method HandleRecharge not implemented")
+}
+func (*UnimplementedBackendServer) RecordLock(ctx context.Context, req *RecordLockRequest) (*RecordLockResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RecordLock not implemented")
 }
 
-func _Task_TaskInspect_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func RegisterBackendServer(s *grpc.Server, srv BackendServer) {
+	s.RegisterService(&_Backend_serviceDesc, srv)
+}
+
+func _Backend_TaskInspect_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(TaskVerifyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TaskServer).TaskInspect(ctx, in)
+		return srv.(BackendServer).TaskInspect(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/rpc.Task/TaskInspect",
+		FullMethod: "/rpc.Backend/TaskInspect",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TaskServer).TaskInspect(ctx, req.(*TaskVerifyRequest))
+		return srv.(BackendServer).TaskInspect(ctx, req.(*TaskVerifyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-var _Task_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "rpc.Task",
-	HandlerType: (*TaskServer)(nil),
+func _Backend_HandleReport_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(HandleReportRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BackendServer).HandleReport(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/rpc.Backend/HandleReport",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BackendServer).HandleReport(ctx, req.(*HandleReportRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Backend_ManualUserAmount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ManualUserAmountRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BackendServer).ManualUserAmount(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/rpc.Backend/ManualUserAmount",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BackendServer).ManualUserAmount(ctx, req.(*ManualUserAmountRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Backend_HandleWithdraw_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(HandleWithdrawRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BackendServer).HandleWithdraw(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/rpc.Backend/HandleWithdraw",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BackendServer).HandleWithdraw(ctx, req.(*HandleWithdrawRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Backend_HandleRecharge_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(HandleRechargeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BackendServer).HandleRecharge(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/rpc.Backend/HandleRecharge",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BackendServer).HandleRecharge(ctx, req.(*HandleRechargeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Backend_RecordLock_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordLockRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BackendServer).RecordLock(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/rpc.Backend/RecordLock",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BackendServer).RecordLock(ctx, req.(*RecordLockRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+var _Backend_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "rpc.Backend",
+	HandlerType: (*BackendServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "TaskInspect",
-			Handler:    _Task_TaskInspect_Handler,
+			Handler:    _Backend_TaskInspect_Handler,
+		},
+		{
+			MethodName: "HandleReport",
+			Handler:    _Backend_HandleReport_Handler,
+		},
+		{
+			MethodName: "ManualUserAmount",
+			Handler:    _Backend_ManualUserAmount_Handler,
+		},
+		{
+			MethodName: "HandleWithdraw",
+			Handler:    _Backend_HandleWithdraw_Handler,
+		},
+		{
+			MethodName: "HandleRecharge",
+			Handler:    _Backend_HandleRecharge_Handler,
+		},
+		{
+			MethodName: "RecordLock",
+			Handler:    _Backend_RecordLock_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

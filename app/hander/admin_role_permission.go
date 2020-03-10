@@ -90,7 +90,14 @@ func (task *AdminRolePermission) Put (req *ghttp.Request)  {
 		response.Json(req, errcode.ErrCodeAdminRolePermissionBindError, "")
 	} else {
 		_, _ = g.Redis().Do("HDEL", redis.ADMIN_HASH_ROLE_PERMISSION_AUTH, edit.RoleId)
-		role.CashBinRoute.Role_permission(edit.RoleId)
+		if ok := role.CashBinRoute.Role_permission(edit.RoleId); ok == true {
+			// 开启此处,立即赋予权限生效, 为了安全起见，管理员只能看见相关权限,但是必须重新登陆才会生效 fixme eros
+			/*var redisService redis.RedisService
+			var casbin role.CasbinRoleCashins
+			var permissions []*permission
+			_ = redisService.GetJsonDecodeDataByKeyName(redis.ADMIN_HASH_ROLE_PERMISSION_AUTH, edit.RoleId, &permissions)
+			casbin.CreateRolePermissionRoute(permissions, edit.RoleId)*/
+		}
 	}
 	log, _ := json.Marshal(&edit)
 	server.ModelAdminLog.NewAdminLogOption(func(options *server.AdminLogOptions) {

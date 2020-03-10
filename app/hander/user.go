@@ -11,6 +11,7 @@ import (
 	"platform/app/server"
 	"platform/app/server/report"
 	"platform/library/help"
+	"platform/library/redis"
 	"platform/library/response"
 	"strings"
 	"time"
@@ -152,8 +153,12 @@ func (*User)Get(req *ghttp.Request)  {
 		where["id"] = list.Id
 	}
 	result, pages, _ := server.ModelUser.GetPageList(where, list.Page, list.PageSize)
-
-	response.Json(req, errcode.ErrCodeSuccess, "", result, pages)
+	results := result.List()
+	for k, v := range results {
+		results[k]["balance"] 	= help.Decimal(gconv.Float64(v["balance"]))
+		results[k]["commission"] = help.Decimal(gconv.Float64(v["commission"]))
+	}
+	response.Json(req, errcode.ErrCodeSuccess, "", results, pages)
 
 }
 
@@ -294,6 +299,9 @@ func  (*User) Patch (req *ghttp.Request)  {
 		if err != nil {
 			_ = tx.Rollback()
 		} else {
+			if action.LoginStatus == server.USER_STATUS_ACTION_STEP_6 {
+				_, _ = g.Redis().Do("HDEL", redis.USER_TOKEN_STATUS, userModel.Id)
+			}
 			log, _ := json.Marshal(&action)
 			server.ModelAdminLog.NewAdminLogOption(func(options *server.AdminLogOptions) {
 				options.Level = server.ADMIN_LOG_LEVEL_WARNING

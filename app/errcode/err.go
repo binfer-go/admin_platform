@@ -57,6 +57,11 @@ var (
 	AdminDepositNotExist    			= errors.New("deposit not exist")    				// 存款订单不存在
 	AdminWithDrawNotExist    			= errors.New("withdraw not exist")    				// 取款订单不存在
 	UploadError   						= errors.New("upload file failure")    			// 文件上传失败
+	MoneyBalanceNotSufficientError 		= errors.New("prompt of insufficient balance")    	// 主钱包余额不足
+	MoneyComissionNotSufficientError 	= errors.New("prompt of insufficient comision")    // 任务钱包余额不足
+	LockError 							= errors.New("lock account not same")    			// 该信息已被锁定
+	ConfigCodeExist 					= errors.New("config option_code is exits")    	// option_code已经存在
+
 
 
 

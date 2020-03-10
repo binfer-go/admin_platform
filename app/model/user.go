@@ -21,11 +21,11 @@ type User struct {
 	LastLoginIp          string    `plat:"last_login_ip" json:"last_login_ip"`                     // 最后登录ip
 	LastLoginTime        time.Time `plat:"last_login_time" json:"last_login_time"`                 // 最后登录时间
 	LoginCount           int32     `plat:"login_count" json:"login_count"`                         // 登陆次数
-	PublishStatus        int32     `plat:"publish_status" json:"publish_status"`                   // 发布任务限制时间  1：正常; 其他：异常限制
-	SubscribeStatus      int32     `plat:"subscribe_status" json:"subscribe_status"`               // 接受任务限制时间  1：正常; 其他：异常限制
-	WithdrawStatus       int32     `plat:"withdraw_status" json:"withdraw_status"`                 // 提现限制时间  1：正常; 其他：异常限制
-	MessageStatus        int32     `plat:"message_status" json:"message_status"`                   // 发送消息限制时间  1：正常; 其他：异常限制
-	LoginStatus          int32     `plat:"login_status" json:"login_status"`                       // 登陆限制时间  1：正常; 其他：异常限制
+	PublishStatus        int32     `plat:"publish_status" json:"publish_status"`                   // 发布任务限制时间  @1：正常; -1：永久; 其他：异常限制
+	SubscribeStatus      int32     `plat:"subscribe_status" json:"subscribe_status"`               // 接受任务限制时间  @1：正常; -1：永久; 其他：异常限制
+	WithdrawStatus       int32     `plat:"withdraw_status" json:"withdraw_status"`                 // 提现限制时间       @1：正常;  -1：永久; 其他：异常限制
+	MessageStatus        int32     `plat:"message_status" json:"message_status"`                   // 发送消息限制时间   @1：正常; -1：永久; 其他：异常限制
+	LoginStatus          int32     `plat:"login_status" json:"login_status"`                       // 登陆限制时间  @1：正常; -1：永久；其他：异常限制
 	LastActionStatusTime time.Time `plat:"last_action_status_time" json:"last_action_status_time"` // 标记状态改动时的生效时间
 	Remark               string    `plat:"remark" json:"remark"`                                   // 备注
 }

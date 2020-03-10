@@ -1,18 +1,29 @@
 package rpc
 
-import "google.golang.org/grpc"
+import (
+	"golang.org/x/net/context"
+	"google.golang.org/grpc"
+	"time"
+)
 
-var client TaskClient
+var client BackendClient
+
+func init()  {
+
+}
 
 func RegisterClient(addr string) error {
-	c, err := grpc.Dial(addr, grpc.WithInsecure())
+
+	ctx, _:= context.WithTimeout(context.TODO(), time.Second * 3)
+	conn, err := grpc.DialContext(ctx, addr, grpc.WithInsecure())
 	if err != nil {
 		return err
 	}
-	client = NewTaskClient(c)
+	client = NewBackendClient(conn)
 	return nil
+
 }
 
-func TaskConn() TaskClient {
+func GrpcConn() BackendClient {
 	return client
 }

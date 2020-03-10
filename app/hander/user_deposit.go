@@ -1,14 +1,20 @@
 package hander
 
 import (
+	"context"
 	"encoding/json"
+	"fmt"
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
+	"github.com/gogf/gf/os/glog"
+	"github.com/gogf/gf/util/gconv"
 	"platform/app/errcode"
 	"platform/app/hander/env"
+	"platform/app/hander/env/rpc"
 	"platform/app/model"
 	"platform/app/server"
 	"platform/library/help"
+	"platform/library/redis"
 	"platform/library/response"
 	"time"
 )
@@ -31,9 +37,16 @@ type getListUserDepositReq struct {
 type putEditUserDepositReq struct {
 	Id int32 `json:"id"`
 	Status    byte      `json:"status"`
+	Remark string `json:"remark"`
 	UpdatedAt time.Time `json:"updated_at"`
 }
 
+
+type patchDepositReq struct {
+	UserId int32 `json:"user_id"`
+	Wallet byte `json:"wallet"`
+	Money float64 `json:"money"`
+}
 
 
 /**
@@ -129,7 +142,7 @@ func (*UserDeposit)Get(req *ghttp.Request)  {
  * @apiVersion 0.1.0
  * @apiName  更新
  * @apiGroup 会员存款 Deposit
- * @apiParam {Integer} id			  * 存款Id
+ * @apiParam {Integer} id			  * 存款Id {status == 2, 才可以审核}
  * @apiParam {Integer} status			状态 {3：成功 4：拒绝}
  * @apiSuccess {Integer}   code   标识码 200：成功
  * @apiSuccess {Object}    data   数据
@@ -153,6 +166,11 @@ func (*UserDeposit) Put (req *ghttp.Request)  {
 	if err := req.Parse(&edit); err != nil {
 		response.Json(req, errcode.ErrCodeAdminParseError, "")
 	}
+	lockName := redis.ADMIN_LOCK_TIME_DEPOSIT+gconv.String(edit.Id)
+	ts := redis.ModelRedis.Lock(lockName, redis.ADMIN_LOCK_TIME, nil)
+	if ts != 0 {
+		response.Json(req, errcode.ErrCodeFailure, fmt.Sprintf("请不要频繁操作, 剩余时间: %v 秒.", ts))
+	}
 	if edit.Id == 0 {
 		response.Json(req, errcode.ErrCodeAdminDepositNotExist, "")
 	}
@@ -163,17 +181,30 @@ func (*UserDeposit) Put (req *ghttp.Request)  {
 	}
 	var modelUserDeposit model.UserDeposit
 	_ = info.Struct(&modelUserDeposit)
-	// 通过 or 拒绝
-	if modelUserDeposit.Status == server.USER_DEPOSIT_STATUS_SUCCESS || modelUserDeposit.Status == server.USER_DEPOSIT_STATUS_FAILURE {
-		// 处理RPC通知
-	} else {
+	if modelUserDeposit.Status != server.USER_DEPOSIT_STATUS_INSPECTION {
 		response.Json(req, errcode.ErrCodeFailure, "")
 	}
-	edit.UpdatedAt = time.Now()
-	data := help.Filter(edit)
-	result, err := server.ModelUserDeposit.Update(edit.Id, data)
+	var status bool
+	switch edit.Status {
+	case server.USER_DEPOSIT_STATUS_SUCCESS:
+		status = true
+	case server.USER_DEPOSIT_STATUS_FAILURE:
+		status = false
+	}
+	// 锁定订单
+	redis.ModelRedis.Lock(lockName, redis.ADMIN_LOCK_TIME, time.Now())
+
+	ctx, _ := context.WithTimeout(context.TODO(), time.Second * 3)
+	_, err = rpc.GrpcConn().HandleRecharge(ctx, &rpc.HandleRechargeRequest{
+		Id:                   edit.Id,
+		Status:               status,
+		Account:              Admins.Account,
+		Remark:               edit.Remark,
+		Amount:               modelUserDeposit.Amount,
+	})
 	if err != nil {
-		response.Json(req, errcode.ErrCodeFailure, "")
+		glog.Level(glog.LEVEL_ERRO).Printf("--10086 - 审核存款失败,", &rpc.HandleRechargeRequest{})
+		response.Json(req, errcode.ErrCodeFailure, err.Error())
 	}
 	log, _ := json.Marshal(&edit)
 	server.ModelAdminLog.NewAdminLogOption(func(options *server.AdminLogOptions) {
@@ -184,21 +215,92 @@ func (*UserDeposit) Put (req *ghttp.Request)  {
 		options.ActionAdminName = Admins.Account
 		options.ActionAdminIp = req.GetClientIp()
 	})
-	response.Json(req, errcode.ErrCodeSuccess, "", result)
+	glog.Level(glog.LEVEL_ERRO).Printf("--10086 - 审核存款成功,", &rpc.HandleRechargeRequest{})
+	response.Json(req, errcode.ErrCodeSuccess, "", edit)
 
 }
 
-type patchDepositReq struct {
-	Id int32 `json:"id"`
-	Type byte `json:"type"`
-	Money int32 `json:"money"`
-}
+
+
+/**
+ * @api {patch} /v1/user_deposit   人工加款
+ * @apiVersion 0.1.0
+ * @apiName  人工
+ * @apiGroup 会员存款 Deposit
+ * @apiParam {Integer} user_id			* 会员id
+ * @apiParam {String}  wallet			* 会员钱包类型 {config: user_wallet_type}
+ * @apiParam {Float}   money			* 交易金额/元
+ * @apiSuccess {Integer}   code   标识码 200：成功
+ * @apiSuccess {Object}    data   数据
+ * @apiSuccess {String}    msg    提示信息
+ * @apiSuccessExample Success-Response:
+	{
+		"code": 200,
+		"data": 1,
+		"msg": "成功"
+	}
+ * @apiErrorExample Error-Response:
+   {
+     	"code": 201,
+      	"data": null
+      	"msg": "失败提示",
+   }
+*/
 func (*UserDeposit) Patch (req *ghttp.Request)  {
 	var patch patchDepositReq
 
 	if err := req.Parse(&patch); err != nil {
 		response.Json(req, errcode.ErrCodeAdminParseError, "")
 	}
+	lockName := redis.ADMIN_LOCK_TIME_MANUAL_DEPOSIT+gconv.String(patch.UserId)
+	ts := redis.ModelRedis.Lock(lockName, redis.ADMIN_LOCK_TIME, nil)
+	if ts != 0 {
+		response.Json(req, errcode.ErrCodeFailure, fmt.Sprintf("请不要频繁操作, 剩余时间: %v 秒.", ts))
+	}
 
-
+	user, err := server.ModelUser.GetById(patch.UserId)
+	if err != nil || user == nil {
+		response.Json(req, errcode.ErrCodeUserNotExist, "")
+		return
+	}
+	if patch.Wallet < server.USER_WALLET_TYPE_MASTER || patch.Wallet > server.USER_WALLET_TYPE_COMISSION {
+		response.Json(req, errcode.ErrCodeFailure, "")
+	}
+	var modelUser model.User
+	_ = user.Struct(&modelUser)
+	if patch.Money <= 0 {
+		response.Json(req, errcode.ErrCodeFailure, "")
+	}
+	// 锁定订单
+	redis.ModelRedis.Lock(lockName, redis.ADMIN_LOCK_TIME, time.Now())
+	ctx, _ := context.WithTimeout(context.TODO(), time.Second * 3)
+	_, err = rpc.GrpcConn().ManualUserAmount(ctx, &rpc.ManualUserAmountRequest{
+		UserId:             modelUser.Id,
+		Username:           modelUser.Username,
+		Phone:              modelUser.Phone,
+		Amount:             help.DecimalIntVal(patch.Money),
+		Account:            Admins.Account,
+		Status:             true,
+		Wallet:             rpc.Wallet(patch.Wallet),
+	})
+	if err != nil {
+		glog.Level(glog.LEVEL_ERRO).Printf("--10010 - 人工存款失败,", &rpc.ManualUserAmountRequest{})
+		response.Json(req, errcode.ErrCodeFailure, err.Error(), patch)
+	} else {
+		log, _ := json.Marshal(&patch)
+		server.ModelAdminLog.NewAdminLogOption(func(options *server.AdminLogOptions) {
+			options.Level = server.ADMIN_LOG_LEVEL_WARNING
+			options.Action= server.ADMIN_LOG_ACTION_CREATE
+			options.Module= env.ADMIN_MODULE_USER_DEPOSIT
+			options.Title = env.F[env.ADMIN_MODULE_USER_DEPOSIT]
+			options.Description = string(log)
+			options.ActionAdminId = Admins.Id
+			options.ActionAdminName = Admins.Account
+			options.ActionUserId = modelUser.Id
+			options.ActionUserName = modelUser.Phone
+			options.ActionAdminIp = req.GetClientIp()
+		})
+		glog.Level(glog.LEVEL_ERRO).Printf("--10010 - 人工存款成功,", &rpc.ManualUserAmountRequest{})
+		response.Json(req, errcode.ErrCodeSuccess, "", patch)
+	}
 }

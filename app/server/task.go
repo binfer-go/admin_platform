@@ -11,6 +11,7 @@ import (
 const (
 	ADMIN_TASK_STATUS_ENABLE 	= byte(1)
 	ADMIN_TASK_STATUS_DISABLE 	= byte(2)
+	ADMIN_TASK_STATUS_DELETE 	= byte(3)
 )
 var (
 	ModelTask  *ServerTask
@@ -70,3 +71,13 @@ func (*ServerTask) GetById(id int32) (gdb.Record, error)  {
 	return result, nil
 }
 
+
+func (*ServerTask) Get (where interface{}, fields string, groups string, orders string) (gdb.Result, error) {
+
+	result, err := tableTask.Where(where).Fields(fields).Order(orders).Group(groups).All()
+	if err != nil {
+		return nil, err
+	}
+	return result, nil
+
+}

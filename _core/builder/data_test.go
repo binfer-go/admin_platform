@@ -1,13 +1,12 @@
 package builder
 
 import (
-	"github.com/gogf/gf/frame/g"
 	"testing"
 )
 
 func TestBuilderMysqlTestData(t *testing.T) {
 	// BuilderMysqlTestData()
-	//BuilderMysqlReportUsers()
+	BuilderMysqlReportUsers()
 
-	g.Dump(	g.DB("default"))
+
 }

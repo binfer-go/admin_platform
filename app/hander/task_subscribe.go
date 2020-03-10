@@ -1,14 +1,19 @@
 package hander
 
 import (
+	"context"
 	"encoding/json"
+	"fmt"
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
+	"github.com/gogf/gf/os/glog"
+	"github.com/gogf/gf/util/gconv"
 	"platform/app/errcode"
 	"platform/app/hander/env"
+	"platform/app/hander/env/rpc"
 	"platform/app/model"
 	"platform/app/server"
-	"platform/library/help"
+	"platform/library/redis"
 	"platform/library/response"
 	"time"
 )
@@ -66,7 +71,7 @@ type patchActionTaskSubscribeReq struct {}
 		Amount          int32     `plat:"amount" json:"amount"`                     // 任务佣金
 		Step            string    `plat:"step" json:"step"`                         // 任务步骤
 		Result          string    `plat:"result" json:"result"`                     // 任务提交凭证
-		Status          byte      `plat:"status" json:"status"`                     // 1: 待提交 2:待审核 3:已通过 4:已拒绝 5:待复审 6:复审失败 7:已过期
+		Status          byte      `plat:"status" json:"status"`                     // {config: task_subscribe_status} 1: 待提交 2:待审核 3:已通过 4:已拒绝 5:待复审 6:复审失败 7:已过期
 		AdminAccount    string    `plat:"admin_account" json:"admin_account"`       // 操作人账号
 		AcceptTs        int64     `plat:"accept_ts" json:"accept_ts"`               // 领取时间
 		CommitTs        int64     `plat:"commit_ts" json:"commit_ts"`               // 提交时间
@@ -128,12 +133,12 @@ func (*TaskSubscribe)Get(req *ghttp.Request)  {
 
 
 /**
- * @api {put} /v1/task_subscribe   更新接单任务
+ * @api {put} /v1/task_subscribe   更新接单任务（审核）
  * @apiVersion 0.1.0
  * @apiName  更新
  * @apiGroup 接单任务 Subscribe
- * @apiParam {Integer} id		* 接单任务Id	- {status == 2, 才可以修改}
- * @apiParam {Integer} status	  任务状态：{ 1: 待提交 2:待审核 3:已通过 4:已拒绝 5:待复审 6:复审失败 7:已过期}
+ * @apiParam {Integer} id		* 接单任务Id	- {status == 2, 才可以审核}
+ * @apiParam {Integer} status	  任务状态：{config: task_subscribe_status}
  * @apiParam {String}  remark	  备注
  * @apiSuccess {Integer}   code   标识码 200：成功
  * @apiSuccess {Object}    data   数据
@@ -154,39 +159,65 @@ func (*TaskSubscribe)Get(req *ghttp.Request)  {
 func (*TaskSubscribe) Put (req *ghttp.Request)  {
 	var edit putEditTaskSubscribeReq
 
-	id := req.GetInt32("id", 0)
-	if id == 0 {
+	if err := req.Parse(&edit); err != nil {
+		response.Json(req, errcode.ErrCodeAdminParseError, "")
+	}
+	lockName := redis.ADMIN_LOCK_TIME_TASK_SUBSCRIBE+gconv.String(edit.Id)
+	ts := redis.ModelRedis.Lock(lockName, redis.ADMIN_LOCK_TIME, nil)
+	if ts != 0 {
+		response.Json(req, errcode.ErrCodeFailure, fmt.Sprintf("请不要频繁操作, 剩余时间: %v 秒.", ts))
+	}
+	if edit.Id == 0 {
 		response.Json(req, errcode.ErrCodeUpdateTaskError, "")
 	}
-	info, err := server.ModelTaskSubscribe.GetById(id)
+	info, err := server.ModelTaskSubscribe.GetById(edit.Id)
 	if err != nil || info == nil{
 		response.Json(req, errcode.ErrCodeUpdateTaskNotExist, "")
 		return
 	}
-	if err := req.Parse(&edit); err != nil {
-		response.Json(req, errcode.ErrCodeAdminParseError, "")
-	}
 	var modelTaskSubscribe model.TaskSubscribe
 	_ = info.Struct(&modelTaskSubscribe)
-	// 拒绝的任务才可以修改
-	if modelTaskSubscribe.Status > 0 && modelTaskSubscribe.Status != server.SUBSCRIBE_STATUS_REFUSE {
-		response.Json(req, errcode.ErrCodeSubscribePassError, "")
+	if modelTaskSubscribe.AdminAccount != Admins.Account {
+		response.Json(req, errcode.ErrCodeLockError, "")
 	}
-	edit.UpdatedAt = time.Now()
-	data := help.Filter(edit)
-	status, err := server.ModelTaskSubscribe.Update(id, data)
-	if err != nil || status != nil {
-		log, _ := json.Marshal(&edit)
-		server.ModelAdminLog.NewAdminLogOption(func(options *server.AdminLogOptions) {
-			options.Action = server.ADMIN_LOG_ACTION_UPDATE
-			options.Title  = env.F[env.ADMIN_MODULE_TASK_SUBSCRIBE]
-			options.Description = string(log)
-			options.ActionAdminId = Admins.Id
-			options.ActionAdminName = Admins.Account
-			options.ActionAdminIp = req.GetClientIp()
+	// 复审介入
+	if modelTaskSubscribe.Status == server.SUBSCRIBE_STATUS_REWAIT {
+		var status bool
+		switch edit.Status {
+		case server.SUBSCRIBE_STATUS_PASS:
+			status = true
+		case server.SUBSCRIBE_STATUS_REWAIT_FAILURE:
+			status = false
+		}
+		// 锁定订单
+		redis.ModelRedis.Lock(lockName, redis.ADMIN_LOCK_TIME, time.Now())
+
+		ctx, _ := context.WithTimeout(context.TODO(), time.Second * 3)
+		_, err := rpc.GrpcConn().HandleReport(ctx, &rpc.HandleReportRequest{
+			Id:                   edit.Id,
+			Status:               status,
+			Account:              Admins.Account,
+			Remark:               edit.Remark,
 		})
+		if err != nil {
+			glog.Level(glog.LEVEL_ERRO).Printf("--10011 - 审核接单任务失败,", &rpc.HandleReportRequest{})
+			response.Json(req, errcode.ErrCodeFailure, err.Error())
+		} else {
+			log, _ := json.Marshal(&edit)
+			server.ModelAdminLog.NewAdminLogOption(func(options *server.AdminLogOptions) {
+				options.Action = server.ADMIN_LOG_ACTION_UPDATE
+				options.Title  = env.F[env.ADMIN_MODULE_TASK_SUBSCRIBE]
+				options.Description = string(log)
+				options.ActionAdminId = Admins.Id
+				options.ActionAdminName = Admins.Account
+				options.ActionAdminIp = req.GetClientIp()
+			})
+			glog.Level(glog.LEVEL_ERRO).Printf("--10011 - 审核接单任务成功,", &rpc.HandleReportRequest{})
+			response.Json(req, errcode.ErrCodeSuccess, "", edit)
+		}
+	} else {
+		response.Json(req, errcode.ErrCodeFailure, "")
 	}
-	response.Json(req, errcode.ErrCodeSuccess, "", status)
 
 }
 

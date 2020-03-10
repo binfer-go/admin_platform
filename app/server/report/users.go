@@ -73,3 +73,9 @@ func (*ServerReportUser) GetLeftUser (where interface{}, fields string) (*gdb.Re
 	}
 	return &result, nil
 }
+
+func (*ServerReportUser) Count() (int, error) {
+
+	return tableReportUser.Count()
+
+}

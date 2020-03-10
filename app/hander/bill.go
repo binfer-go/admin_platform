@@ -35,9 +35,9 @@ type getListBillReq struct {
  * @apiParam {Integer} page_size	20
  * @apiParam {Integer} id			单条信息详情
  * @apiParam {String}  username		用户名
- * @apiParam {Integer} type			账变形式 { 1: 加款 2：扣款 } {config : bill_type}
- * @apiParam {Integer} operate		账变类型 { 1:存款 2:取款 3:发布任务 4:佣金 5:任务结束退回 6:提取佣金 }{config : bill_operate}
- * @apiParam {Integer} role			账变方案 { 1:系统处理 2:人工处理} {config : bill_role}
+ * @apiParam {Integer} type			账变形式 {config : bill_type}
+ * @apiParam {Integer} operate		账变类型 {config : bill_operate}
+ * @apiParam {Integer} role			账变方案 {config : bill_role}
  * @apiParam {String}  start_time   开始时间
  * @apiParam {String}  end_time		结束时间
  * @apiSuccess {Integer}   code   标识码 200：成功
@@ -56,8 +56,7 @@ type getListBillReq struct {
 		Type         byte      `plat:"type" json:"type"`                   // 账变类型(1:加钱 2:扣钱)
 		Operate      byte      `plat:"operate" json:"operate"`             // 1:存款 2:取款 3:发布任务 4:佣金 5:任务结束退回 6:提取佣金
 		Src          int32     `plat:"src" json:"src"`                     // 来源ID，默认为系统：0
-		TaskId       int32     `plat:"task_id" json:"task_id"`             // 任务Id 当类型为发布任务或者获得佣金时此id生效
-		Status       byte      `plat:"status" json:"status"`               // 状态 1:待处理 2:成功 3:失败
+		Role         byte      `plat:"role" json:"role"`                   // 账变角色
 		Amount       int32     `plat:"amount" json:"amount"`               // 交易金额
 		BeforeAmount int32     `plat:"before_amount" json:"before_amount"` // 变动前金额
 		AfterAmount  int32     `plat:"after_amount" json:"after_amount"`   // 变动后金额

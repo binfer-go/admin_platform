@@ -3,58 +3,62 @@ package errcode
 type ErrCode int32
 
 const (
-	ErrCodeSuccess                      ErrCode = 200
-	ErrCodeFailure                      ErrCode = 201
-	ErrCodeInvalidToken                 ErrCode = 202
-	ErrCodeInvalidParam                 ErrCode = 203
-	ErrCodeRequestFrequently            ErrCode = 204
-	ErrCodeInvalidSMSCode               ErrCode = 205
-	ErrCodeCodeExpire                   ErrCode = 206
-	ErrCodeUserAlreadyExist             ErrCode = 207
-	ErrCodeInvalidPassword              ErrCode = 208
-	ErrCodeUserNotExist                 ErrCode = 209
-	ErrCodeTaskPubOrderNotExist         ErrCode = 210
-	ErrCodeTaskPubOrderExpiration       ErrCode = 211
-	ErrCodeTaskOrderAlreadyExist        ErrCode = 212
-	ErrCodeTimeError                    ErrCode = 213
-	ErrCodeCreateTaskError              ErrCode = 214
-	ErrCodeUpdateTaskError              ErrCode = 215
-	ErrCodeUpdateTaskNotExist           ErrCode = 216
-	ErrCodeCreateAdminError             ErrCode = 217
-	ErrCodeUpdateAdminError             ErrCode = 218
-	ErrCodeAdminNotExist                ErrCode = 219
-	ErrCodeAdminAlreadyExist            ErrCode = 220
-	ErrCodeLoginError                   ErrCode = 221
-	ErrCodeLoginStatusError             ErrCode = 222
-	ErrCodeAdminAccountLimitError       ErrCode = 223
-	ErrCodeAdminPasswordLimitError      ErrCode = 224
-	ErrCodePublishPassError             ErrCode = 225
-	ErrCodeSubscribePassError           ErrCode = 226
-	ErrCodeOrderTaskLockError           ErrCode = 227
-	ErrCodeUserUpdateError              ErrCode = 228
-	ErrCodeAdminRoleError               ErrCode = 229
-	ErrCodeAdminRoleAddError            ErrCode = 230
-	ErrCodeAdminRoleEditError           ErrCode = 231
-	ErrCodeAdminRoleIsAlready           ErrCode = 232
-	ErrCodeAdminRoleNotError            ErrCode = 233
-	ErrCodeAdminPermissionError         ErrCode = 234
-	ErrCodeAdminPermissionAddError      ErrCode = 235
-	ErrCodeAdminPermissionEditError     ErrCode = 236
-	ErrCodeAdminPermissionIsAlready     ErrCode = 237
-	ErrCodeAdminPermissionParentIs      ErrCode = 238
-	ErrCodeAdminPermissionTypeIs        ErrCode = 239
-	ErrCodeAdminRolePermissionBindError ErrCode = 240
-	ErrCodeAdminRolePermissionRoleId    ErrCode = 241
-	ErrCodeAdminRolePermissionId        ErrCode = 242
-	ErrCodeApiRouteAuthError            ErrCode = 243
-	ErrCodeUserBankNotExist             ErrCode = 244
-	ErrCodeUserBankUpdateError          ErrCode = 245
-	ErrCodeAdminParseError              ErrCode = 246
-	ErrCodeAdminBindPermissionError     ErrCode = 247
-	ErrCodeAdminMasterBindError         ErrCode = 248
-	ErrCodeAdminDepositNotExist         ErrCode = 249
-	ErrCodeAdminWithDrawNotExist        ErrCode = 250
-	ErrCodeUploadError                  ErrCode = 251
+	ErrCodeSuccess                          ErrCode = 200
+	ErrCodeFailure                          ErrCode = 201
+	ErrCodeInvalidToken                     ErrCode = 202
+	ErrCodeInvalidParam                     ErrCode = 203
+	ErrCodeRequestFrequently                ErrCode = 204
+	ErrCodeInvalidSMSCode                   ErrCode = 205
+	ErrCodeCodeExpire                       ErrCode = 206
+	ErrCodeUserAlreadyExist                 ErrCode = 207
+	ErrCodeInvalidPassword                  ErrCode = 208
+	ErrCodeUserNotExist                     ErrCode = 209
+	ErrCodeTaskPubOrderNotExist             ErrCode = 210
+	ErrCodeTaskPubOrderExpiration           ErrCode = 211
+	ErrCodeTaskOrderAlreadyExist            ErrCode = 212
+	ErrCodeTimeError                        ErrCode = 213
+	ErrCodeCreateTaskError                  ErrCode = 214
+	ErrCodeUpdateTaskError                  ErrCode = 215
+	ErrCodeUpdateTaskNotExist               ErrCode = 216
+	ErrCodeCreateAdminError                 ErrCode = 217
+	ErrCodeUpdateAdminError                 ErrCode = 218
+	ErrCodeAdminNotExist                    ErrCode = 219
+	ErrCodeAdminAlreadyExist                ErrCode = 220
+	ErrCodeLoginError                       ErrCode = 221
+	ErrCodeLoginStatusError                 ErrCode = 222
+	ErrCodeAdminAccountLimitError           ErrCode = 223
+	ErrCodeAdminPasswordLimitError          ErrCode = 224
+	ErrCodePublishPassError                 ErrCode = 225
+	ErrCodeSubscribePassError               ErrCode = 226
+	ErrCodeOrderTaskLockError               ErrCode = 227
+	ErrCodeUserUpdateError                  ErrCode = 228
+	ErrCodeAdminRoleError                   ErrCode = 229
+	ErrCodeAdminRoleAddError                ErrCode = 230
+	ErrCodeAdminRoleEditError               ErrCode = 231
+	ErrCodeAdminRoleIsAlready               ErrCode = 232
+	ErrCodeAdminRoleNotError                ErrCode = 233
+	ErrCodeAdminPermissionError             ErrCode = 234
+	ErrCodeAdminPermissionAddError          ErrCode = 235
+	ErrCodeAdminPermissionEditError         ErrCode = 236
+	ErrCodeAdminPermissionIsAlready         ErrCode = 237
+	ErrCodeAdminPermissionParentIs          ErrCode = 238
+	ErrCodeAdminPermissionTypeIs            ErrCode = 239
+	ErrCodeAdminRolePermissionBindError     ErrCode = 240
+	ErrCodeAdminRolePermissionRoleId        ErrCode = 241
+	ErrCodeAdminRolePermissionId            ErrCode = 242
+	ErrCodeApiRouteAuthError                ErrCode = 243
+	ErrCodeUserBankNotExist                 ErrCode = 244
+	ErrCodeUserBankUpdateError              ErrCode = 245
+	ErrCodeAdminParseError                  ErrCode = 246
+	ErrCodeAdminBindPermissionError         ErrCode = 247
+	ErrCodeAdminMasterBindError             ErrCode = 248
+	ErrCodeAdminDepositNotExist             ErrCode = 249
+	ErrCodeAdminWithDrawNotExist            ErrCode = 250
+	ErrCodeUploadError                      ErrCode = 251
+	ErrCodeMoneyBalanceNotSufficientError   ErrCode = 252
+	ErrCodeMoneyComissionNotSufficientError ErrCode = 253
+	ErrCodeLockError                        ErrCode = 254
+	ErrCodeConfigCodeExist                  ErrCode = 255
 )
 
 func (code ErrCode) String() string {
@@ -163,6 +167,14 @@ func (code ErrCode) String() string {
 		return "取款订单不存在"
 	case ErrCodeUploadError:
 		return "文件上传失败"
+	case ErrCodeMoneyBalanceNotSufficientError:
+		return "主钱包余额不足"
+	case ErrCodeMoneyComissionNotSufficientError:
+		return "任务钱包余额不足"
+	case ErrCodeLockError:
+		return "该信息已被锁定"
+	case ErrCodeConfigCodeExist:
+		return "option_code已经存在"
 	default:
 		return "系统繁忙"
 	}
@@ -274,6 +286,14 @@ func Code(err error) ErrCode {
 		return ErrCodeAdminWithDrawNotExist
 	case UploadError:
 		return ErrCodeUploadError
+	case MoneyBalanceNotSufficientError:
+		return ErrCodeMoneyBalanceNotSufficientError
+	case MoneyComissionNotSufficientError:
+		return ErrCodeMoneyComissionNotSufficientError
+	case LockError:
+		return ErrCodeLockError
+	case ConfigCodeExist:
+		return ErrCodeConfigCodeExist
 	default:
 		return -1
 	}

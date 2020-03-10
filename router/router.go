@@ -4,6 +4,7 @@ import (
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
 	"platform/app/hander"
+	"platform/app/hander/config"
 	"platform/app/hander/report"
 	"platform/app/middleware"
 )
@@ -18,7 +19,7 @@ func init()  {
 	server.Group(ADMIN_API_VERSION, func(group *ghttp.RouterGroup) {
 
 		// 业务状态配置
-		group.REST("site_config", 			new(hander.Configs))
+		group.REST("config", 				new(hander.Configs))
 		// 登陆
 		group.POST("login", 				new(hander.Auth).Post)
 		/* ------------- */
@@ -53,6 +54,7 @@ func init()  {
 		group.REST("user_deposit", 			new(hander.UserDeposit))
 		// 会员取款管理
 		group.REST("user_withdraw", 		new(hander.UserWithdraw))
+		group.PUT( "user_withdraw_lock",	new(hander.UserWithdraw).Lock)
 		// 任务管理
 		group.REST("task", 					new(hander.Task))
 		// 派单任务管理
@@ -63,6 +65,11 @@ func init()  {
 		group.GET( "report_dashboards",		new(report.ReportDashboard).Get)
 		// 账单
 		group.REST("bill",					new(hander.Bill))
+		// 配置类型
+		group.REST("site_configs_type",		new(config.SiteConfigsType))
+		// 配置
+		group.REST("site_configs",			new(config.SiteConfigs))
+		group.GET( "site_type_config",		new(config.SiteConfigs).Option)
 		// 其他细微操作补充
 		// code fixme eros
 

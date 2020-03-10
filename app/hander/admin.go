@@ -203,6 +203,7 @@ func (*Admin) Post (req *ghttp.Request)  {
 	if err != nil || createResult == nil {
 		response.Json(req, errcode.ErrCodeCreateAdminError, "")
 	}
+
 	log, _ := json.Marshal(&add)
 	server.ModelAdminLog.NewAdminLogOption(func(options *server.AdminLogOptions) {
 		options.Level  = server.ADMIN_LOG_LEVEL_WARNING

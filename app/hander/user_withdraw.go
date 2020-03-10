@@ -1,14 +1,20 @@
 package hander
 
 import (
+	"context"
 	"encoding/json"
+	"fmt"
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
+	"github.com/gogf/gf/os/glog"
+	"github.com/gogf/gf/util/gconv"
 	"platform/app/errcode"
 	"platform/app/hander/env"
+	"platform/app/hander/env/rpc"
 	"platform/app/model"
 	"platform/app/server"
 	"platform/library/help"
+	"platform/library/redis"
 	"platform/library/response"
 	"time"
 )
@@ -31,13 +37,21 @@ type getListUserWithdrawReq struct {
 type putEditUserWithdrawReq struct {
 	Id int32 `json:"id"`
 	Status    byte      `json:"status"`
+	Remark    string `json:"remark"`
 	UpdatedAt time.Time `json:"updated_at"`
 }
 
+type patchWithdrawReq struct {
+	UserId int32 `json:"user_id"`
+	Wallet byte `json:"wallet"`
+	Money float64 `json:"money"`
+}
 
-
+type putLockWithdrawReq struct {
+	Id int32 `json:"id"`
+}
 /**
- * @api {get} /v1/user_deposit  会员取款列表
+ * @api {get} /v1/user_withdraw  会员取款列表
  * @apiVersion 0.1.0
  * @apiName  列表
  * @apiGroup 会员取款 Withdraw
@@ -123,11 +137,11 @@ func (*UserWithdraw)Get(req *ghttp.Request)  {
 
 
 /**
- * @api {put} /v1/user_deposit   更新会员取款信息
+ * @api {put} /v1/user_withdraw   更新会员取款信息(审核)
  * @apiVersion 0.1.0
  * @apiName  更新
  * @apiGroup 会员取款 Withdraw
- * @apiParam {Integer} id			  * 存款Id
+ * @apiParam {Integer} id			  * 存款Id {status= 2才可以审核}
  * @apiParam {Integer} status			状态 {3：成功 4：拒绝}
  * @apiSuccess {Integer}   code   标识码 200：成功
  * @apiSuccess {Object}    data   数据
@@ -151,6 +165,11 @@ func (*UserWithdraw) Put (req *ghttp.Request)  {
 	if err := req.Parse(&edit); err != nil {
 		response.Json(req, errcode.ErrCodeAdminParseError, "")
 	}
+	lockName := redis.ADMIN_LOCK_TIME_WITHDRAW+gconv.String(edit.Id)
+	ts := redis.ModelRedis.Lock(lockName, redis.ADMIN_LOCK_TIME, nil)
+	if ts != 0 {
+		response.Json(req, errcode.ErrCodeFailure, fmt.Sprintf("请不要频繁操作, 剩余时间: %v 秒.", ts))
+	}
 	if edit.Id == 0 {
 		response.Json(req, errcode.ErrCodeAdminWithDrawNotExist, "")
 	}
@@ -161,17 +180,33 @@ func (*UserWithdraw) Put (req *ghttp.Request)  {
 	}
 	var modelUserWithdraw model.UserWithdraw
 	_ = info.Struct(&modelUserWithdraw)
-	// 通过 or 拒绝
-	if modelUserWithdraw.Status == server.USER_WITHDRAW_STATUS_SUCCESS || modelUserWithdraw.Status == server.USER_WITHDRAW_STATUS_FAILURE {
-		// 处理RPC通知
-	} else {
+	if modelUserWithdraw.AdminAccount != Admins.Account {
+		response.Json(req, errcode.ErrCodeLockError, "")
+	}
+	if modelUserWithdraw.Status != server.USER_WITHDRAW_STATUS_INSPECTION {
 		response.Json(req, errcode.ErrCodeFailure, "")
 	}
-	edit.UpdatedAt = time.Now()
-	data := help.Filter(edit)
-	result, err := server.ModelUserWithdraw.Update(edit.Id, data)
+	var status bool
+	switch edit.Status {
+	case server.USER_WITHDRAW_STATUS_SUCCESS:
+		status = true
+	case server.USER_WITHDRAW_STATUS_FAILURE:
+		status = false
+	}
+	// 锁定订单
+	redis.ModelRedis.Lock(lockName, redis.ADMIN_LOCK_TIME, time.Now())
+
+	ctx, _ := context.WithTimeout(context.TODO(), time.Second * 3)
+	_, err = rpc.GrpcConn().HandleWithdraw(ctx, &rpc.HandleWithdrawRequest{
+		Id:                   edit.Id,
+		Status:               status,
+		Account:              Admins.Account,
+		Remark:               edit.Remark,
+		Amount:               modelUserWithdraw.Amount,
+	})
 	if err != nil {
-		response.Json(req, errcode.ErrCodeFailure, "")
+		glog.Level(glog.LEVEL_ERRO).Printf("--10086 - 审核取款失败,", &rpc.HandleWithdrawRequest{})
+		response.Json(req, errcode.ErrCodeFailure, err.Error())
 	}
 	log, _ := json.Marshal(&edit)
 	server.ModelAdminLog.NewAdminLogOption(func(options *server.AdminLogOptions) {
@@ -182,9 +217,152 @@ func (*UserWithdraw) Put (req *ghttp.Request)  {
 		options.ActionAdminName = Admins.Account
 		options.ActionAdminIp = req.GetClientIp()
 	})
-	response.Json(req, errcode.ErrCodeSuccess, "", result)
+	glog.Level(glog.LEVEL_ERRO).Printf("--10086 - 审核取款成功,", &rpc.HandleWithdrawRequest{})
+	response.Json(req, errcode.ErrCodeSuccess, "", edit)
 
 }
 
 
 
+/**
+ * @api {patch} /v1/user_withdraw   人工扣款
+ * @apiVersion 0.1.0
+ * @apiName  人工
+ * @apiGroup 会员取款 Withdraw
+ * @apiParam {Integer} user_id			* 会员id
+ * @apiParam {String}  wallet			* 会员钱包类型 {config: user_wallet_type}
+ * @apiParam {Float} money				* 交易金额/元
+ * @apiSuccess {Integer}   code   标识码 200：成功
+ * @apiSuccess {Object}    data   数据
+ * @apiSuccess {String}    msg    提示信息
+ * @apiSuccessExample Success-Response:
+	{
+		"code": 200,
+		"data": 1,
+		"msg": "成功"
+	}
+ * @apiErrorExample Error-Response:
+   {
+     	"code": 201,
+      	"data": null
+      	"msg": "失败提示",
+   }
+*/
+func (*UserWithdraw) Patch (req *ghttp.Request)  {
+	var patch patchWithdrawReq
+
+	if err := req.Parse(&patch); err != nil {
+		response.Json(req, errcode.ErrCodeAdminParseError, "")
+	}
+	lockName := redis.ADMIN_LOCK_TIME_MANUAL_WITHDRAW+gconv.String(patch.UserId)
+	if ts := redis.ModelRedis.Lock(lockName, redis.ADMIN_LOCK_TIME, nil); ts != 0 {
+		response.Json(req, errcode.ErrCodeFailure, fmt.Sprintf("请不要频繁操作, 剩余时间: %v 秒.", ts))
+	}
+	user, err := server.ModelUser.GetById(patch.UserId)
+	if err != nil || user == nil {
+		response.Json(req, errcode.ErrCodeUserNotExist, "")
+		return
+	}
+	var modelUser model.User
+	_ = user.Struct(&modelUser)
+	if patch.Money == 0 {
+		response.Json(req, errcode.ErrCodeFailure, "")
+	}
+	switch patch.Wallet {
+		case server.USER_WALLET_TYPE_MASTER:
+			if help.DecimalIntVal(patch.Money) > modelUser.Balance {
+				response.Json(req, errcode.ErrCodeMoneyBalanceNotSufficientError, "")
+			}
+		case server.USER_WALLET_TYPE_COMISSION:
+			if help.DecimalIntVal(patch.Money) > modelUser.Commission {
+				response.Json(req, errcode.ErrCodeMoneyComissionNotSufficientError, "")
+			}
+		default:
+			response.Json(req, errcode.ErrCodeFailure, "")
+	}
+	// 锁定订单
+	redis.ModelRedis.Lock(lockName, redis.ADMIN_LOCK_TIME, time.Now())
+	ctx, _ := context.WithTimeout(context.TODO(), time.Second * 3)
+	_, err = rpc.GrpcConn().ManualUserAmount(ctx, &rpc.ManualUserAmountRequest{
+		UserId:               modelUser.Id,
+		Username:             modelUser.Username,
+		Phone:                modelUser.Phone,
+		Amount:               help.DecimalIntVal(patch.Money),
+		Account:              Admins.Account,
+		Status:               false,
+		Wallet:               rpc.Wallet(patch.Wallet),
+	})
+	if err != nil {
+		glog.Level(glog.LEVEL_ERRO).Printf("--10010 - 人工取款失败,", &rpc.ManualUserAmountRequest{})
+		response.Json(req, errcode.ErrCodeFailure, err.Error())
+	} else {
+		log, _ := json.Marshal(&patch)
+		server.ModelAdminLog.NewAdminLogOption(func(options *server.AdminLogOptions) {
+			options.Level = server.ADMIN_LOG_LEVEL_WARNING
+			options.Action= server.ADMIN_LOG_ACTION_CREATE
+			options.Module= env.ADMIN_MODULE_USER_WITHDRAW
+			options.Title = env.F[env.ADMIN_MODULE_USER_WITHDRAW]
+			options.Description = string(log)
+			options.ActionAdminId = Admins.Id
+			options.ActionAdminName = Admins.Account
+			options.ActionUserId = modelUser.Id
+			options.ActionUserName = modelUser.Phone
+			options.ActionAdminIp = req.GetClientIp()
+		})
+		glog.Level(glog.LEVEL_ERRO).Printf("--10010 - 人工取款成功,", &rpc.ManualUserAmountRequest{})
+		response.Json(req, errcode.ErrCodeSuccess, "", patch)
+	}
+
+}
+
+
+/**
+ * @api {put} /v1/user_withdraw_lock   锁定/解锁取款单
+ * @apiVersion 0.1.0
+ * @apiName  行为
+ * @apiGroup 会员取款 Withdraw
+ * @apiParam   {Integer}   id	*取款单Id
+ * @apiSuccess {Integer}   code   标识码 200：成功
+ * @apiSuccess {Object}    data   数据
+ * @apiSuccess {String}    msg    提示信息
+ * @apiSuccessExample Success-Response:
+	{
+		"code": 200,
+		"data": 1,
+		"msg": "成功"
+	}
+ * @apiErrorExample Error-Response:
+   {
+     	"code": 201,
+      	"data": null
+      	"msg": "失败提示",
+   }
+*/
+
+func (*UserWithdraw) Lock (req *ghttp.Request)  {
+	var lock putLockWithdrawReq
+	if err := req.Parse(&lock); err != nil {
+		response.Json(req, errcode.ErrCodeAdminParseError, "")
+	}
+	info, err := server.ModelUserWithdraw.GetById(lock.Id)
+	if err != nil || info == nil {
+		response.Json(req, errcode.ErrCodeFailure, "")
+		return
+	}
+	var modelWithdraw model.UserWithdraw
+	_ = info.Struct(&modelWithdraw)
+	if modelWithdraw.AdminAccount == "" {
+		modelWithdraw.AdminAccount = Admins.Account
+	} else if modelWithdraw.AdminAccount != Admins.Account {
+		response.Json(req, errcode.ErrCodeOrderTaskLockError, "")
+	} else {
+		modelWithdraw.AdminAccount = ""
+	}
+	modelWithdraw.UpdatedAt = time.Now()
+	status, err := server.ModelUserWithdraw.Update(lock.Id, modelWithdraw)
+	if err != nil {
+		response.Json(req, errcode.ErrCodeFailure, "")
+	}
+	response.Json(req, errcode.ErrCodeSuccess, "", status)
+
+}

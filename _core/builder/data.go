@@ -31,8 +31,8 @@ func BuilderMysqlReportUsers ()  {
 
 	rand.Seed(time.Now().Unix())
 	var temp model.ReportUsers
-	for i:=0;i< 10 ;i++ {
-		temp.UserId = 100101006
+	for i:=0;i< 1 ;i++ {
+		temp.UserId = 100101007
 		temp.LoginCount = gconv.Int32(rand.Intn(60))
 		temp.ComissionPromotionSum = gconv.Int32(rand.Intn(60))
 		temp.ComissionTaskSum = gconv.Int32(rand.Intn(60))
