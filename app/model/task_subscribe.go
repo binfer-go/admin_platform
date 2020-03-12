@@ -15,7 +15,7 @@ type TaskSubscribe struct {
 	Amount          int32     `plat:"amount" json:"amount"`                     // 任务佣金
 	Step            string    `plat:"step" json:"step"`                         // 任务步骤
 	Result          string    `plat:"result" json:"result"`                     // 任务提交凭证
-	Status          byte      `plat:"status" json:"status"`                     // 1: 待提交 2:待审核 3:已通过 4:已拒绝 5:待复审 6:复审失败 7:已过期
+	Status          byte      `plat:"status" json:"status"`                     // 1: 待提交 2:待审核 3:已通过 4:已拒绝 5:待复审 6:已过期 7:复审失败 8:已失败
 	AdminAccount    string    `plat:"admin_account" json:"admin_account"`       // 操作人账号
 	AcceptTs        int64     `plat:"accept_ts" json:"accept_ts"`               // 领取时间
 	CommitTs        int64     `plat:"commit_ts" json:"commit_ts"`               // 提交时间

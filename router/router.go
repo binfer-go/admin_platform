@@ -52,6 +52,7 @@ func init()  {
 		group.REST("user_bank", 			new(hander.UserBank))
 		// 会员存款管理
 		group.REST("user_deposit", 			new(hander.UserDeposit))
+		group.PUT( "user_deposit_lock",		new(hander.UserDeposit).Lock)
 		// 会员取款管理
 		group.REST("user_withdraw", 		new(hander.UserWithdraw))
 		group.PUT( "user_withdraw_lock",	new(hander.UserWithdraw).Lock)

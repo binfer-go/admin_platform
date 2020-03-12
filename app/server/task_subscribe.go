@@ -15,8 +15,9 @@ const (
 	SUBSCRIBE_STATUS_PASS 		= byte(3)	// 已通过
 	SUBSCRIBE_STATUS_REFUSE 	= byte(4)	// 已拒绝
 	SUBSCRIBE_STATUS_REWAIT 	= byte(5)	// 待复审
-	SUBSCRIBE_STATUS_REWAIT_FAILURE = byte(6)	// 复审失败
-	SUBSCRIBE_STATUS_OVERDUE 	= byte(7)	// 已过期
+	SUBSCRIBE_STATUS_OVERDUE 	= byte(6)	// 已过期
+	SUBSCRIBE_STATUS_REWAIT_FAILURE = byte(7)	// 复审失败
+	SUBSCRIBE_STATUS_FAILURE 	= byte(8)	// 失败
 
 )
 
@@ -79,3 +80,23 @@ func (*ServiceTaskSubscribe) GetCount (where interface{}) int {
 }
 
 
+func (*ServiceTaskSubscribe) Get (where interface{}, fields string, groups string, orders string) (gdb.Result, error) {
+
+	result, err := tableSubscribe.Where(where).Fields(fields).Order(orders).Group(groups).All()
+	if err != nil {
+		return nil, err
+	}
+	return result, nil
+
+}
+
+
+func (*ServiceTaskSubscribe) Create(data interface{}) (interface{}, error) {
+
+	result, err := tableSubscribe.Data(data).Save();
+	if err != nil {
+		return nil, err
+	}
+	lastId, _ := result.LastInsertId()
+	return lastId, nil
+}

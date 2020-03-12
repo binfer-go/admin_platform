@@ -12,13 +12,19 @@ type ReportBases struct {
 	UserCommission                  int32     `plat:"user_commission" json:"user_commission"`                                         // 佣金钱包
 	TaskPublishCount                int32     `plat:"task_publish_count" json:"task_publish_count"`                                   // 发布任务数
 	TaskPublishMoneySum             int32     `plat:"task_publish_money_sum" json:"task_publish_money_sum"`                           // 发布任务金额
-	TaskPublishChilderCount         int32     `plat:"task_publish_childer_count" json:"task_publish_childer_count"`                   // 发布子任务数量
 	TaskPublishAcceptCount          int32     `plat:"task_publish_accept_count" json:"task_publish_accept_count"`                     // 做单人数
-	TaskPublishSuccessCount         int32     `plat:"task_publish_success_count" json:"task_publish_success_count"`                   // 已成功人数
-	TaskSubscribeCount              int32     `plat:"task_subscribe_count" json:"task_subscribe_count"`                               // 订阅任务数
-	TaskSubscribeMoneySum           int32     `plat:"task_subscribe_money_sum" json:"task_subscribe_money_sum"`                       // 订阅任务金额
-	TaskSubscribeStatusSuccessCount int32     `plat:"task_subscribe_status_success_count" json:"task_subscribe_status_success_count"` // 成功的任务数
-	TaskSubscribeStatusFailureCount int32     `plat:"task_subscribe_status_failure_count" json:"task_subscribe_status_failure_count"` // 失败的任务数
+	TaskPublishSuccessAcceptCount   int32     `plat:"task_publish_success_accept_count" json:"task_publish_success_accept_count"`     // 已成功人数
+	TaskPublishEndCount             int32     `plat:"task_publish_end_count" json:"task_publish_end_count"`                           // 发布结束任务数
+	TaskPublishSuccessCount         int32     `plat:"task_publish_success_count" json:"task_publish_success_count"`                   // 发布成功任务数
+	TaskPublishChildrenCount        int32     `plat:"task_publish_children_count" json:"task_publish_children_count"`                 // 发布子任务数量
+	TaskPublishChildrenFailureCount int32     `plat:"task_publish_children_failure_count" json:"task_publish_children_failure_count"` // 发布子任务失败数量(自身发布)
+	TaskPublishChildrenSuccessCount int32     `plat:"task_publish_children_success_count" json:"task_publish_children_success_count"` // 发布子任务成功数量(自身发布)
+	TaskPublishChildrenWaitCount    int32     `plat:"task_publish_children_wait_count" json:"task_publish_children_wait_count"`       // 发布子任务进行中数量(自身发布)
+	TaskSubscribeCount              int32     `plat:"task_subscribe_count" json:"task_subscribe_count"`                               // 订阅任务总量（其他会员发布）
+	TaskSubscribeMoneySum           int32     `plat:"task_subscribe_money_sum" json:"task_subscribe_money_sum"`                       // 订阅任务金额（其他会员发布）
+	TaskSubscribeStatusSuccessCount int32     `plat:"task_subscribe_status_success_count" json:"task_subscribe_status_success_count"` // 成功的任务量（其他会员发布）
+	TaskSubscribeStatusFailureCount int32     `plat:"task_subscribe_status_failure_count" json:"task_subscribe_status_failure_count"` // 失败的任务量（其他会员发布）
+	TaskSubscribeStatusWaitCount    int32     `plat:"task_subscribe_status_wait_count" json:"task_subscribe_status_wait_count"`       // 进行中的任务量（其他会员发布）
 	UserDepositCount                int32     `plat:"user_deposit_count" json:"user_deposit_count"`                                   // 充值次数
 	UserDepositMoneySum             int32     `plat:"user_deposit_money_sum" json:"user_deposit_money_sum"`                           // 充值金额
 	UserDepositMoneyMax             int32     `plat:"user_deposit_money_max" json:"user_deposit_money_max"`                           // 最大充值金额

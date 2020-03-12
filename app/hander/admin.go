@@ -277,6 +277,9 @@ func (*Admin) Put (req *ghttp.Request)  {
 	data := help.Filter(edit)
 	status, err := server.ModelAdmin.Update(edit.Id, data)
 	if err != nil || status != nil {
+		if edit.Status != server.ADMIN_STATUS_ENABLE {
+			_, _ = g.Redis().Do("DEL", help.RedisFormat(redis.ADMIN_PLATFORM_TOKEN_LIST, edit.Id))
+		}
 		log, _ := json.Marshal(&edit)
 		server.ModelAdminLog.NewAdminLogOption(func(options *server.AdminLogOptions) {
 			options.Level  = server.ADMIN_LOG_LEVEL_WARNING

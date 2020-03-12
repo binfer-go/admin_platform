@@ -111,10 +111,16 @@ func (auth *Auth) Post (req *ghttp.Request)  {
 			response.Json(req, errcode.ErrCodeAdminBindPermissionError, "")
 		}
 	}
+	var modelRole model.AdminRole
+	roles, _ := server.ModelAdminRole.GetById(modelAdmin.RoleId)
+	_ = roles.Struct(&modelRole)
+	if modelRole.Status != server.ADMIN_ROLE_STATUS_ENABLE {
+		response.Json(req, errcode.ErrCodeLoginStatusError, "")
+	}
 	// 禁用
 	if modelAdmin.Status != server.ADMIN_STATUS_ENABLE {
-
 		response.Json(req, errcode.ErrCodeLoginStatusError, "")
+		return
 	}
 	token, err := auth.Token.Sign(server.NewOptions(func(options *server.Options) {
 		options.Id = modelAdmin.Id

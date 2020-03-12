@@ -84,24 +84,37 @@ func (*ServerReportBase) NewOptions (opts ...ServiceReportBaseOption) *model.Rep
 		Id:                              0,
 		Date:                            time.Time{},
 		UserId:                          0,
+		UserParentId:                    0,
 		UserPhone:                       "",
 		UserBalance:                     0,
 		UserCommission:                  0,
 		TaskPublishCount:                0,
 		TaskPublishMoneySum:             0,
-		TaskPublishChilderCount:         0,
 		TaskPublishAcceptCount:          0,
+		TaskPublishSuccessAcceptCount:   0,
+		TaskPublishEndCount:             0,
 		TaskPublishSuccessCount:         0,
+		TaskPublishChildrenCount:        0,
+		TaskPublishChildrenFailureCount: 0,
+		TaskPublishChildrenSuccessCount: 0,
+		TaskPublishChildrenWaitCount:    0,
 		TaskSubscribeCount:              0,
 		TaskSubscribeMoneySum:           0,
 		TaskSubscribeStatusSuccessCount: 0,
 		TaskSubscribeStatusFailureCount: 0,
+		TaskSubscribeStatusWaitCount:    0,
 		UserDepositCount:                0,
 		UserDepositMoneySum:             0,
 		UserDepositMoneyMax:             0,
+		UserDepositManualMoneySum:       0,
+		UserDepositManualMoneyCount:     0,
+		UserDepositManualMoneyMax:       0,
 		UserWithdrawCount:               0,
 		UserWithdrawMoneySum:            0,
 		UserWithdrawMoneyMax:            0,
+		UserWithdrawManualMoneySum:      0,
+		UserWithdrawManualMoneyCount:    0,
+		UserWithdrawManualMoneyMax:      0,
 		CreatedAt:                       time.Time{},
 		UpdatedAt:                       time.Now(),
 	}
@@ -114,7 +127,7 @@ func (*ServerReportBase) NewOptions (opts ...ServiceReportBaseOption) *model.Rep
 
 func (*ServerReportBase) Querys(sql string) error {
 
-	_, err := g.DB(DB_NAME_REPORT).Query(sql)
+	_, err := g.DB(DB_NAME_REPORT).Exec(sql)
 	if err != nil {
 		return err
 	}

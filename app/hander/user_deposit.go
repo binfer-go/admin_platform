@@ -48,6 +48,9 @@ type patchDepositReq struct {
 	Money float64 `json:"money"`
 }
 
+type putLockDepositReq struct {
+	Id int32 `json:"id"`
+}
 
 /**
  * @api {get} /v1/user_deposit  会员存款列表
@@ -138,7 +141,7 @@ func (*UserDeposit)Get(req *ghttp.Request)  {
 
 
 /**
- * @api {put} /v1/user_deposit   更新会员存款信息
+ * @api {put} /v1/user_deposit   更新会员存款信息(审核)
  * @apiVersion 0.1.0
  * @apiName  更新
  * @apiGroup 会员存款 Deposit
@@ -303,4 +306,55 @@ func (*UserDeposit) Patch (req *ghttp.Request)  {
 		glog.Level(glog.LEVEL_ERRO).Printf("--10010 - 人工存款成功,", &rpc.ManualUserAmountRequest{})
 		response.Json(req, errcode.ErrCodeSuccess, "", patch)
 	}
+}
+
+/**
+ * @api {put} /v1/user_deposit_lock   锁定/解锁存款单
+ * @apiVersion 0.1.0
+ * @apiName  行为
+ * @apiGroup 会员存款 Deposit
+ * @apiParam   {Integer}   id	*存款单Id
+ * @apiSuccess {Integer}   code   标识码 200：成功
+ * @apiSuccess {Object}    data   数据
+ * @apiSuccess {String}    msg    提示信息
+ * @apiSuccessExample Success-Response:
+	{
+		"code": 200,
+		"data": 1,
+		"msg": "成功"
+	}
+ * @apiErrorExample Error-Response:
+   {
+     	"code": 201,
+      	"data": null
+      	"msg": "失败提示",
+   }
+*/
+
+func (*UserDeposit) Lock (req *ghttp.Request)  {
+	var lock putLockDepositReq
+	if err := req.Parse(&lock); err != nil {
+		response.Json(req, errcode.ErrCodeAdminParseError, "")
+	}
+	info, err := server.ModelUserDeposit.GetById(lock.Id)
+	if err != nil || info == nil {
+		response.Json(req, errcode.ErrCodeFailure, "")
+		return
+	}
+	var modelDeposit model.UserDeposit
+	_ = info.Struct(&modelDeposit)
+	if modelDeposit.AdminAccount == "" {
+		modelDeposit.AdminAccount = Admins.Account
+	} else if modelDeposit.AdminAccount != Admins.Account {
+		response.Json(req, errcode.ErrCodeOrderTaskLockError, "")
+	} else {
+		modelDeposit.AdminAccount = ""
+	}
+	modelDeposit.UpdatedAt = time.Now()
+	status, err := server.ModelUserDeposit.Update(lock.Id, modelDeposit)
+	if err != nil {
+		response.Json(req, errcode.ErrCodeFailure, "")
+	}
+	response.Json(req, errcode.ErrCodeSuccess, "", status)
+
 }

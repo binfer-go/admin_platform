@@ -1,0 +1,306 @@
+2020-03-11 19:14:57.345 [DEBU] [51 ms] SELECT * FROM `admin` WHERE account='test001' LIMIT 1
+2020-03-11 19:14:57.359 [DEBU] [13 ms] SELECT * FROM `admin_role` WHERE id=1 LIMIT 1
+2020-03-11 19:14:57.381 [DEBU] [22 ms] UPDATE `admin` SET `created_ip`='10.10.35.250',`last_login_time`='2020-03-11 19:14:57',`last_login_ip`='10.10.35.250',`login_password`='test001',`updated_at`='2020-03-11 18:35:52',`created_id`=1,`secret_key`='',`status`=1,`created_at`='2020-02-22 19:26:33',`login_count`=450,`id`=48,`account`='test001',`nick_name`='allen',`role_id`=1,`role_name`='管理员' WHERE id=48
+2020-03-11 19:14:57.399 [DEBU] [17 ms] SELECT * FROM `admin_role_permission` WHERE role_id=1 LIMIT 1
+2020-03-11 19:14:57.415 [DEBU] [16 ms] INSERT INTO `site_admin_log`(`module`,`action`,`description`,`action_admin_name`,`action_user_id`,`action_admin_ip`,`created_at`,`level`,`action_admin_id`,`action_user_name`,`title`) VALUES(2,5,'管理员: test001, 在 2020-03-11 19:14:57.3996139 +0800 CST m=+29.338311901, 第 450 次登陆','test001',0,'10.10.35.250','2020-03-11 19:14:57',1,48,'','登陆') ON DUPLICATE KEY UPDATE `action`=VALUES(`action`),`description`=VALUES(`description`),`action_admin_name`=VALUES(`action_admin_name`),`action_user_id`=VALUES(`action_user_id`),`action_admin_ip`=VALUES(`action_admin_ip`),`created_at`=VALUES(`created_at`),`level`=VALUES(`level`),`module`=VALUES(`module`),`action_user_name`=VALUES(`action_user_name`),`title`=VALUES(`title`),`action_admin_id`=VALUES(`action_admin_id`)
+2020-03-11 19:16:36.637 [DEBU] [32 ms] SELECT * FROM `admin` WHERE account='clear2' LIMIT 1
+2020-03-11 19:16:36.658 [DEBU] [21 ms] SELECT * FROM `admin_role_permission` WHERE role_id=25 LIMIT 1
+2020-03-11 19:16:36.665 [DEBU] [7 ms] SELECT * FROM `admin_role` WHERE id=25 LIMIT 1
+2020-03-11 19:16:36.687 [DEBU] [21 ms] UPDATE `admin` SET `login_password`='222222',`created_ip`='10.10.35.146',`last_login_ip`='10.10.35.146',`nick_name`='',`updated_at`='2020-03-11 14:35:33',`created_id`=1,`role_name`='test11',`account`='clear2',`status`=1,`created_at`='2020-03-11 14:35:33',`last_login_time`='2020-03-11 19:16:36',`id`=63,`role_id`=25,`secret_key`='',`login_count`=15 WHERE id=63
+2020-03-11 19:16:36.730 [DEBU] [40 ms] INSERT INTO `site_admin_log`(`title`,`action_user_id`,`action_admin_ip`,`action_admin_id`,`action_admin_name`,`action_user_name`,`created_at`,`level`,`module`,`action`,`description`) VALUES('登陆',0,'10.10.35.146',63,'clear2','','2020-03-11 19:16:36',1,2,5,'管理员: clear2, 在 2020-03-11 19:16:36.6901656 +0800 CST m=+26.602676001, 第 15 次登陆') ON DUPLICATE KEY UPDATE `description`=VALUES(`description`),`action_admin_id`=VALUES(`action_admin_id`),`action_admin_name`=VALUES(`action_admin_name`),`action_user_name`=VALUES(`action_user_name`),`created_at`=VALUES(`created_at`),`level`=VALUES(`level`),`module`=VALUES(`module`),`action`=VALUES(`action`),`title`=VALUES(`title`),`action_user_id`=VALUES(`action_user_id`),`action_admin_ip`=VALUES(`action_admin_ip`)
+2020-03-11 19:16:39.257 [DEBU] [7 ms] SELECT * FROM `admin_permission` ORDER BY `sort` asc
+2020-03-11 19:16:39.273 [DEBU] [23 ms] SELECT COUNT(1) FROM `admin_role`  WHERE id!= 1
+2020-03-11 19:16:39.279 [DEBU] [6 ms] SELECT * FROM `admin_role` WHERE id!= 1 LIMIT 0,10
+2020-03-11 19:16:44.125 [DEBU] [7 ms] SELECT COUNT(1) FROM `admin` 
+2020-03-11 19:16:44.132 [DEBU] [7 ms] SELECT * FROM `admin` LIMIT 0,10
+2020-03-11 19:16:44.135 [DEBU] [11 ms] SELECT COUNT(1) FROM `admin_role`  WHERE `status`=1 AND id!= 1
+2020-03-11 19:16:44.141 [DEBU] [6 ms] SELECT * FROM `admin_role` WHERE `status`=1 AND id!= 1 LIMIT 0,30
+2020-03-11 19:16:47.457 [DEBU] [4 ms] SELECT * FROM `admin_permission` ORDER BY `sort` asc
+2020-03-11 19:16:47.465 [DEBU] [13 ms] SELECT COUNT(1) FROM `admin_role`  WHERE id!= 1
+2020-03-11 19:16:47.489 [DEBU] [24 ms] SELECT * FROM `admin_role` WHERE id!= 1 LIMIT 0,10
+2020-03-11 19:16:48.312 [DEBU] [11 ms] SELECT COUNT(1) FROM `admin` 
+2020-03-11 19:16:48.314 [DEBU] [12 ms] SELECT COUNT(1) FROM `admin_role`  WHERE `status`=1 AND id!= 1
+2020-03-11 19:16:48.317 [DEBU] [5 ms] SELECT * FROM `admin` LIMIT 0,10
+2020-03-11 19:16:48.323 [DEBU] [8 ms] SELECT * FROM `admin_role` WHERE id!= 1 AND `status`=1 LIMIT 0,30
+2020-03-11 19:16:48.903 [DEBU] [4 ms] SELECT * FROM `admin_permission` ORDER BY `sort` asc
+2020-03-11 19:16:49.495 [DEBU] [5 ms] SELECT * FROM `admin_permission` ORDER BY `sort` asc
+2020-03-11 19:16:49.496 [DEBU] [7 ms] SELECT COUNT(1) FROM `admin_role`  WHERE id!= 1
+2020-03-11 19:16:49.504 [DEBU] [8 ms] SELECT * FROM `admin_role` WHERE id!= 1 LIMIT 0,10
+2020-03-11 19:16:54.715 [DEBU] [3 ms] SELECT COUNT(1) FROM `admin` 
+2020-03-11 19:16:54.717 [DEBU] [6 ms] SELECT COUNT(1) FROM `admin_role`  WHERE `status`=1 AND id!= 1
+2020-03-11 19:16:54.720 [DEBU] [5 ms] SELECT * FROM `admin` LIMIT 0,10
+2020-03-11 19:16:54.724 [DEBU] [7 ms] SELECT * FROM `admin_role` WHERE `status`=1 AND id!= 1 LIMIT 0,30
+2020-03-11 19:17:03.414 [DEBU] [15 ms] SELECT * FROM `admin_permission` ORDER BY `sort` asc
+2020-03-11 19:17:03.415 [DEBU] [16 ms] SELECT COUNT(1) FROM `admin_role`  WHERE id!= 1
+2020-03-11 19:17:03.425 [DEBU] [10 ms] SELECT * FROM `admin_role` WHERE id!= 1 LIMIT 0,10
+2020-03-11 19:17:18.235 [DEBU] [69 ms] SELECT * FROM `admin_role_permission` WHERE role_id=25 LIMIT 1
+2020-03-11 19:17:18.266 [DEBU] [31 ms] UPDATE `admin_role_permission` SET `permission_ids`='[{"id":16},{"id":2},{"id":3},{"id":4},{"id":5},{"id":6},{"id":7},{"id":8},{"id":45},{"id":30},{"id":9},{"id":10},{"id":25},{"id":26},{"id":43},{"id":35},{"id":36},{"id":37},{"id":41},{"id":42},{"id":38},{"id":39},{"id":40},{"id":31},{"id":11},{"id":17},{"id":33},{"id":32},{"id":18},{"id":19},{"id":20},{"id":12},{"id":24},{"id":23},{"id":22},{"id":21}]',`status`=1,`module`='{}',`role_id`=25 WHERE role_id=25
+2020-03-11 19:17:18.279 [DEBU] [12 ms] SELECT * FROM `admin_role_permission` WHERE role_id=25 LIMIT 1
+2020-03-11 19:17:18.324 [DEBU] [44 ms] SELECT id, parent_id, permission_code, permission_name, permission_path, request_param, type, sort, status FROM `admin_permission` WHERE id IN(16,2,3,4,5,6,7,8,45,30,9,10,25,26,43,35,36,37,41,42,38,39,40,31,11,17,33,32,18,19,20,12,24,23,22,21) AND parent_id!=0
+2020-03-11 19:17:18.355 [DEBU] [30 ms] INSERT INTO `site_admin_log`(`action_admin_id`,`action_admin_name`,`action_admin_ip`,`created_at`,`title`,`description`,`action`,`action_user_id`,`action_user_name`,`level`,`module`) VALUES(63,'clear2','10.10.35.146','2020-03-11 19:17:18','权限控制','{"role_id":25,"permission_ids":"[{\"id\":16},{\"id\":2},{\"id\":3},{\"id\":4},{\"id\":5},{\"id\":6},{\"id\":7},{\"id\":8},{\"id\":45},{\"id\":30},{\"id\":9},{\"id\":10},{\"id\":25},{\"id\":26},{\"id\":43},{\"id\":35},{\"id\":36},{\"id\":37},{\"id\":41},{\"id\":42},{\"id\":38},{\"id\":39},{\"id\":40},{\"id\":31},{\"id\":11},{\"id\":17},{\"id\":33},{\"id\":32},{\"id\":18},{\"id\":19},{\"id\":20},{\"id\":12},{\"id\":24},{\"id\":23},{\"id\":22},{\"id\":21}]","status":1,"module":"{}"}',2,0,'',2,1) ON DUPLICATE KEY UPDATE `description`=VALUES(`description`),`action_admin_id`=VALUES(`action_admin_id`),`action_admin_name`=VALUES(`action_admin_name`),`action_admin_ip`=VALUES(`action_admin_ip`),`created_at`=VALUES(`created_at`),`title`=VALUES(`title`),`module`=VALUES(`module`),`action`=VALUES(`action`),`action_user_id`=VALUES(`action_user_id`),`action_user_name`=VALUES(`action_user_name`),`level`=VALUES(`level`)
+2020-03-11 19:17:30.615 [DEBU] [18 ms] SELECT COUNT(1) FROM `admin_role`  WHERE `status`=1 AND id!= 1
+2020-03-11 19:17:30.656 [DEBU] [41 ms] SELECT * FROM `admin_role` WHERE `status`=1 AND id!= 1 LIMIT 0,30
+2020-03-11 19:17:30.675 [DEBU] [77 ms] SELECT COUNT(1) FROM `admin` 
+2020-03-11 19:17:30.694 [DEBU] [19 ms] SELECT * FROM `admin` LIMIT 0,10
+2020-03-11 19:17:33.073 [DEBU] [4 ms] SELECT * FROM `admin_permission` ORDER BY `sort` asc
+2020-03-11 19:17:33.087 [DEBU] [18 ms] SELECT COUNT(1) FROM `admin_role`  WHERE id!= 1
+2020-03-11 19:17:33.092 [DEBU] [5 ms] SELECT * FROM `admin_role` WHERE id!= 1 LIMIT 0,10
+2020-03-11 19:17:39.706 [DEBU] [14 ms] SELECT * FROM `admin_permission` ORDER BY `sort` asc
+2020-03-11 19:17:39.708 [DEBU] [17 ms] SELECT COUNT(1) FROM `admin_role`  WHERE id!= 1
+2020-03-11 19:17:39.717 [DEBU] [8 ms] SELECT * FROM `admin_role` WHERE id!= 1 LIMIT 0,10
+2020-03-11 19:17:55.518 [DEBU] [41 ms] SELECT * FROM `admin` WHERE account='clear2' LIMIT 1
+2020-03-11 19:17:55.544 [DEBU] [26 ms] SELECT * FROM `admin_role_permission` WHERE role_id=25 LIMIT 1
+2020-03-11 19:17:55.560 [DEBU] [15 ms] SELECT * FROM `admin_role` WHERE id=25 LIMIT 1
+2020-03-11 19:17:55.584 [DEBU] [24 ms] UPDATE `admin` SET `account`='clear2',`nick_name`='',`created_ip`='10.10.35.146',`login_count`=16,`last_login_time`='2020-03-11 19:17:55',`role_name`='test11',`status`=1,`last_login_ip`='10.10.35.146',`id`=63,`role_id`=25,`login_password`='222222',`secret_key`='',`created_at`='2020-03-11 14:35:33',`updated_at`='2020-03-11 14:35:33',`created_id`=1 WHERE id=63
+2020-03-11 19:17:55.606 [DEBU] [19 ms] INSERT INTO `site_admin_log`(`description`,`action_user_name`,`action_admin_ip`,`created_at`,`action_admin_id`,`action_admin_name`,`action_user_id`,`level`,`module`,`action`,`title`) VALUES('管理员: clear2, 在 2020-03-11 19:17:55.5866043 +0800 CST m=+105.499114701, 第 16 次登陆','','10.10.35.146','2020-03-11 19:17:55',63,'clear2',0,1,2,5,'登陆') ON DUPLICATE KEY UPDATE `action_admin_id`=VALUES(`action_admin_id`),`action_admin_name`=VALUES(`action_admin_name`),`action_user_id`=VALUES(`action_user_id`),`level`=VALUES(`level`),`module`=VALUES(`module`),`action`=VALUES(`action`),`title`=VALUES(`title`),`description`=VALUES(`description`),`action_user_name`=VALUES(`action_user_name`),`action_admin_ip`=VALUES(`action_admin_ip`),`created_at`=VALUES(`created_at`)
+2020-03-11 19:17:57.921 [DEBU] [5 ms] SELECT COUNT(1) FROM `user` 
+2020-03-11 19:17:57.931 [DEBU] [9 ms] SELECT * FROM `user` LIMIT 0,10
+2020-03-11 19:18:00.068 [DEBU] [12 ms] SELECT COUNT(1) FROM `user_deposit` 
+2020-03-11 19:18:00.081 [DEBU] [13 ms] SELECT * FROM `user_deposit` LIMIT 0,10
+2020-03-11 19:18:01.542 [DEBU] [107 ms] SELECT COUNT(1) FROM `user` 
+2020-03-11 19:18:01.566 [DEBU] [24 ms] SELECT * FROM `user` LIMIT 0,10
+2020-03-11 19:18:18.799 [DEBU] [6 ms] SELECT COUNT(1) FROM `user_deposit` 
+2020-03-11 19:18:18.802 [DEBU] [3 ms] SELECT * FROM `user_deposit` LIMIT 0,10
+2020-03-11 19:18:20.509 [DEBU] [3 ms] SELECT COUNT(1) FROM `user` 
+2020-03-11 19:18:20.513 [DEBU] [4 ms] SELECT * FROM `user` LIMIT 0,10
+2020-03-11 19:18:29.025 [DEBU] [37 ms] SELECT * FROM `admin` WHERE account='test001' LIMIT 1
+2020-03-11 19:18:29.030 [DEBU] [5 ms] SELECT * FROM `admin_role` WHERE id=1 LIMIT 1
+2020-03-11 19:18:29.045 [DEBU] [15 ms] UPDATE `admin` SET `created_id`=1,`role_id`=1,`account`='test001',`secret_key`='',`nick_name`='allen',`login_password`='test001',`last_login_time`='2020-03-11 19:18:29',`status`=1,`created_at`='2020-02-22 19:26:33',`created_ip`='10.10.35.250',`last_login_ip`='10.10.35.250',`login_count`=451,`id`=48,`role_name`='管理员',`updated_at`='2020-03-11 18:35:52' WHERE id=48
+2020-03-11 19:18:29.051 [DEBU] [5 ms] SELECT * FROM `admin_role_permission` WHERE role_id=1 LIMIT 1
+2020-03-11 19:18:29.076 [DEBU] [25 ms] INSERT INTO `site_admin_log`(`action_admin_id`,`action_admin_name`,`action_user_name`,`created_at`,`module`,`action`,`description`,`action_user_id`,`action_admin_ip`,`level`,`title`) VALUES(48,'test001','','2020-03-11 19:18:29',2,5,'管理员: test001, 在 2020-03-11 19:18:29.0512534 +0800 CST m=+138.963763801, 第 451 次登陆',0,'10.10.35.250',1,'登陆') ON DUPLICATE KEY UPDATE `created_at`=VALUES(`created_at`),`module`=VALUES(`module`),`action`=VALUES(`action`),`action_admin_id`=VALUES(`action_admin_id`),`action_admin_name`=VALUES(`action_admin_name`),`action_user_name`=VALUES(`action_user_name`),`level`=VALUES(`level`),`title`=VALUES(`title`),`description`=VALUES(`description`),`action_user_id`=VALUES(`action_user_id`),`action_admin_ip`=VALUES(`action_admin_ip`)
+2020-03-11 19:18:29.098 [DEBU] [3 ms] SELECT * FROM `admin_permission` WHERE FIND_IN_SET(1,`joins`) ORDER BY `sort` asc
+2020-03-11 19:18:38.720 [DEBU] [25 ms] SELECT COUNT(1) FROM `user_deposit` 
+2020-03-11 19:18:38.725 [DEBU] [5 ms] SELECT * FROM `user_deposit` LIMIT 0,10
+2020-03-11 19:18:40.067 [DEBU] [72 ms] SELECT COUNT(1) FROM `user_withdraw` 
+2020-03-11 19:18:40.072 [DEBU] [4 ms] SELECT * FROM `user_withdraw` LIMIT 0,10
+2020-03-11 19:18:43.859 [DEBU] [3 ms] SELECT COUNT(1) FROM `user_deposit` 
+2020-03-11 19:18:43.869 [DEBU] [10 ms] SELECT * FROM `user_deposit` LIMIT 0,10
+2020-03-11 19:18:46.416 [DEBU] [3 ms] SELECT COUNT(1) FROM `task` 
+2020-03-11 19:18:46.419 [DEBU] [2 ms] SELECT * FROM `task` LIMIT 0,10
+2020-03-11 19:18:54.237 [DEBU] [4 ms] SELECT COUNT(1) FROM `task`  WHERE `status`=1
+2020-03-11 19:18:54.242 [DEBU] [4 ms] SELECT * FROM `task` WHERE `status`=1 LIMIT 0,10
+2020-03-11 19:18:56.249 [DEBU] [16 ms] SELECT COUNT(1) FROM `task`  WHERE `status`=2
+2020-03-11 19:18:56.276 [DEBU] [27 ms] SELECT * FROM `task` WHERE `status`=2 LIMIT 0,10
+2020-03-11 19:18:57.927 [DEBU] [8 ms] SELECT COUNT(1) FROM `task`  WHERE `status`=1
+2020-03-11 19:18:57.940 [DEBU] [13 ms] SELECT * FROM `task` WHERE `status`=1 LIMIT 0,10
+2020-03-11 19:19:06.361 [DEBU] [3 ms] SELECT COUNT(1) FROM `user_withdraw` 
+2020-03-11 19:19:06.367 [DEBU] [6 ms] SELECT * FROM `user_withdraw` LIMIT 0,10
+2020-03-11 19:19:07.439 [DEBU] [7 ms] SELECT * FROM `task` WHERE id=1 LIMIT 1
+2020-03-11 19:19:07.482 [DEBU] [43 ms] UPDATE `task` SET `describe`='bb',`status`=2,`sort`=1,`updated_at`='2020-03-11 19:19:07',`id`=1,`title`='aa' WHERE id=1
+2020-03-11 19:19:07.505 [DEBU] [22 ms] INSERT INTO `site_admin_log`(`level`,`module`,`description`,`action_admin_name`,`action_user_name`,`action_admin_ip`,`created_at`,`action`,`title`,`action_admin_id`,`action_user_id`) VALUES(1,1,'{"id":1,"title":"aa","describe":"bb","commit_time":"","inspect_time":"","status":2,"sort":1,"updated_at":"2020-03-11T19:19:07.4397912+08:00"}','test001','','10.10.35.250','2020-03-11 19:19:07',2,'任务',48,0) ON DUPLICATE KEY UPDATE `action_admin_id`=VALUES(`action_admin_id`),`action_user_id`=VALUES(`action_user_id`),`action`=VALUES(`action`),`title`=VALUES(`title`),`description`=VALUES(`description`),`action_admin_name`=VALUES(`action_admin_name`),`action_user_name`=VALUES(`action_user_name`),`action_admin_ip`=VALUES(`action_admin_ip`),`created_at`=VALUES(`created_at`),`level`=VALUES(`level`),`module`=VALUES(`module`)
+2020-03-11 19:19:07.546 [DEBU] [27 ms] SELECT COUNT(1) FROM `task`  WHERE `status`=1
+2020-03-11 19:19:07.571 [DEBU] [24 ms] SELECT * FROM `task` WHERE `status`=1 LIMIT 0,10
+2020-03-11 19:19:11.060 [DEBU] [39 ms] SELECT COUNT(1) FROM `task`  WHERE `status`=1
+2020-03-11 19:19:11.070 [DEBU] [9 ms] SELECT * FROM `task` WHERE `status`=1 LIMIT 0,10
+2020-03-11 19:19:11.727 [DEBU] [7 ms] SELECT COUNT(1) FROM `task`  WHERE `status`=1
+2020-03-11 19:19:11.740 [DEBU] [12 ms] SELECT * FROM `task` WHERE `status`=1 LIMIT 0,10
+2020-03-11 19:19:11.949 [DEBU] [7 ms] SELECT COUNT(1) FROM `task`  WHERE `status`=1
+2020-03-11 19:19:11.979 [DEBU] [30 ms] SELECT * FROM `task` WHERE `status`=1 LIMIT 0,10
+2020-03-11 19:19:25.748 [DEBU] [10 ms] SELECT * FROM `task` WHERE id=2 LIMIT 1
+2020-03-11 19:19:25.771 [DEBU] [23 ms] UPDATE `task` SET `status`=1,`sort`=1,`updated_at`='2020-03-11 19:19:25',`id`=2,`title`='111',`describe`='111' WHERE id=2
+2020-03-11 19:19:25.783 [DEBU] [12 ms] INSERT INTO `site_admin_log`(`description`,`action_user_id`,`action`,`title`,`action_admin_id`,`action_admin_name`,`action_user_name`,`action_admin_ip`,`created_at`,`level`,`module`) VALUES('{"id":2,"title":"111","describe":"111","commit_time":"","inspect_time":"","status":1,"sort":1,"updated_at":"2020-03-11T19:19:25.7484686+08:00"}',0,2,'任务',48,'test001','','10.10.35.250','2020-03-11 19:19:25',1,1) ON DUPLICATE KEY UPDATE `title`=VALUES(`title`),`description`=VALUES(`description`),`action_user_id`=VALUES(`action_user_id`),`action`=VALUES(`action`),`module`=VALUES(`module`),`action_admin_id`=VALUES(`action_admin_id`),`action_admin_name`=VALUES(`action_admin_name`),`action_user_name`=VALUES(`action_user_name`),`action_admin_ip`=VALUES(`action_admin_ip`),`created_at`=VALUES(`created_at`),`level`=VALUES(`level`)
+2020-03-11 19:19:25.804 [DEBU] [9 ms] SELECT COUNT(1) FROM `task`  WHERE `status`=1
+2020-03-11 19:19:25.815 [DEBU] [11 ms] SELECT * FROM `task` WHERE `status`=1 LIMIT 0,10
+2020-03-11 19:19:28.911 [DEBU] [13 ms] SELECT * FROM `admin_permission` WHERE FIND_IN_SET(1,`joins`) ORDER BY `sort` asc
+2020-03-11 19:19:29.079 [DEBU] [3 ms] SELECT COUNT(1) FROM `task` 
+2020-03-11 19:19:29.107 [DEBU] [27 ms] SELECT * FROM `task` LIMIT 0,10
+2020-03-11 19:19:32.660 [DEBU] [5 ms] SELECT * FROM `admin_permission` WHERE FIND_IN_SET(1,`joins`) ORDER BY `sort` asc
+2020-03-11 19:19:32.778 [DEBU] [12 ms] SELECT COUNT(1) FROM `task` 
+2020-03-11 19:19:32.786 [DEBU] [8 ms] SELECT * FROM `task` LIMIT 0,10
+2020-03-11 19:19:35.424 [DEBU] [19 ms] SELECT * FROM `task` WHERE id=2 LIMIT 1
+2020-03-11 19:19:35.449 [DEBU] [25 ms] UPDATE `task` SET `title`='111',`describe`='111',`status`=2,`sort`=1,`updated_at`='2020-03-11 19:19:35',`id`=2 WHERE id=2
+2020-03-11 19:19:35.463 [DEBU] [13 ms] INSERT INTO `site_admin_log`(`level`,`action`,`action_admin_id`,`action_admin_name`,`action_user_id`,`created_at`,`module`,`title`,`description`,`action_user_name`,`action_admin_ip`) VALUES(1,2,48,'test001',0,'2020-03-11 19:19:35',1,'任务','{"id":2,"title":"111","describe":"111","commit_time":"","inspect_time":"","status":2,"sort":1,"updated_at":"2020-03-11T19:19:35.4242296+08:00"}','','10.10.35.250') ON DUPLICATE KEY UPDATE `module`=VALUES(`module`),`title`=VALUES(`title`),`description`=VALUES(`description`),`action_user_name`=VALUES(`action_user_name`),`action_admin_ip`=VALUES(`action_admin_ip`),`level`=VALUES(`level`),`action`=VALUES(`action`),`action_admin_id`=VALUES(`action_admin_id`),`action_admin_name`=VALUES(`action_admin_name`),`action_user_id`=VALUES(`action_user_id`),`created_at`=VALUES(`created_at`)
+2020-03-11 19:19:35.480 [DEBU] [3 ms] SELECT COUNT(1) FROM `task` 
+2020-03-11 19:19:35.492 [DEBU] [12 ms] SELECT * FROM `task` LIMIT 0,10
+2020-03-11 19:19:36.217 [DEBU] [31 ms] SELECT * FROM `admin_permission` WHERE FIND_IN_SET(1,`joins`) ORDER BY `sort` asc
+2020-03-11 19:19:36.348 [DEBU] [3 ms] SELECT COUNT(1) FROM `task` 
+2020-03-11 19:19:36.358 [DEBU] [9 ms] SELECT * FROM `task` LIMIT 0,10
+2020-03-11 19:19:41.936 [DEBU] [45 ms] SELECT * FROM `task` WHERE id=1 LIMIT 1
+2020-03-11 19:19:41.960 [DEBU] [24 ms] UPDATE `task` SET `status`=1,`sort`=1,`updated_at`='2020-03-11 19:19:41',`id`=1,`title`='aa',`describe`='bb' WHERE id=1
+2020-03-11 19:19:41.979 [DEBU] [19 ms] INSERT INTO `site_admin_log`(`description`,`action_admin_name`,`action_user_id`,`action_admin_ip`,`level`,`module`,`action`,`title`,`created_at`,`action_admin_id`,`action_user_name`) VALUES('{"id":1,"title":"aa","describe":"bb","commit_time":"","inspect_time":"","status":1,"sort":1,"updated_at":"2020-03-11T19:19:41.9363022+08:00"}','test001',0,'10.10.35.250',1,1,2,'任务','2020-03-11 19:19:41',48,'') ON DUPLICATE KEY UPDATE `module`=VALUES(`module`),`action`=VALUES(`action`),`title`=VALUES(`title`),`description`=VALUES(`description`),`action_admin_name`=VALUES(`action_admin_name`),`action_user_id`=VALUES(`action_user_id`),`action_admin_ip`=VALUES(`action_admin_ip`),`level`=VALUES(`level`),`created_at`=VALUES(`created_at`),`action_user_name`=VALUES(`action_user_name`),`action_admin_id`=VALUES(`action_admin_id`)
+2020-03-11 19:19:41.996 [DEBU] [2 ms] SELECT COUNT(1) FROM `task` 
+2020-03-11 19:19:42.010 [DEBU] [14 ms] SELECT * FROM `task` LIMIT 0,10
+2020-03-11 19:19:43.323 [DEBU] [8 ms] SELECT * FROM `admin_permission` WHERE FIND_IN_SET(1,`joins`) ORDER BY `sort` asc
+2020-03-11 19:19:43.451 [DEBU] [6 ms] SELECT COUNT(1) FROM `task` 
+2020-03-11 19:19:43.456 [DEBU] [5 ms] SELECT * FROM `task` LIMIT 0,10
+2020-03-11 19:20:29.205 [DEBU] [40 ms] SELECT COUNT(1) FROM `task_subscribe` 
+2020-03-11 19:20:29.209 [DEBU] [3 ms] SELECT * FROM `task_subscribe` ORDER BY `id` desc LIMIT 0,10
+2020-03-11 19:20:49.643 [DEBU] [11 ms] SELECT COUNT(1) FROM `admin_role`  WHERE id!= 1
+2020-03-11 19:20:49.666 [DEBU] [23 ms] SELECT * FROM `admin_role` WHERE id!= 1 LIMIT 0,10
+2020-03-11 19:20:49.692 [DEBU] [59 ms] SELECT * FROM `admin_permission` ORDER BY `sort` asc
+2020-03-11 19:20:55.745 [DEBU] [3 ms] SELECT COUNT(1) FROM `task` 
+2020-03-11 19:20:55.747 [DEBU] [2 ms] SELECT * FROM `task` LIMIT 0,10
+2020-03-11 19:21:02.339 [DEBU] [6 ms] SELECT COUNT(1) FROM `task` 
+2020-03-11 19:21:02.342 [DEBU] [3 ms] SELECT * FROM `task` LIMIT 0,10
+2020-03-11 19:21:53.277 [DEBU] [27 ms] SELECT COUNT(1) FROM `task_subscribe` 
+2020-03-11 19:21:53.281 [DEBU] [4 ms] SELECT * FROM `task_subscribe` ORDER BY `id` desc LIMIT 0,10
+2020-03-11 19:22:01.575 [DEBU] [9 ms] SELECT COUNT(id) FROM `task_publish` 
+2020-03-11 19:22:01.578 [DEBU] [3 ms] SELECT * FROM `task_publish` ORDER BY `id` desc LIMIT 0,10
+2020-03-11 19:22:12.400 [DEBU] [20 ms] SELECT COUNT(id) FROM `task_publish`  WHERE `status`=1
+2020-03-11 19:22:12.416 [DEBU] [16 ms] SELECT * FROM `task_publish` WHERE `status`=1 ORDER BY `id` desc LIMIT 0,10
+2020-03-11 19:22:14.542 [DEBU] [12 ms] SELECT COUNT(id) FROM `task_publish`  WHERE `status`=2
+2020-03-11 19:22:14.559 [DEBU] [17 ms] SELECT * FROM `task_publish` WHERE `status`=2 ORDER BY `id` desc LIMIT 0,10
+2020-03-11 19:22:17.276 [DEBU] [13 ms] SELECT COUNT(id) FROM `task_publish`  WHERE `status`=3
+2020-03-11 19:22:17.288 [DEBU] [12 ms] SELECT * FROM `task_publish` WHERE `status`=3 ORDER BY `id` desc LIMIT 0,10
+2020-03-11 19:22:18.927 [DEBU] [5 ms] SELECT COUNT(id) FROM `task_publish` 
+2020-03-11 19:22:18.931 [DEBU] [4 ms] SELECT * FROM `task_publish` ORDER BY `id` desc LIMIT 0,10
+2020-03-11 19:22:19.821 [DEBU] [3 ms] SELECT COUNT(id) FROM `task_publish` 
+2020-03-11 19:22:19.837 [DEBU] [16 ms] SELECT * FROM `task_publish` ORDER BY `id` desc LIMIT 0,10
+2020-03-11 19:22:25.585 [DEBU] [27 ms] SELECT COUNT(1) FROM `user` 
+2020-03-11 19:22:25.589 [DEBU] [4 ms] SELECT * FROM `user` LIMIT 0,10
+2020-03-11 19:22:26.508 [DEBU] [5 ms] SELECT COUNT(1) FROM `user_withdraw` 
+2020-03-11 19:22:26.514 [DEBU] [5 ms] SELECT * FROM `user_withdraw` LIMIT 0,10
+2020-03-11 19:22:56.412 [DEBU] [27 ms] SELECT COUNT(1) FROM `task_subscribe` 
+2020-03-11 19:22:56.417 [DEBU] [5 ms] SELECT * FROM `task_subscribe` ORDER BY `id` desc LIMIT 0,10
+2020-03-11 19:22:58.720 [DEBU] [4 ms] SELECT COUNT(id) FROM `task_publish` 
+2020-03-11 19:22:58.724 [DEBU] [4 ms] SELECT * FROM `task_publish` ORDER BY `id` desc LIMIT 0,10
+2020-03-11 19:23:01.461 [DEBU] [5 ms] SELECT COUNT(id) FROM `task_publish`  WHERE created_at between '2020-03-11 00:00:00' and '2020-03-11 23:59:59'
+2020-03-11 19:23:01.479 [DEBU] [18 ms] SELECT * FROM `task_publish` WHERE created_at between '2020-03-11 00:00:00' and '2020-03-11 23:59:59' ORDER BY `id` desc LIMIT 0,10
+2020-03-11 19:23:02.102 [DEBU] [23 ms] SELECT COUNT(id) FROM `task_publish`  WHERE created_at between '2020-03-10 00:00:00' and '2020-03-10 23:59:59'
+2020-03-11 19:23:02.113 [DEBU] [11 ms] SELECT * FROM `task_publish` WHERE created_at between '2020-03-10 00:00:00' and '2020-03-10 23:59:59' ORDER BY `id` desc LIMIT 0,10
+2020-03-11 19:23:02.491 [DEBU] [34 ms] SELECT COUNT(id) FROM `task_publish`  WHERE created_at between '2020-03-08 00:00:00' and '2020-03-14 23:59:59'
+2020-03-11 19:23:02.501 [DEBU] [9 ms] SELECT * FROM `task_publish` WHERE created_at between '2020-03-08 00:00:00' and '2020-03-14 23:59:59' ORDER BY `id` desc LIMIT 0,10
+2020-03-11 19:23:03.458 [DEBU] [4 ms] SELECT COUNT(id) FROM `task_publish`  WHERE created_at between '2020-03-01 00:00:00' and '2020-03-07 23:59:59'
+2020-03-11 19:23:03.467 [DEBU] [8 ms] SELECT * FROM `task_publish` WHERE created_at between '2020-03-01 00:00:00' and '2020-03-07 23:59:59' ORDER BY `id` desc LIMIT 0,10
+2020-03-11 19:23:04.710 [DEBU] [7 ms] SELECT COUNT(id) FROM `task_publish`  WHERE created_at between '2020-03-01 00:00:00' and '2020-03-29 23:59:59'
+2020-03-11 19:23:04.725 [DEBU] [15 ms] SELECT * FROM `task_publish` WHERE created_at between '2020-03-01 00:00:00' and '2020-03-29 23:59:59' ORDER BY `id` desc LIMIT 0,10
+2020-03-11 19:23:05.452 [DEBU] [38 ms] SELECT COUNT(id) FROM `task_publish`  WHERE created_at between '2020-03-01 00:00:00' and '2020-03-07 23:59:59'
+2020-03-11 19:23:05.475 [DEBU] [22 ms] SELECT * FROM `task_publish` WHERE created_at between '2020-03-01 00:00:00' and '2020-03-07 23:59:59' ORDER BY `id` desc LIMIT 0,10
+2020-03-11 19:23:05.584 [DEBU] [5 ms] SELECT COUNT(1) FROM `user_withdraw` 
+2020-03-11 19:23:05.588 [DEBU] [4 ms] SELECT * FROM `user_withdraw` LIMIT 0,10
+2020-03-11 19:23:06.546 [DEBU] [4 ms] SELECT COUNT(id) FROM `task_publish`  WHERE created_at between '2020-03-01 00:00:00' and '2020-03-29 23:59:59'
+2020-03-11 19:23:06.557 [DEBU] [10 ms] SELECT * FROM `task_publish` WHERE created_at between '2020-03-01 00:00:00' and '2020-03-29 23:59:59' ORDER BY `id` desc LIMIT 0,10
+2020-03-11 19:23:07.631 [DEBU] [15 ms] SELECT COUNT(id) FROM `task_publish`  WHERE created_at between '2020-02-01 00:00:00' and '2020-02-29 23:59:59'
+2020-03-11 19:23:07.639 [DEBU] [8 ms] SELECT * FROM `task_publish` WHERE created_at between '2020-02-01 00:00:00' and '2020-02-29 23:59:59' ORDER BY `id` desc LIMIT 0,10
+2020-03-11 19:23:08.149 [DEBU] [3 ms] SELECT COUNT(id) FROM `task_publish` 
+2020-03-11 19:23:08.153 [DEBU] [4 ms] SELECT * FROM `task_publish` ORDER BY `id` desc LIMIT 0,10
+2020-03-11 19:23:09.199 [DEBU] [7 ms] SELECT COUNT(id) FROM `task_publish`  WHERE created_at between '2020-03-10 00:00:00' and '2020-03-10 23:59:59'
+2020-03-11 19:23:09.213 [DEBU] [14 ms] SELECT * FROM `task_publish` WHERE created_at between '2020-03-10 00:00:00' and '2020-03-10 23:59:59' ORDER BY `id` desc LIMIT 0,10
+2020-03-11 19:23:09.660 [DEBU] [15 ms] SELECT COUNT(id) FROM `task_publish`  WHERE created_at between '2020-03-11 00:00:00' and '2020-03-11 23:59:59'
+2020-03-11 19:23:09.669 [DEBU] [9 ms] SELECT * FROM `task_publish` WHERE created_at between '2020-03-11 00:00:00' and '2020-03-11 23:59:59' ORDER BY `id` desc LIMIT 0,10
+2020-03-11 19:23:15.584 [DEBU] [6 ms] SELECT COUNT(id) FROM `task_publish`  WHERE created_at between '2020-03-11 00:00:00' and '2020-03-11 23:59:59' AND `status`=2
+2020-03-11 19:23:15.597 [DEBU] [12 ms] SELECT * FROM `task_publish` WHERE created_at between '2020-03-11 00:00:00' and '2020-03-11 23:59:59' AND `status`=2 ORDER BY `id` desc LIMIT 0,10
+2020-03-11 19:23:16.166 [DEBU] [6 ms] SELECT COUNT(id) FROM `task_publish`  WHERE created_at between '2020-03-10 00:00:00' and '2020-03-10 23:59:59' AND `status`=2
+2020-03-11 19:23:16.176 [DEBU] [10 ms] SELECT * FROM `task_publish` WHERE created_at between '2020-03-10 00:00:00' and '2020-03-10 23:59:59' AND `status`=2 ORDER BY `id` desc LIMIT 0,10
+2020-03-11 19:23:16.813 [DEBU] [7 ms] SELECT COUNT(id) FROM `task_publish`  WHERE created_at between '2020-03-11 00:00:00' and '2020-03-11 23:59:59' AND `status`=2
+2020-03-11 19:23:16.829 [DEBU] [16 ms] SELECT * FROM `task_publish` WHERE created_at between '2020-03-11 00:00:00' and '2020-03-11 23:59:59' AND `status`=2 ORDER BY `id` desc LIMIT 0,10
+2020-03-11 19:24:10.415 [DEBU] [36 ms] SELECT COUNT(1) FROM `bill` 
+2020-03-11 19:24:10.426 [DEBU] [11 ms] SELECT * FROM `bill` LIMIT 0,10
+2020-03-11 19:24:14.317 [DEBU] [6 ms] SELECT COUNT(1) FROM `site_admin_log` 
+2020-03-11 19:24:14.320 [DEBU] [3 ms] SELECT * FROM `site_admin_log` LIMIT 0,10
+2020-03-11 19:25:10.762 [DEBU] [83 ms] SELECT * FROM `site_configs_type` WHERE status=1
+2020-03-11 19:25:11.309 [DEBU] [14 ms] SELECT * FROM `site_configs_type` WHERE status=1
+2020-03-11 19:25:11.327 [DEBU] [28 ms] SELECT COUNT(1) FROM `site_configs` 
+2020-03-11 19:25:11.333 [DEBU] [6 ms] SELECT * FROM `site_configs` LIMIT 0,10
+2020-03-11 19:33:01.614 [DEBU] [108 ms] SELECT COUNT(1) FROM `site_admin_log` 
+2020-03-11 19:33:01.644 [DEBU] [29 ms] SELECT * FROM `site_admin_log` LIMIT 0,10
+2020-03-11 19:33:14.786 [DEBU] [10 ms] SELECT COUNT(1) FROM `task` 
+2020-03-11 19:33:14.799 [DEBU] [13 ms] SELECT * FROM `task` LIMIT 0,10
+2020-03-11 19:33:15.693 [DEBU] [16 ms] SELECT COUNT(1) FROM `site_admin_log` 
+2020-03-11 19:33:15.706 [DEBU] [13 ms] SELECT * FROM `site_admin_log` LIMIT 0,10
+2020-03-11 19:33:28.714 [DEBU] [12 ms] SELECT * FROM `admin_permission` ORDER BY `sort` asc
+2020-03-11 19:33:35.041 [DEBU] [47 ms] SELECT * FROM `admin_permission` WHERE id=27 LIMIT 1
+2020-03-11 19:33:35.060 [DEBU] [18 ms] SELECT * FROM `admin_permission` WHERE id=1 LIMIT 1
+2020-03-11 19:33:35.066 [DEBU] [6 ms] SELECT * FROM `admin_permission` WHERE permission_name='test2' LIMIT 1
+2020-03-11 19:33:35.087 [DEBU] [20 ms] UPDATE `admin_permission` SET `status`=2,`permission_path`='test',`joins`='1',`type`=1,`permission_code`='test',`request_param`='OPTIONS',`sort`=8,`updated_at`='2020-03-11 19:33:35',`id`=27,`parent_id`=1,`permission_name`='test2' WHERE id=27
+2020-03-11 19:33:35.103 [DEBU] [15 ms] INSERT INTO `site_admin_log`(`level`,`description`,`action_admin_id`,`action_admin_name`,`action_admin_ip`,`created_at`,`module`,`action`,`title`,`action_user_id`,`action_user_name`) VALUES(2,'{"id":27,"parent_id":1,"permission_name":"test2","permission_code":"test","permission_path":"test","request_param":"OPTIONS","joins":"1","sort":8,"type":1,"status":2,"remark":"","updated_at":"2020-03-11T19:33:35.0678982+08:00"}',48,'test001','10.10.35.250','2020-03-11 19:33:35',1,2,'权限管理',0,'') ON DUPLICATE KEY UPDATE `level`=VALUES(`level`),`description`=VALUES(`description`),`action_admin_id`=VALUES(`action_admin_id`),`action_admin_name`=VALUES(`action_admin_name`),`action_user_name`=VALUES(`action_user_name`),`action_admin_ip`=VALUES(`action_admin_ip`),`created_at`=VALUES(`created_at`),`module`=VALUES(`module`),`action`=VALUES(`action`),`title`=VALUES(`title`),`action_user_id`=VALUES(`action_user_id`)
+2020-03-11 19:33:42.459 [DEBU] [6 ms] SELECT * FROM `admin_permission` WHERE FIND_IN_SET(1,`joins`) ORDER BY `sort` asc
+2020-03-11 19:33:42.582 [DEBU] [31 ms] SELECT * FROM `admin_permission` ORDER BY `sort` asc
+2020-03-11 19:33:44.396 [DEBU] [9 ms] SELECT COUNT(1) FROM `bill` 
+2020-03-11 19:33:44.400 [DEBU] [4 ms] SELECT * FROM `bill` LIMIT 0,10
+2020-03-11 19:33:49.775 [DEBU] [16 ms] SELECT COUNT(1) FROM `site_admin_log` 
+2020-03-11 19:33:49.780 [DEBU] [5 ms] SELECT * FROM `site_admin_log` LIMIT 0,10
+2020-03-11 19:33:51.366 [DEBU] [7 ms] SELECT COUNT(1) FROM `user` 
+2020-03-11 19:33:51.383 [DEBU] [17 ms] SELECT * FROM `user` LIMIT 0,10
+2020-03-11 19:33:52.541 [DEBU] [4 ms] SELECT COUNT(1) FROM `user_deposit` 
+2020-03-11 19:33:52.545 [DEBU] [4 ms] SELECT * FROM `user_deposit` LIMIT 0,10
+2020-03-11 19:33:54.011 [DEBU] [9 ms] SELECT COUNT(1) FROM `user_withdraw` 
+2020-03-11 19:33:54.015 [DEBU] [4 ms] SELECT * FROM `user_withdraw` LIMIT 0,10
+2020-03-11 19:33:56.640 [DEBU] [23 ms] SELECT * FROM `site_bank` WHERE status=1
+2020-03-11 19:33:56.680 [DEBU] [63 ms] SELECT COUNT(1) FROM `user_bank` 
+2020-03-11 19:33:56.686 [DEBU] [6 ms] SELECT * FROM `user_bank` LIMIT 0,10
+2020-03-11 19:34:16.593 [DEBU] [4 ms] SELECT COUNT(1) FROM `user` 
+2020-03-11 19:34:16.599 [DEBU] [6 ms] SELECT * FROM `user` LIMIT 0,10
+2020-03-11 19:34:17.856 [DEBU] [6 ms] SELECT COUNT(1) FROM `user_deposit` 
+2020-03-11 19:34:17.873 [DEBU] [16 ms] SELECT * FROM `user_deposit` LIMIT 0,10
+2020-03-11 19:34:44.855 [DEBU] [50 ms] SELECT * FROM `admin_role_permission` WHERE role_id=25 LIMIT 1
+2020-03-11 19:34:44.864 [DEBU] [9 ms] SELECT id, parent_id, permission_code, permission_name, permission_path, request_param, type, sort, status FROM `admin_permission` WHERE id IN(16,2,3,4,5,6,7,8,45,30,9,10,25,26,43,35,36,37,41,42,38,39,40,31,11,17,33,32,18,19,20,12,24,23,22,21) AND parent_id!=0
+2020-03-11 19:34:44.877 [DEBU] [11 ms] SELECT COUNT(1) FROM `user_withdraw`  WHERE `status`=1
+2020-03-11 19:34:44.883 [DEBU] [6 ms] SELECT * FROM `user_withdraw` WHERE `status`=1 LIMIT 0,10
+2020-03-11 19:34:47.944 [DEBU] [19 ms] SELECT COUNT(1) FROM `user_withdraw`  WHERE `status`=2
+2020-03-11 19:34:47.951 [DEBU] [6 ms] SELECT * FROM `user_withdraw` WHERE `status`=2 LIMIT 0,10
+2020-03-11 19:34:50.026 [DEBU] [5 ms] SELECT COUNT(1) FROM `user_withdraw`  WHERE `status`=3
+2020-03-11 19:34:50.033 [DEBU] [7 ms] SELECT * FROM `user_withdraw` WHERE `status`=3 LIMIT 0,10
+2020-03-11 19:34:52.613 [DEBU] [11 ms] SELECT COUNT(1) FROM `user_withdraw`  WHERE `status`=1
+2020-03-11 19:34:52.640 [DEBU] [27 ms] SELECT * FROM `user_withdraw` WHERE `status`=1 LIMIT 0,10
+2020-03-11 19:34:53.605 [DEBU] [3 ms] SELECT COUNT(1) FROM `user_withdraw` 
+2020-03-11 19:34:53.608 [DEBU] [2 ms] SELECT * FROM `user_withdraw` LIMIT 0,10
+2020-03-11 19:34:55.943 [DEBU] [4 ms] SELECT COUNT(1) FROM `bill` 
+2020-03-11 19:34:55.959 [DEBU] [15 ms] SELECT * FROM `bill` LIMIT 0,10
+2020-03-11 19:38:37.448 [DEBU] [28 ms] SELECT COUNT(1) FROM `user_withdraw` 
+2020-03-11 19:38:37.454 [DEBU] [6 ms] SELECT * FROM `user_withdraw` LIMIT 0,10
+2020-03-11 19:39:48.264 [DEBU] [35 ms] SELECT * FROM `admin` WHERE account='clear2' LIMIT 1
+2020-03-11 19:39:48.271 [DEBU] [7 ms] SELECT * FROM `admin_role_permission` WHERE role_id=25 LIMIT 1
+2020-03-11 19:39:48.277 [DEBU] [5 ms] SELECT * FROM `admin_role` WHERE id=25 LIMIT 1
+2020-03-11 19:39:48.303 [DEBU] [26 ms] UPDATE `admin` SET `role_id`=25,`nick_name`='',`login_password`='222222',`created_ip`='10.10.35.146',`login_count`=17,`last_login_time`='2020-03-11 19:39:48',`updated_at`='2020-03-11 14:35:33',`created_id`=1,`account`='clear2',`status`=1,`id`=63,`role_name`='test11',`secret_key`='',`created_at`='2020-03-11 14:35:33',`last_login_ip`='10.10.35.146' WHERE id=63
+2020-03-11 19:39:48.392 [DEBU] [86 ms] INSERT INTO `site_admin_log`(`description`,`action_admin_id`,`action_user_name`,`action_admin_ip`,`module`,`action`,`title`,`created_at`,`level`,`action_admin_name`,`action_user_id`) VALUES('管理员: clear2, 在 2020-03-11 19:39:48.3056355 +0800 CST m=+1418.218145901, 第 17 次登陆',63,'','10.10.35.146',2,5,'登陆','2020-03-11 19:39:48',1,'clear2',0) ON DUPLICATE KEY UPDATE `level`=VALUES(`level`),`action_admin_name`=VALUES(`action_admin_name`),`action_user_id`=VALUES(`action_user_id`),`created_at`=VALUES(`created_at`),`module`=VALUES(`module`),`action`=VALUES(`action`),`title`=VALUES(`title`),`description`=VALUES(`description`),`action_admin_id`=VALUES(`action_admin_id`),`action_user_name`=VALUES(`action_user_name`),`action_admin_ip`=VALUES(`action_admin_ip`)
+2020-03-11 19:39:48.592 [DEBU] [7 ms] SELECT COUNT(1) FROM `user_withdraw` 
+2020-03-11 19:39:48.596 [DEBU] [3 ms] SELECT * FROM `user_withdraw` LIMIT 0,10
+2020-03-11 19:48:10.426 [DEBU] [54 ms] SELECT COUNT(1) FROM `user_deposit` 
+2020-03-11 19:48:10.435 [DEBU] [9 ms] SELECT * FROM `user_deposit` LIMIT 0,10
+2020-03-11 19:48:12.324 [DEBU] [4 ms] SELECT COUNT(1) FROM `user_withdraw` 
+2020-03-11 19:48:12.335 [DEBU] [11 ms] SELECT * FROM `user_withdraw` LIMIT 0,10
+2020-03-11 19:49:39.066 [DEBU] [37 ms] SELECT COUNT(1) FROM `user_withdraw` 
+2020-03-11 19:49:39.071 [DEBU] [5 ms] SELECT * FROM `user_withdraw` LIMIT 0,10
+2020-03-11 19:49:39.791 [DEBU] [31 ms] SELECT COUNT(1) FROM `user_withdraw` 
+2020-03-11 19:49:39.801 [DEBU] [10 ms] SELECT * FROM `user_withdraw` LIMIT 0,10
+2020-03-11 19:49:43.802 [DEBU] [11 ms] SELECT * FROM `site_bank` WHERE status=1
+2020-03-11 19:49:43.819 [DEBU] [27 ms] SELECT COUNT(1) FROM `user_bank` 
+2020-03-11 19:49:43.822 [DEBU] [3 ms] SELECT * FROM `user_bank` LIMIT 0,10
+2020-03-11 19:49:45.234 [DEBU] [16 ms] SELECT COUNT(1) FROM `user_deposit` 
+2020-03-11 19:49:45.244 [DEBU] [9 ms] SELECT * FROM `user_deposit` LIMIT 0,10
+2020-03-11 19:52:13.430 [DEBU] [44 ms] SELECT COUNT(1) FROM `user_withdraw` 
+2020-03-11 19:52:13.435 [DEBU] [4 ms] SELECT * FROM `user_withdraw` LIMIT 0,10
+2020-03-11 19:53:09.959 [DEBU] [24 ms] SELECT COUNT(1) FROM `user_withdraw` 
+2020-03-11 19:53:09.974 [DEBU] [15 ms] SELECT * FROM `user_withdraw` LIMIT 0,10
+2020-03-11 19:59:56.939 [DEBU] [50 ms] SELECT COUNT(1) FROM `user_withdraw` 
+2020-03-11 19:59:56.944 [DEBU] [4 ms] SELECT * FROM `user_withdraw` LIMIT 0,10
+2020-03-11 20:00:00.956 [DEBU] [15 ms] SELECT COUNT(1) FROM `bill` 
+2020-03-11 20:00:00.959 [DEBU] [2 ms] SELECT * FROM `bill` LIMIT 0,10
+2020-03-11 20:00:13.757 [DEBU] [4 ms] SELECT * FROM `admin_permission` ORDER BY `sort` asc
+2020-03-11 20:01:27.367 [DEBU] [59 ms] SELECT * FROM `admin_permission` WHERE id=14 LIMIT 1
+2020-03-11 20:01:27.383 [DEBU] [16 ms] SELECT * FROM `admin_permission` WHERE id=13 LIMIT 1
+2020-03-11 20:01:27.394 [DEBU] [11 ms] SELECT * FROM `admin_permission` WHERE permission_name='账单管理' LIMIT 1
+2020-03-11 20:01:27.420 [DEBU] [25 ms] UPDATE `admin_permission` SET `type`=1,`permission_name`='账单管理',`permission_code`='bill',`request_param`='OPTIONS',`sort`=7,`status`=1,`updated_at`='2020-03-11 20:01:27',`id`=14,`parent_id`=13,`permission_path`='order',`joins`='1,13' WHERE id=14
+2020-03-11 20:01:27.448 [DEBU] [27 ms] INSERT INTO `site_admin_log`(`level`,`action`,`title`,`description`,`action_admin_id`,`action_user_id`,`created_at`,`module`,`action_admin_name`,`action_user_name`,`action_admin_ip`) VALUES(2,2,'权限管理','{"id":14,"parent_id":13,"permission_name":"账单管理","permission_code":"bill","permission_path":"order","request_param":"OPTIONS","joins":"1,13","sort":7,"type":1,"status":1,"remark":"","updated_at":"2020-03-11T20:01:27.3954756+08:00"}',48,0,'2020-03-11 20:01:27',1,'test001','','10.10.35.250') ON DUPLICATE KEY UPDATE `action_admin_id`=VALUES(`action_admin_id`),`action_user_id`=VALUES(`action_user_id`),`created_at`=VALUES(`created_at`),`level`=VALUES(`level`),`action`=VALUES(`action`),`title`=VALUES(`title`),`description`=VALUES(`description`),`module`=VALUES(`module`),`action_admin_name`=VALUES(`action_admin_name`),`action_user_name`=VALUES(`action_user_name`),`action_admin_ip`=VALUES(`action_admin_ip`)
+2020-03-11 20:01:35.662 [DEBU] [12 ms] SELECT * FROM `admin_permission` WHERE FIND_IN_SET(1,`joins`) ORDER BY `sort` asc
+2020-03-11 20:01:35.763 [DEBU] [8 ms] SELECT * FROM `admin_permission` ORDER BY `sort` asc
+2020-03-11 20:01:52.290 [DEBU] [11 ms] SELECT * FROM `admin_permission` ORDER BY `sort` asc
+2020-03-11 20:02:17.551 [DEBU] [48 ms] SELECT * FROM `admin_permission` WHERE id=13 LIMIT 1
+2020-03-11 20:02:17.561 [DEBU] [10 ms] SELECT * FROM `admin_permission` WHERE id=1 LIMIT 1
+2020-03-11 20:02:17.589 [DEBU] [28 ms] SELECT * FROM `admin_permission` WHERE permission_name='财务管理' LIMIT 1
+2020-03-11 20:02:17.655 [DEBU] [65 ms] UPDATE `admin_permission` SET `id`=13,`permission_name`='财务管理',`permission_path`='money',`type`=2,`sort`=5,`status`=1,`updated_at`='2020-03-11 20:02:17',`parent_id`=1,`permission_code`='money',`request_param`='OPTIONS',`joins`='1' WHERE id=13
+2020-03-11 20:02:17.692 [DEBU] [36 ms] INSERT INTO `site_admin_log`(`module`,`action`,`action_admin_id`,`action_admin_name`,`action_user_id`,`level`,`description`,`action_user_name`,`action_admin_ip`,`created_at`,`title`) VALUES(1,2,48,'test001',0,2,'{"id":13,"parent_id":1,"permission_name":"财务管理","permission_code":"money","permission_path":"money","request_param":"OPTIONS","joins":"1","sort":5,"type":2,"status":1,"remark":"","updated_at":"2020-03-11T20:02:17.5909023+08:00"}','','10.10.35.250','2020-03-11 20:02:17','权限管理') ON DUPLICATE KEY UPDATE `action_admin_name`=VALUES(`action_admin_name`),`action_user_id`=VALUES(`action_user_id`),`level`=VALUES(`level`),`module`=VALUES(`module`),`action`=VALUES(`action`),`action_admin_id`=VALUES(`action_admin_id`),`created_at`=VALUES(`created_at`),`title`=VALUES(`title`),`description`=VALUES(`description`),`action_user_name`=VALUES(`action_user_name`),`action_admin_ip`=VALUES(`action_admin_ip`)
+2020-03-11 20:02:19.012 [DEBU] [11 ms] SELECT * FROM `admin_permission` WHERE FIND_IN_SET(1,`joins`) ORDER BY `sort` asc
+2020-03-11 20:02:19.250 [DEBU] [111 ms] SELECT * FROM `admin_permission` ORDER BY `sort` asc
+2020-03-11 20:02:29.246 [DEBU] [9 ms] SELECT * FROM `admin_permission` WHERE FIND_IN_SET(1,`joins`) ORDER BY `sort` asc
+2020-03-11 20:02:29.346 [DEBU] [8 ms] SELECT * FROM `admin_permission` ORDER BY `sort` asc
+2020-03-11 20:02:38.584 [DEBU] [7 ms] SELECT COUNT(1) FROM `site_admin_log` 
+2020-03-11 20:02:38.595 [DEBU] [11 ms] SELECT * FROM `site_admin_log` LIMIT 0,10
+2020-03-11 20:02:44.520 [DEBU] [3 ms] SELECT COUNT(1) FROM `admin_role` 
+2020-03-11 20:02:44.524 [DEBU] [4 ms] SELECT * FROM `admin_role` LIMIT 0,10
+2020-03-11 20:02:44.574 [DEBU] [56 ms] SELECT * FROM `admin_permission` ORDER BY `sort` asc
+2020-03-11 20:02:45.362 [DEBU] [13 ms] SELECT * FROM `admin_permission` ORDER BY `sort` asc
+2020-03-11 20:02:55.128 [DEBU] [10 ms] SELECT * FROM `admin_permission` WHERE id=13 LIMIT 1
+2020-03-11 20:02:55.137 [DEBU] [9 ms] SELECT * FROM `admin_permission` WHERE id=1 LIMIT 1
+2020-03-11 20:02:55.143 [DEBU] [5 ms] SELECT * FROM `admin_permission` WHERE permission_name='财务管理' LIMIT 1
+2020-03-11 20:02:55.165 [DEBU] [21 ms] UPDATE `admin_permission` SET `sort`=5,`type`=1,`updated_at`='2020-03-11 20:02:55',`id`=13,`permission_name`='财务管理',`permission_path`='money',`joins`='1',`parent_id`=1,`permission_code`='money',`request_param`='OPTIONS',`status`=1 WHERE id=13
+2020-03-11 20:02:55.182 [DEBU] [16 ms] INSERT INTO `site_admin_log`(`level`,`action`,`description`,`action_admin_id`,`action_user_name`,`action_admin_ip`,`created_at`,`module`,`title`,`action_admin_name`,`action_user_id`) VALUES(2,2,'{"id":13,"parent_id":1,"permission_name":"财务管理","permission_code":"money","permission_path":"money","request_param":"OPTIONS","joins":"1","sort":5,"type":1,"status":1,"remark":"","updated_at":"2020-03-11T20:02:55.1446418+08:00"}',48,'','10.10.35.250','2020-03-11 20:02:55',1,'权限管理','test001',0) ON DUPLICATE KEY UPDATE `action_admin_ip`=VALUES(`action_admin_ip`),`created_at`=VALUES(`created_at`),`level`=VALUES(`level`),`action`=VALUES(`action`),`description`=VALUES(`description`),`action_admin_id`=VALUES(`action_admin_id`),`action_user_name`=VALUES(`action_user_name`),`module`=VALUES(`module`),`title`=VALUES(`title`),`action_admin_name`=VALUES(`action_admin_name`),`action_user_id`=VALUES(`action_user_id`)
+2020-03-11 20:02:56.380 [DEBU] [7 ms] SELECT * FROM `admin_permission` WHERE FIND_IN_SET(1,`joins`) ORDER BY `sort` asc
+2020-03-11 20:02:56.516 [DEBU] [10 ms] SELECT * FROM `admin_permission` ORDER BY `sort` asc
+2020-03-11 20:03:07.501 [DEBU] [11 ms] SELECT * FROM `admin_permission` WHERE id=14 LIMIT 1
+2020-03-11 20:03:07.508 [DEBU] [6 ms] SELECT * FROM `admin_permission` WHERE id=13 LIMIT 1
+2020-03-11 20:03:07.525 [DEBU] [17 ms] SELECT * FROM `admin_permission` WHERE permission_name='账单管理' LIMIT 1
+2020-03-11 20:03:07.550 [DEBU] [25 ms] UPDATE `admin_permission` SET `id`=14,`joins`='1,13',`request_param`='OPTIONS',`sort`=7,`type`=2,`status`=1,`parent_id`=13,`permission_name`='账单管理',`permission_code`='bill',`permission_path`='order',`updated_at`='2020-03-11 20:03:07' WHERE id=14
+2020-03-11 20:03:07.613 [DEBU] [63 ms] INSERT INTO `site_admin_log`(`action_admin_ip`,`module`,`action`,`action_admin_id`,`action_user_id`,`action_user_name`,`level`,`title`,`description`,`action_admin_name`,`created_at`) VALUES('10.10.35.250',1,2,48,0,'',2,'权限管理','{"id":14,"parent_id":13,"permission_name":"账单管理","permission_code":"bill","permission_path":"order","request_param":"OPTIONS","joins":"1,13","sort":7,"type":2,"status":1,"remark":"","updated_at":"2020-03-11T20:03:07.5256344+08:00"}','test001','2020-03-11 20:03:07') ON DUPLICATE KEY UPDATE `action_user_name`=VALUES(`action_user_name`),`action_admin_ip`=VALUES(`action_admin_ip`),`module`=VALUES(`module`),`action`=VALUES(`action`),`action_admin_id`=VALUES(`action_admin_id`),`action_user_id`=VALUES(`action_user_id`),`created_at`=VALUES(`created_at`),`level`=VALUES(`level`),`title`=VALUES(`title`),`description`=VALUES(`description`),`action_admin_name`=VALUES(`action_admin_name`)
+2020-03-11 20:03:08.804 [DEBU] [14 ms] SELECT * FROM `admin_permission` WHERE FIND_IN_SET(1,`joins`) ORDER BY `sort` asc

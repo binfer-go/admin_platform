@@ -13,10 +13,11 @@ func init()  {
 	server 	:= g.Server()
 	logpath := config.GetString("setting.logpath")
 	_ = glog.SetPath(logpath)
+	server.SetLogPath(logpath)
+	glog.SetDebug(true)
 	glog.SetStdoutPrint(true)
 	server.SetIndexFolder(true)
-	server.SetServerRoot("/public")
-	server.SetLogPath(logpath)
+	server.SetServerRoot("public")
 	server.SetNameToUriType(ghttp.URI_TYPE_ALLLOWER)
 	err := rpc.RegisterClient(g.Config().GetString("rpc.default"))
 	if err != nil {

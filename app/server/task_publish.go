@@ -114,3 +114,13 @@ func (*ServiceTaskPublish) Get (where interface{}, fields string, groups string,
 	return result, nil
 
 }
+
+func (*ServiceTaskPublish) Create(data interface{}) (interface{}, error) {
+
+	result, err := tablePublish.Data(data).Save();
+	if err != nil {
+		return nil, err
+	}
+	lastId, _ := result.LastInsertId()
+	return lastId, nil
+}

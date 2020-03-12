@@ -56,3 +56,45 @@ func BuilderMysqlReportUsers ()  {
 		_, _ = report.ModelReportUser.Create(temp)
 	}
 }
+
+func BuilderTaskPublish ()  {
+	rand.Seed(time.Now().Unix())
+	var temp model.TaskPublish
+	for i:=0;i< 1 ;i++ {
+		temp.UserId = 100101007
+		temp.Amount = gconv.Int32(rand.Intn(60))
+		temp.Status = gconv.Byte(rand.Intn(4)+1)
+		temp.Count  = gconv.Int32(rand.Intn(60))
+		temp.Rate   = gconv.Float64(rand.Intn(20))
+		temp.Title  = gconv.String(rand.Intn(11111111160))
+		temp.Step   =  "{}"
+		temp.Commit = gconv.Int32(rand.Intn(30))
+		temp.Describe = gconv.String(rand.Intn(9099999999))
+		temp.Project = gconv.String(rand.Intn(100000))
+		temp.Accept  = gconv.Int32(rand.Intn(30))
+		temp.CreatedAt   = time.Now()
+		temp.UpdatedAt   = time.Now()
+		_, _ = server.ModelTaskPublish.Create(temp)
+	}
+}
+
+
+func BuilderTaskSubscribe ()  {
+	rand.Seed(time.Now().Unix())
+	var temp model.TaskSubscribe
+	for i:=0;i< 1 ;i++ {
+		temp.UserId = 100101007
+		temp.Amount = gconv.Int32(rand.Intn(60))
+		temp.Status = gconv.Byte(rand.Intn(7)+1)
+		temp.Result = "---"
+		temp.TaskId = 100101048
+		temp.TaskType = 1
+		temp.Step   =  "{}"
+		temp.RefuseMsg = "{}"
+		temp.Result = "{}"
+		temp.Project = gconv.String(rand.Intn(100000))
+		temp.CreatedAt   = time.Now()
+		temp.UpdatedAt   = time.Now()
+		_, _ = server.ModelTaskSubscribe.Create(temp)
+	}
+}

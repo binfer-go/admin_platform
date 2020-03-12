@@ -17,6 +17,7 @@ type UserDeposit struct {
 	Title        string    `plat:"title" json:"title"`                 // 标题
 	CreatedAt    time.Time `plat:"created_at" json:"created_at"`       // 创建时间
 	UpdatedAt    time.Time `plat:"updated_at" json:"updated_at"`       // 变动时间
+	Remark       string    `plat:"remark" json:"remark"`               // 电话
 }
 
 func (*UserDeposit) TableName() string {

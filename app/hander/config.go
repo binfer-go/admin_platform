@@ -103,7 +103,7 @@ func (*Configs) Get (req *ghttp.Request)  {
 				"value":server.SUBSCRIBE_STATUS_INSPECTION,
 			},
 			{
-				"name":"已通过",
+				"name":"成功",
 				"value":server.SUBSCRIBE_STATUS_PASS,
 			},
 			{
@@ -115,12 +115,16 @@ func (*Configs) Get (req *ghttp.Request)  {
 				"value":server.SUBSCRIBE_STATUS_REWAIT,
 			},
 			{
+				"name":"已过期",
+				"value":server.SUBSCRIBE_STATUS_OVERDUE,
+			},
+			{
 				"name":"复审失败",
 				"value":server.SUBSCRIBE_STATUS_REWAIT_FAILURE,
 			},
 			{
-				"name":"已过期",
-				"value":server.SUBSCRIBE_STATUS_OVERDUE,
+				"name":"失败",
+				"value":server.SUBSCRIBE_STATUS_FAILURE,
 			},
 		},
 		"admin_status" : []g.Map{

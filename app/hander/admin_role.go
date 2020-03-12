@@ -6,6 +6,7 @@ import (
 	"github.com/gogf/gf/net/ghttp"
 	"platform/app/errcode"
 	"platform/app/hander/env"
+	"platform/app/hander/role"
 	"platform/app/model"
 	"platform/app/server"
 	"platform/library/help"
@@ -227,7 +228,7 @@ func (task *AdminRole) Put (req *ghttp.Request)  {
 		response.Json(req, errcode.ErrCodeAdminRoleEditError, "")
 		return
 	}
-	if len(edit.RoleName) < 4 {
+	if len(edit.RoleName) < 2 {
 		response.Json(req, errcode.ErrCodeAdminRoleError, "")
 	}
 	type temps struct {
@@ -335,6 +336,7 @@ func (*AdminRole) RoleMaps (req *ghttp.Request)  {
 	var redisService redis.RedisService
 
 	var permissions []*permission
+	role.CashBinRoute.Role_permission(Admins.RoleId)
 	_ = redisService.GetJsonDecodeDataByKeyName(redis.ADMIN_HASH_ROLE_PERMISSION_AUTH, patch.RoleId, &permissions)
 
 	response.Json(req, errcode.ErrCodeSuccess, "", permissions)

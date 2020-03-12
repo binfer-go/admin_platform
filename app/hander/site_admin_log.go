@@ -15,7 +15,7 @@ type SiteAdminLog struct {}
 type getListAdminLogReq struct {
 	Id int32 `json:"id"`
 	Level byte `json:"level"`
-	Module env.State `json:"module"`
+	Module byte `json:"module"`
 	Action byte `json:"action"`
 	ActionAdminName string `json:"action_admin_name"`
 	ActionUserName string `json:"action_user_name"`
@@ -78,7 +78,7 @@ func (*SiteAdminLog) Get (req *ghttp.Request)  {
 	if list.Level >=  server.ADMIN_LOG_LEVEL_INFO {
 		where["level"]= list.Level
 	}
-	if list.Module >= env.ADMIN_MODULE {
+	if env.State(list.Module) >= env.ADMIN_MODULE {
 		where["module"]= list.Module
 	}
 	if list.Action >= server.ADMIN_LOG_ACTION_CREATE {
