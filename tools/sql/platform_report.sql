@@ -11,7 +11,7 @@
  Target Server Version : 80019
  File Encoding         : 65001
 
- Date: 10/03/2020 17:28:14
+ Date: 12/03/2020 10:27:04
 */
 
 SET NAMES utf8mb4;
@@ -30,18 +30,20 @@ CREATE TABLE `report_bases`  (
   `user_balance` int(0) NOT NULL DEFAULT 0 COMMENT '发布钱包',
   `user_commission` int(0) NOT NULL DEFAULT 0 COMMENT '佣金钱包',
   `task_publish_count` int(0) NOT NULL DEFAULT 0 COMMENT '发布任务数',
-  `task_publish_children_count` int(0) NOT NULL DEFAULT 0 COMMENT '发布子任务数量',
   `task_publish_money_sum` int(0) NOT NULL DEFAULT 0 COMMENT '发布任务金额',
   `task_publish_accept_count` int(0) NOT NULL DEFAULT 0 COMMENT '做单人数',
-  `task_publish_success_perssion_count` int(0) NOT NULL DEFAULT 0 COMMENT '已成功人数',
+  `task_publish_success_accept_count` int(0) NOT NULL DEFAULT 0 COMMENT '已成功人数',
   `task_publish_end_count` int(0) NOT NULL DEFAULT 0 COMMENT '发布结束任务数',
-  `task_publish_children_end_count` int(0) NOT NULL DEFAULT 0 COMMENT '发布任务子级结束数量',
-  `task_publish_success_count` int(0) NULL DEFAULT 0 COMMENT '发布有效任务数',
-  `task_publish_children_success_count` int(0) NOT NULL COMMENT '发布有效子级任务量',
-  `task_subscribe_count` int(0) NOT NULL DEFAULT 0 COMMENT '订阅任务总量',
-  `task_subscribe_money_sum` int(0) NOT NULL DEFAULT 0 COMMENT '订阅任务金额',
-  `task_subscribe_status_success_count` int(0) NOT NULL DEFAULT 0 COMMENT '成功的任务数',
-  `task_subscribe_status_failure_count` int(0) NOT NULL DEFAULT 0 COMMENT '失败的任务数',
+  `task_publish_success_count` int(0) NULL DEFAULT 0 COMMENT '发布成功任务数',
+  `task_publish_children_count` int(0) NOT NULL DEFAULT 0 COMMENT '发布子任务数量',
+  `task_publish_children_failure_count` int(0) NOT NULL DEFAULT 0 COMMENT '发布子任务失败数量(自身发布)',
+  `task_publish_children_success_count` int(0) NOT NULL COMMENT '发布子任务成功数量(自身发布)',
+  `task_publish_children_wait_count` int(0) NOT NULL COMMENT '发布子任务进行中数量(自身发布)',
+  `task_subscribe_count` int(0) NOT NULL DEFAULT 0 COMMENT '订阅任务总量（其他会员发布）',
+  `task_subscribe_money_sum` int(0) NOT NULL DEFAULT 0 COMMENT '订阅任务金额（其他会员发布）',
+  `task_subscribe_status_success_count` int(0) NOT NULL DEFAULT 0 COMMENT '成功的任务量（其他会员发布）',
+  `task_subscribe_status_failure_count` int(0) NOT NULL DEFAULT 0 COMMENT '失败的任务量（其他会员发布）',
+  `task_subscribe_status_wait_count` int(0) NOT NULL COMMENT '进行中的任务量（其他会员发布）',
   `user_deposit_count` int(0) NOT NULL DEFAULT 0 COMMENT '充值次数',
   `user_deposit_money_sum` int(0) NOT NULL DEFAULT 0 COMMENT '充值金额',
   `user_deposit_money_max` int(0) NOT NULL DEFAULT 0 COMMENT '最大充值金额',
@@ -58,16 +60,23 @@ CREATE TABLE `report_bases`  (
   `updated_at` datetime(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `user_id`(`user_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 75 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '平台数据单日累计表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 82 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '平台数据单日累计表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of report_bases
 -- ----------------------------
-INSERT INTO `report_bases` VALUES (70, '2020-03-05', 100101001, 0, '13294137777', 11111, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2492, 1183, 335, 1, 335, 5, 7022, 2643, 5517, 2, 2940, '2020-03-05 11:08:41', '2020-03-05 14:18:24');
-INSERT INTO `report_bases` VALUES (71, '2020-03-05', 100101002, 1, '13111111111', 222, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2492, 1183, 335, 1, 335, 5, 7022, 2643, 5517, 2, 2940, '2020-03-05 11:08:41', '2020-03-05 14:18:24');
-INSERT INTO `report_bases` VALUES (72, '2020-03-06', 100101003, 0, '13125153563', 3333, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 11788, 11788, 26828, 20, 8844, 12, 19936, 11236, 11788, 9, 14740, '2020-03-06 11:21:54', '2020-03-06 19:16:52');
-INSERT INTO `report_bases` VALUES (73, '2020-03-06', 100101006, 0, '13294138888', 444, 5555, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 16968, 11304, 1016, 4, 1016, 24, 47396, 10816, 3912, 9, 4895, '2020-03-06 11:21:54', '2020-03-06 19:16:52');
-INSERT INTO `report_bases` VALUES (74, '2020-03-09', 100101001, 0, '13294137777', 11111, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-03-09 10:54:25', '2020-03-09 12:43:09');
+INSERT INTO `report_bases` VALUES (70, '2020-03-05', 100101001, 0, '13294137777', 11111, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2492, 1183, 335, 1, 335, 5, 7022, 2643, 5517, 2, 2940, '2020-03-05 11:08:41', '2020-03-05 14:18:24');
+INSERT INTO `report_bases` VALUES (71, '2020-03-05', 100101002, 1, '13111111111', 222, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2492, 1183, 335, 1, 335, 5, 7022, 2643, 5517, 2, 2940, '2020-03-05 11:08:41', '2020-03-05 14:18:24');
+INSERT INTO `report_bases` VALUES (72, '2020-03-06', 100101003, 0, '13125153563', 3333, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 11788, 11788, 26828, 20, 8844, 12, 19936, 11236, 11788, 9, 14740, '2020-03-06 11:21:54', '2020-03-06 19:16:52');
+INSERT INTO `report_bases` VALUES (73, '2020-03-06', 100101006, 0, '13294138888', 444, 5555, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 16968, 11304, 1016, 4, 1016, 24, 47396, 10816, 3912, 9, 4895, '2020-03-06 11:21:54', '2020-03-06 19:16:52');
+INSERT INTO `report_bases` VALUES (74, '2020-03-09', 100101001, 0, '13294137777', 11111, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-03-09 10:54:25', '2020-03-09 12:43:09');
+INSERT INTO `report_bases` VALUES (75, '2020-03-10', 100101001, 0, '13294137777', 1724159078, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-03-10 17:58:55', '2020-03-10 18:00:28');
+INSERT INTO `report_bases` VALUES (76, '2020-03-10', 100101006, 0, '13294138888', 444, 5555, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-03-10 17:58:55', '2020-03-10 18:00:28');
+INSERT INTO `report_bases` VALUES (77, '2020-03-10', 100101007, 0, '13091919191', 555, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-03-10 17:58:55', '2020-03-10 18:00:28');
+INSERT INTO `report_bases` VALUES (78, '2020-03-10', 100101008, 0, '13092929292', 1, 33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-03-10 17:58:55', '2020-03-10 18:00:28');
+INSERT INTO `report_bases` VALUES (79, '2020-03-11', 100101006, 0, '13294138888', 444, 5555, 30, 33474, 264, 0, 1, 4, 1272, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-03-11 10:08:26', '2020-03-11 23:59:46');
+INSERT INTO `report_bases` VALUES (80, '2020-03-11', 100101007, 0, '13091919191', 555, 0, 220, 195905, 2662, 50, 7, 8, 6089, 17, 17, -8, 1365, 40697, 299, 315, 1061, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-03-11 10:08:26', '2020-03-11 23:59:46');
+INSERT INTO `report_bases` VALUES (81, '2020-03-11', 100101008, 0, '13092929292', 1, 33, 30, 36072, 588, 1386, 2, 3, 906, 0, 0, 0, 140, 3962, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-03-11 10:08:26', '2020-03-11 23:59:46');
 
 -- ----------------------------
 -- Table structure for report_users
@@ -98,7 +107,7 @@ CREATE TABLE `report_users`  (
   `created_at` datetime(0) NOT NULL COMMENT '注册时间',
   `updated_at` datetime(0) NOT NULL COMMENT '最后更新时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户数据累计表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户数据累计表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of report_users
